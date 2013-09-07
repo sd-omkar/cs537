@@ -79,7 +79,7 @@ if (bytesRead != buf.st_size) {
  exit(1);
 }
 
-// sort
+// sort with qsort
 qsort(records, numRecords, sizeof(rec_t), compare);
 
 // generate output file
