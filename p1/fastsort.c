@@ -46,7 +46,7 @@ while ((option = getopt(argc, argv, "i:o:")) != -1 ) {
  }
 }
 
-// errors for improper argument passing
+// errors for incorrect arguments 
 if (argc != 5)
   usage(argv[0]);
  
