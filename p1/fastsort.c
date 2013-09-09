@@ -27,7 +27,6 @@ int main (int argc, char *argv[]) {
 
 char *inFile = NULL;
 char *outFile = NULL;
-int counter = 0;
 
 // process arguments
 int option;
@@ -96,6 +95,8 @@ if (bytesWritten != buf.st_size) {
 
 // cleanup
 free(records);
+free(inFile);
+free(outFile);
 close(inFD);
 close(outFD);
 
