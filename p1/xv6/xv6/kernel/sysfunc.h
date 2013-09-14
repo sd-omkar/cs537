@@ -25,4 +25,6 @@ int sys_write(void);
 int sys_uptime(void);
 int sys_getsyscallinfo(void);
 
+// System call counter
+extern unsigned long sysCallCount;
 #endif // _SYSFUNC_H_

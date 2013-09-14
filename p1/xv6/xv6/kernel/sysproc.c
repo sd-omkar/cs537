@@ -91,7 +91,6 @@ sys_uptime(void)
 
 // return total number of syscalls made since boot
 int sys_getsyscallinfo() {
-  int count = 0;
   // get from some global counter
-  return count;
+  return sysCallCount;
 }
