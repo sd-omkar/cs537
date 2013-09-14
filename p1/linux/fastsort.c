@@ -11,8 +11,8 @@
 #include <errno.h>
 
 // usage
-void usage (char *executable) {
- fprintf(stderr, "Usage: %s -i inputFile -o outputFile\n", executable);
+void usage() {
+ fprintf(stderr, "Usage: fastsort -i inputfile -o outputfile\n");
  exit(1);
 }
 
@@ -41,13 +41,15 @@ while ((option = getopt(argc, argv, "i:o:")) != -1 ) {
   outFile = strdup(optarg);
   break;
  default:
-  usage(argv[0]);
+  usage();
  }
 }
 
 // errors for incorrect arguments 
 if (argc != 5)
-  usage(argv[0]);
+ usage();
+if (argc - optind)
+ usage();
  
 // open input file
 int inFD = open(inFile, O_RDONLY);

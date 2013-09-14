@@ -1,0 +1,255 @@
+
+**********************************************************************
+
+Test build
+build project using make
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+rm -f fastsort 
+Trying to build project using make
+make
+gcc -O3 -o fastsort fastsort.c
+
+
+test build PASSED
+ (build project using make)
+
+
+**********************************************************************
+
+Test arg
+bad arguments
+
+**********************************************************************
+/tmp/tmpYgSW8D/p/fastsort
+
+
+test arg PASSED
+ (bad arguments)
+
+
+**********************************************************************
+
+Test arg2
+bad arguments
+
+**********************************************************************
+/tmp/tmpYgSW8D/p/fastsort a b c d
+
+
+test arg2 PASSED
+ (bad arguments)
+
+
+**********************************************************************
+
+Test badin
+bad input file
+
+**********************************************************************
+/tmp/tmpYgSW8D/p/fastsort -i /invalid/path/JcfKP7 -o outfile
+
+
+test badin PASSED
+ (bad input file)
+
+
+**********************************************************************
+
+Test badout
+bad output file
+
+**********************************************************************
+/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /invalid/path/JcfKP7
+
+
+test badout PASSED
+ (bad output file)
+
+
+**********************************************************************
+
+Test empty
+empty input file
+
+**********************************************************************
+Generating input file
+/u/c/s/cs537-2/ta/tests/1a/generate -s 0 -n 0 -o /tmp/tmpYgSW8D/p/infile
+Running fastsort
+/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /tmp/tmpYgSW8D/p/outfile
+Fastsort completed in 0.00154614448547 seconds
+Checking output
+
+
+test empty PASSED
+ (empty input file)
+
+
+**********************************************************************
+
+Test one
+a single record
+
+**********************************************************************
+Generating input file
+/u/c/s/cs537-2/ta/tests/1a/generate -s 0 -n 1 -o /tmp/tmpYgSW8D/p/infile
+Running fastsort
+/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /tmp/tmpYgSW8D/p/outfile
+Fastsort completed in 0.00153589248657 seconds
+Checking output
+
+
+test one PASSED
+ (a single record)
+
+
+**********************************************************************
+
+Test five1
+five records
+
+**********************************************************************
+Generating input file
+/u/c/s/cs537-2/ta/tests/1a/generate -s 1 -n 5 -o /tmp/tmpYgSW8D/p/infile
+Running fastsort
+/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /tmp/tmpYgSW8D/p/outfile
+Fastsort completed in 0.00166296958923 seconds
+Checking output
+
+
+test five1 PASSED
+ (five records)
+
+
+**********************************************************************
+
+Test five2
+five records
+
+**********************************************************************
+Generating input file
+/u/c/s/cs537-2/ta/tests/1a/generate -s 2 -n 5 -o /tmp/tmpYgSW8D/p/infile
+Running fastsort
+/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /tmp/tmpYgSW8D/p/outfile
+Fastsort completed in 0.00164914131165 seconds
+Checking output
+
+
+test five2 PASSED
+ (five records)
+
+
+**********************************************************************
+
+Test medium
+100 records
+
+**********************************************************************
+Generating input file
+/u/c/s/cs537-2/ta/tests/1a/generate -s 3 -n 100 -o /tmp/tmpYgSW8D/p/infile
+Running fastsort
+/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /tmp/tmpYgSW8D/p/outfile
+Fastsort completed in 0.00175499916077 seconds
+Checking output
+
+
+test medium PASSED
+ (100 records)
+
+
+**********************************************************************
+
+Test large
+10k records
+
+**********************************************************************
+Generating input file
+/u/c/s/cs537-2/ta/tests/1a/generate -s 4 -n 10000 -o /tmp/tmpYgSW8D/p/infile
+Running fastsort
+/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /tmp/tmpYgSW8D/p/outfile
+Fastsort completed in 0.00608801841736 seconds
+Checking output
+
+
+test large PASSED
+ (10k records)
+
+
+**********************************************************************
+
+Test verylarge
+100k records
+
+**********************************************************************
+Generating input file
+/u/c/s/cs537-2/ta/tests/1a/generate -s 5 -n 100000 -o /tmp/tmpYgSW8D/p/infile
+Running fastsort
+/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /tmp/tmpYgSW8D/p/outfile
+Fastsort completed in 0.0673508644104 seconds
+Checking output
+
+
+test verylarge PASSED
+ (100k records)
+
+
+**********************************************************************
+
+Test dup
+duplicate records
+
+**********************************************************************
+Running fastsort
+/tmp/tmpYgSW8D/p/fastsort -i /u/c/s/cs537-2/ta/tests/1a/dupdata -o /tmp/tmpYgSW8D/p/outfile
+Fastsort completed in 0.00440907478333 seconds
+Checking output
+
+
+test dup PASSED
+ (duplicate records)
+
+**********************************************************************
+Summary:
+test build PASSED
+ (build project using make)
+
+test arg PASSED
+ (bad arguments)
+
+test arg2 PASSED
+ (bad arguments)
+
+test badin PASSED
+ (bad input file)
+
+test badout PASSED
+ (bad output file)
+
+test empty PASSED
+ (empty input file)
+
+test one PASSED
+ (a single record)
+
+test five1 PASSED
+ (five records)
+
+test five2 PASSED
+ (five records)
+
+test medium PASSED
+ (100 records)
+
+test large PASSED
+ (10k records)
+
+test verylarge PASSED
+ (100k records)
+
+test dup PASSED
+ (duplicate records)
+
+Passed 13 of 13 tests.
+Overall 13 of 13

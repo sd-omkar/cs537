@@ -1,0 +1,9 @@
+To run the tests:
+
+1. Navigate to the directory that contains your fastsort.c
+2. From that directory, execute the runtests executable in this directory
+  Like:  ~cs537-2/ta/tests/1a/runtests
+
+The output from runtests will indicate which tests you have passed and which you failed (if any)
+
+For more options available while testing, run '.../runtests -h'
