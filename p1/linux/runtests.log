@@ -23,7 +23,7 @@ Test arg
 bad arguments
 
 **********************************************************************
-/tmp/tmpYgSW8D/p/fastsort
+/tmp/tmp5dr0iP/p/fastsort
 
 
 test arg PASSED
@@ -36,7 +36,7 @@ Test arg2
 bad arguments
 
 **********************************************************************
-/tmp/tmpYgSW8D/p/fastsort a b c d
+/tmp/tmp5dr0iP/p/fastsort a b c d
 
 
 test arg2 PASSED
@@ -49,7 +49,7 @@ Test badin
 bad input file
 
 **********************************************************************
-/tmp/tmpYgSW8D/p/fastsort -i /invalid/path/JcfKP7 -o outfile
+/tmp/tmp5dr0iP/p/fastsort -i /invalid/path/l0L3qu -o outfile
 
 
 test badin PASSED
@@ -62,7 +62,7 @@ Test badout
 bad output file
 
 **********************************************************************
-/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /invalid/path/JcfKP7
+/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /invalid/path/l0L3qu
 
 
 test badout PASSED
@@ -76,10 +76,10 @@ empty input file
 
 **********************************************************************
 Generating input file
-/u/c/s/cs537-2/ta/tests/1a/generate -s 0 -n 0 -o /tmp/tmpYgSW8D/p/infile
+/u/c/s/cs537-2/ta/tests/1a/generate -s 0 -n 0 -o /tmp/tmp5dr0iP/p/infile
 Running fastsort
-/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /tmp/tmpYgSW8D/p/outfile
-Fastsort completed in 0.00154614448547 seconds
+/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /tmp/tmp5dr0iP/p/outfile
+Fastsort completed in 0.00161194801331 seconds
 Checking output
 
 
@@ -94,10 +94,10 @@ a single record
 
 **********************************************************************
 Generating input file
-/u/c/s/cs537-2/ta/tests/1a/generate -s 0 -n 1 -o /tmp/tmpYgSW8D/p/infile
+/u/c/s/cs537-2/ta/tests/1a/generate -s 0 -n 1 -o /tmp/tmp5dr0iP/p/infile
 Running fastsort
-/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /tmp/tmpYgSW8D/p/outfile
-Fastsort completed in 0.00153589248657 seconds
+/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /tmp/tmp5dr0iP/p/outfile
+Fastsort completed in 0.0018470287323 seconds
 Checking output
 
 
@@ -112,10 +112,10 @@ five records
 
 **********************************************************************
 Generating input file
-/u/c/s/cs537-2/ta/tests/1a/generate -s 1 -n 5 -o /tmp/tmpYgSW8D/p/infile
+/u/c/s/cs537-2/ta/tests/1a/generate -s 1 -n 5 -o /tmp/tmp5dr0iP/p/infile
 Running fastsort
-/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /tmp/tmpYgSW8D/p/outfile
-Fastsort completed in 0.00166296958923 seconds
+/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /tmp/tmp5dr0iP/p/outfile
+Fastsort completed in 0.00159406661987 seconds
 Checking output
 
 
@@ -130,10 +130,10 @@ five records
 
 **********************************************************************
 Generating input file
-/u/c/s/cs537-2/ta/tests/1a/generate -s 2 -n 5 -o /tmp/tmpYgSW8D/p/infile
+/u/c/s/cs537-2/ta/tests/1a/generate -s 2 -n 5 -o /tmp/tmp5dr0iP/p/infile
 Running fastsort
-/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /tmp/tmpYgSW8D/p/outfile
-Fastsort completed in 0.00164914131165 seconds
+/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /tmp/tmp5dr0iP/p/outfile
+Fastsort completed in 0.00167512893677 seconds
 Checking output
 
 
@@ -148,10 +148,10 @@ Test medium
 
 **********************************************************************
 Generating input file
-/u/c/s/cs537-2/ta/tests/1a/generate -s 3 -n 100 -o /tmp/tmpYgSW8D/p/infile
+/u/c/s/cs537-2/ta/tests/1a/generate -s 3 -n 100 -o /tmp/tmp5dr0iP/p/infile
 Running fastsort
-/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /tmp/tmpYgSW8D/p/outfile
-Fastsort completed in 0.00175499916077 seconds
+/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /tmp/tmp5dr0iP/p/outfile
+Fastsort completed in 0.00174498558044 seconds
 Checking output
 
 
@@ -166,10 +166,10 @@ Test large
 
 **********************************************************************
 Generating input file
-/u/c/s/cs537-2/ta/tests/1a/generate -s 4 -n 10000 -o /tmp/tmpYgSW8D/p/infile
+/u/c/s/cs537-2/ta/tests/1a/generate -s 4 -n 10000 -o /tmp/tmp5dr0iP/p/infile
 Running fastsort
-/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /tmp/tmpYgSW8D/p/outfile
-Fastsort completed in 0.00608801841736 seconds
+/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /tmp/tmp5dr0iP/p/outfile
+Fastsort completed in 0.0063099861145 seconds
 Checking output
 
 
@@ -184,10 +184,10 @@ Test verylarge
 
 **********************************************************************
 Generating input file
-/u/c/s/cs537-2/ta/tests/1a/generate -s 5 -n 100000 -o /tmp/tmpYgSW8D/p/infile
+/u/c/s/cs537-2/ta/tests/1a/generate -s 5 -n 100000 -o /tmp/tmp5dr0iP/p/infile
 Running fastsort
-/tmp/tmpYgSW8D/p/fastsort -i /tmp/tmpYgSW8D/p/infile -o /tmp/tmpYgSW8D/p/outfile
-Fastsort completed in 0.0673508644104 seconds
+/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /tmp/tmp5dr0iP/p/outfile
+Fastsort completed in 0.0676031112671 seconds
 Checking output
 
 
@@ -202,8 +202,8 @@ duplicate records
 
 **********************************************************************
 Running fastsort
-/tmp/tmpYgSW8D/p/fastsort -i /u/c/s/cs537-2/ta/tests/1a/dupdata -o /tmp/tmpYgSW8D/p/outfile
-Fastsort completed in 0.00440907478333 seconds
+/tmp/tmp5dr0iP/p/fastsort -i /u/c/s/cs537-2/ta/tests/1a/dupdata -o /tmp/tmp5dr0iP/p/outfile
+Fastsort completed in 0.0278511047363 seconds
 Checking output
 
 

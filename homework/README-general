@@ -1,0 +1,19 @@
+
+Simulation homeworks come in the form of simulators you run to make sure you
+understand some piece of the material. The simulators are generally python
+programs that enable you both to generate different problems (using different
+random seeds) as well as to have the program solve the problem for you (with
+the -c flag) so that you can check your answers. Running any simulator with a
+-h or --help flag will provide with more information as to all the options the
+simulator gives you.
+
+In this directory, you can see a number of different simulators. The relevant
+book chapters provide some questions that you might want to try to answer; or,
+you can make up your own questions! (if you do, and they are good, feel free
+to send them our way).
+
+Enjoy!
+
+
+
+
