@@ -60,6 +60,7 @@ int is_equal(char *s1, char *s2) {
 int main (int argc, char *argv[]) {
   // Decide where to take input from
   FILE *in_file = NULL;
+  FILE *out_file = NULL;
   char input[IN_SIZE];
   int word_count = 0, i;
 
@@ -95,6 +96,7 @@ int main (int argc, char *argv[]) {
       is_redir = 1;
       post_token = strtok(NULL, ">");
       if (strtok(NULL, ">")) {
+        // Too many redirects
         print_error();
         print_prompt();
         continue;
@@ -125,18 +127,32 @@ int main (int argc, char *argv[]) {
         print_prompt();
         continue;
       }
-      else {
-        // Check for valid output file
+      else if (i == 1 && (is_equal(words[word_count - 1], "&"))) {
+        // Too many output file arguments
+        print_error();
+        print_prompt();
+        continue;
       }
     }
-    /*
-    for (i=0; i<word_count; i++)
-      printf("%s\n", words[i]);
-    */
     
     // Check for background job
-    if (is_equal("&", words[word_count - 1]))
+    if (is_equal("&", words[word_count - 1]) || 
+        strlen(words[word_count - 1]) == (1 + strlen(strtok(words[word_count - 1], "&")))) {
       is_bg = 1;
+      if (is_equal("&", words[word_count - 1])) {
+        words[word_count - 1] = NULL;
+        word_count--;
+      }
+    }
+
+    for (i=0; i<word_count; i++)
+      printf("%s\n", words[i]);
+    printf("Redirect = %d\n", is_redir);
+    printf("BG = %d\n", is_bg);
+
+    // In case of redirect, check for valid output file
+    if (is_redir) {
+    }
 
     // Form command line from words
 
