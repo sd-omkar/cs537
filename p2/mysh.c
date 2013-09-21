@@ -94,6 +94,11 @@ int main (int argc, char *argv[]) {
     if (strlen(pre_token) != strlen(input)) {
       is_redir = 1;
       post_token = strtok(NULL, ">");
+      if (strtok(NULL, ">")) {
+        print_error();
+        print_prompt();
+        continue;
+      }
     }
     
     if (!is_redir)
@@ -101,10 +106,12 @@ int main (int argc, char *argv[]) {
     else {
       word_count = split_line(pre_token, words);
       i = split_line(post_token, &(words[word_count]));
+      word_count += i;
       if (i < 1) {
         // No output file specified
         print_error();
-        break;
+        print_prompt();
+        continue;
       }
       else if (i == 1) {
         // Check for valid output file
