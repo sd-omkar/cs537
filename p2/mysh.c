@@ -113,14 +113,27 @@ int main (int argc, char *argv[]) {
         print_prompt();
         continue;
       }
-      else if (i == 1) {
+      else if (i > 2) {
+        // Too many output file arguments
+        print_error();
+        print_prompt();
+        continue;
+      }
+      else if (i == 2 && !(is_equal(words[word_count - 1], "&"))) {
+        // Too many output file arguments
+        print_error();
+        print_prompt();
+        continue;
+      }
+      else {
         // Check for valid output file
       }
     }
-
+    /*
     for (i=0; i<word_count; i++)
       printf("%s\n", words[i]);
-
+    */
+    
     // Check for background job
     if (is_equal("&", words[word_count - 1]))
       is_bg = 1;
