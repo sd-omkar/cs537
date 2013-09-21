@@ -24,7 +24,6 @@ char *pre_token, *post_token, *dummy_in = NULL;
 
 // Print shell prompt
 void print_prompt() {
-  if (!is_batch)
     write(STDOUT_FILENO, prompt_message, strlen(prompt_message)); 
 }
 
@@ -60,7 +59,7 @@ int is_equal(char *s1, char *s2) {
 int main (int argc, char *argv[]) {
   // Decide where to take input from
   FILE *in_file = NULL;
-  FILE *out_file = NULL;
+  int fd_out, fd_stdout;
   char input[IN_SIZE];
   int word_count = 0, i;
 
@@ -128,7 +127,7 @@ int main (int argc, char *argv[]) {
         continue;
       }
       else if (i == 1 && (is_equal(words[word_count - 1], "&"))) {
-        // Too many output file arguments
+        // No output file specified
         print_error();
         print_prompt();
         continue;
@@ -152,10 +151,24 @@ int main (int argc, char *argv[]) {
 
     // In case of redirect, check for valid output file
     if (is_redir) {
+      fd_stdout = dup(1);
+      fd_out = open(words[word_count-1], O_RDWR | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+      if (fd_out < 0) {
+        print_error();
+        print_prompt();
+        continue;
+      }
+      else if (dup2(fd_out, 1) < 0) {
+        print_error();
+        print_prompt();
+        continue;
+      }
     }
 
     // Form command line from words
-
+    
+    // End of iteration
+    dup2(fd_stdout, 1);
     print_prompt();
   }
 
