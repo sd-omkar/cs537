@@ -12,7 +12,8 @@
 
 char prompt_message[6] = "mysh> ";
 char error_message[30] = "An error has occurred\n";
-char *words[100];
+char *words[512];
+char *dummy_words[512];
 int is_batch = 0;
 int is_redir = 0;
 int is_bg = 0;
@@ -24,7 +25,7 @@ char *pre_token, *post_token, *dummy_in = NULL;
 
 // Print shell prompt
 void print_prompt() {
-    write(STDOUT_FILENO, prompt_message, strlen(prompt_message)); 
+    if (!is_batch) write(STDOUT_FILENO, prompt_message, strlen(prompt_message)); 
 }
 
 // Print error message
@@ -70,7 +71,7 @@ int main (int argc, char *argv[]) {
     in_file = fopen(argv[1], "r");
     if (in_file == NULL) {
       print_error();
-      exit(1);
+      exit(0);
     }
   }
   else {
@@ -81,6 +82,27 @@ int main (int argc, char *argv[]) {
   print_prompt();
   // Parse input lines
   while (fgets(input, IN_SIZE, in_file)) {
+    // Input too large
+    if (strlen(input) > 512) {
+      print_error();
+      continue;
+    }
+
+    // Empty command line allowed
+    if (split_line(input, dummy_words) == 0) {
+      print_prompt();
+      continue;
+    }
+
+    // Cannot start with > or &
+    if (split_line(input, dummy_words) > 0)
+      if (is_equal("&", dummy_words[0]) || 
+          is_equal(">", dummy_words[0])) {
+        print_error();
+        print_prompt();
+        continue;
+      }
+
     int is_redir = 0;
     int is_bg = 0;
     pre_token = NULL;
@@ -163,6 +185,17 @@ int main (int argc, char *argv[]) {
         print_prompt();
         continue;
       }
+    }
+
+    // Internal Commands
+    if (!strcmp(str_exit, words[0])) {
+      if (word_count != 1) {
+        print_error();
+        print_prompt();
+        continue;
+      }
+      else
+        exit(0);
     }
 
     // Form command line from words
