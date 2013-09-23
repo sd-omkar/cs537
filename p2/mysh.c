@@ -14,6 +14,7 @@ char prompt_message[6] = "mysh> ";
 char error_message[30] = "An error has occurred\n";
 char *words[512];
 char *dummy_words[512];
+char *command[ARG_SIZE];
 int is_batch = 0;
 int is_redir = 0;
 int is_bg = 0;
@@ -63,7 +64,7 @@ int main (int argc, char *argv[]) {
   FILE *in_file = NULL;
   int fd_out, fd_stdout;
   char input[IN_SIZE];
-  int word_count = 0, i;
+  int word_count = 0, command_count = 0, i;
 
   if (argc == 1)
     in_file = stdin;
@@ -236,9 +237,25 @@ int main (int argc, char *argv[]) {
     }
 
     // Form command line from words
+    // Delete next line and restore at the end
+    dup2(fd_stdout, 1);
+    
+    if (is_redir) {
+      for (i=0; i < word_count - 1; i++)
+        command[i] = strdup(words[i]);
+      command_count = i;
+    }
+    else {
+      for (i=0; i < word_count; i++)
+        command[i] = strdup(words[i]);
+      command_count = i;
+    }
+    
+    for (i=0; i<command_count; i++)
+      printf("%s\n", command[i]);
     
     // End of iteration
-    dup2(fd_stdout, 1);
+    //dup2(fd_stdout, 1);
     print_prompt();
   }
 
