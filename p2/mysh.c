@@ -238,9 +238,6 @@ int main (int argc, char *argv[]) {
       }
     }
 
-    // Python feature
-
-
     // Internal implementation of wait
 
     // Form command line from words
@@ -256,6 +253,18 @@ int main (int argc, char *argv[]) {
       for (i=0; i < word_count; i++)
         command[i] = strdup(words[i]);
       command_count = i;
+      command[command_count] = NULL;
+    }
+
+    // Python feature
+    int length = strlen(command[0]);
+    if (command[0][length - 3] == '.' && 
+        command[0][length - 2] == 'p' && 
+        command[0][length - 1] == 'y') {
+      for (i=0; i < command_count; i++)
+        command[command_count - i] = command[command_count - 1 - i];
+      command[0] = "python";
+      command_count++;
       command[command_count] = NULL;
     }
 
