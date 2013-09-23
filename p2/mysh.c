@@ -64,7 +64,8 @@ int main (int argc, char *argv[]) {
   FILE *in_file = NULL;
   int fd_out, fd_stdout;
   char input[IN_SIZE];
-  int word_count = 0, command_count = 0, i;
+  int word_count = 0, command_count = 0, i, status;
+  pid_t child, child_wait;
 
   if (argc == 1)
     in_file = stdin;
@@ -178,7 +179,8 @@ int main (int argc, char *argv[]) {
     // In case of redirect, check for valid output file
     if (is_redir) {
       fd_stdout = dup(1);
-      fd_out = open(words[word_count-1], O_RDWR | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+      //fd_out = open(words[word_count-1], O_RDWR | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+      fd_out = open(words[word_count-1], O_WRONLY|O_CREAT|O_TRUNC, S_IRWXU);
       if (fd_out < 0) {
         print_error();
         print_prompt();
@@ -236,26 +238,46 @@ int main (int argc, char *argv[]) {
       }
     }
 
+    // Python feature
+
+
+    // Internal implementation of wait
+
     // Form command line from words
     // Delete next line and restore at the end
-    dup2(fd_stdout, 1);
     
     if (is_redir) {
       for (i=0; i < word_count - 1; i++)
         command[i] = strdup(words[i]);
       command_count = i;
+      command[command_count] = NULL;
     }
     else {
       for (i=0; i < word_count; i++)
         command[i] = strdup(words[i]);
       command_count = i;
+      command[command_count] = NULL;
+    }
+
+    // For all non-internal commands
+    // Create child process, call execpvp
+    if (!is_internal) {
+      child = fork();
+      //
+      if (child == 0) {
+        execvp(command[0], command);
+        print_error();
+      }
+      else if (child == (pid_t)-1){
+        print_error();
+      }
+      else {
+        child_wait = wait(&status);
+      }
     }
     
-    for (i=0; i<command_count; i++)
-      printf("%s\n", command[i]);
-    
     // End of iteration
-    //dup2(fd_stdout, 1);
+    dup2(fd_stdout, 1);
     print_prompt();
   }
 
