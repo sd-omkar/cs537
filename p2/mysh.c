@@ -17,6 +17,7 @@ char *dummy_words[512];
 int is_batch = 0;
 int is_redir = 0;
 int is_bg = 0;
+int is_internal = 0;
 char *str_cd = "cd";
 char *str_pwd = "pwd";
 char *str_exit = "exit";
@@ -102,8 +103,9 @@ int main (int argc, char *argv[]) {
         continue;
       }
 
-    int is_redir = 0;
-    int is_bg = 0;
+    is_redir = 0;
+    is_bg = 0;
+    is_internal = 0;
     pre_token = NULL;
     post_token = NULL;
     dummy_in = strdup(input);
@@ -203,6 +205,7 @@ int main (int argc, char *argv[]) {
     // pwd
     if (!strcmp(str_pwd, words[0])) {
       char path[1000];
+      is_internal = 1;
       getcwd(path, sizeof(path));
       write(1, path, strlen(path));
       write(1, "\n", strlen("\n"));
@@ -211,6 +214,7 @@ int main (int argc, char *argv[]) {
     // cd
     if (!strcmp(str_cd, words[0])) {
       int chd;
+      is_internal = 1;
       if (word_count == 1) {
         chd = chdir(getenv("HOME"));
         if (chd != 0) {
