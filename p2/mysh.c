@@ -35,7 +35,7 @@ void print_error() {
 
 // Count the words and split the line
 int split_line(char *line, char *words[]) {
-  char *input = line;
+  char *input = strdup(line);
   int count  = 0;
   while (1) {
     while (isspace(*input)) input++;
@@ -87,7 +87,6 @@ int main (int argc, char *argv[]) {
       print_error();
       continue;
     }
-
     // Empty command line allowed
     if (split_line(input, dummy_words) == 0) {
       print_prompt();
@@ -166,10 +165,12 @@ int main (int argc, char *argv[]) {
       }
     }
 
+    /*
     for (i=0; i<word_count; i++)
       printf("%s\n", words[i]);
     printf("Redirect = %d\n", is_redir);
     printf("BG = %d\n", is_bg);
+    */
 
     // In case of redirect, check for valid output file
     if (is_redir) {
@@ -188,6 +189,7 @@ int main (int argc, char *argv[]) {
     }
 
     // Internal Commands
+    // exit
     if (!strcmp(str_exit, words[0])) {
       if (word_count != 1) {
         print_error();
@@ -196,6 +198,37 @@ int main (int argc, char *argv[]) {
       }
       else
         exit(0);
+    }
+
+    // pwd
+    if (!strcmp(str_pwd, words[0])) {
+      char path[1000];
+      getcwd(path, sizeof(path));
+      write(1, path, strlen(path));
+      write(1, "\n", strlen("\n"));
+    }
+
+    // cd
+    if (!strcmp(str_cd, words[0])) {
+      int chd;
+      if (word_count == 1) {
+        chd = chdir(getenv("HOME"));
+        if (chd != 0) {
+          print_error();
+          print_prompt();
+          dup2(fd_stdout, 1);
+          continue;
+        }
+      }
+      else if (word_count == 2) {
+        chd = chdir(words[word_count - 1]);
+        if (chd != 0) {
+          print_error();
+          print_prompt();
+          dup2(fd_stdout, 1);
+          continue;
+        }
+      }
     }
 
     // Form command line from words
