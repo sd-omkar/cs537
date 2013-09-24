@@ -6,6 +6,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <errno.h>    
 
 #define IN_SIZE 515
 #define ARG_SIZE 515
@@ -239,6 +240,14 @@ int main (int argc, char *argv[]) {
     }
 
     // Internal implementation of wait
+    if (!strcmp(str_wait, words[0])) {
+      while (waitpid(-1, NULL, 0)) {
+        if (errno == ECHILD)  break;
+      }
+      print_prompt();
+      dup2(fd_stdout, 1);
+      continue;
+    }
 
     // Form command line from words
     // Delete next line and restore at the end
@@ -272,16 +281,19 @@ int main (int argc, char *argv[]) {
     // Create child process, call execpvp
     if (!is_internal) {
       child = fork();
-      //
+      // Executed by child
       if (child == 0) {
         execvp(command[0], command);
         print_error();
       }
+      // Fork error
       else if (child == (pid_t)-1){
         print_error();
       }
+      // Execute by parent
       else {
-        child_wait = wait(&status);
+        if (!is_bg)
+          child_wait = wait(&status);
       }
     }
     
