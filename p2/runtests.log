@@ -1,0 +1,26 @@
+
+**********************************************************************
+
+Test build
+build xv6 using make
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+make: *** No rule to make target `clean'.  Stop.
+Trying to build project using make
+make
+make: *** No targets specified and no makefile found.  Stop.
+make xv6.img fs.img
+make: *** No rule to make target `xv6.img'.  Stop.
+
+
+test build FAILED
+ (build xv6 using make)
+ make clean failed (error 2)
+ make failed (error 2)
+ required file 'xv6.img' does not exist after make
+ required file 'fs.img' does not exist after make
+
+Skipped 4 tests.
+To keep testing after failing a test, use flag '-c' or '--continue'

@@ -27,6 +27,7 @@ int sleep(int);
 int uptime(void);
 int getsyscallinfo(void);
 int settickets(int);
+int getpinfo(int);
 
 // user library functions (ulib.c)
 int stat(char*, struct stat*);

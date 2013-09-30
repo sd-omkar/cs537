@@ -7,14 +7,6 @@ build xv6 using make
 **********************************************************************
 Trying to clean project using make clean
 make clean
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/trap.c -MF kernel/trap.d -MT kernel/trap.d -MT kernel/trap.o
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/sysproc.c -MF kernel/sysproc.d -MT kernel/sysproc.d -MT kernel/sysproc.o
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/sysfile.c -MF kernel/sysfile.d -MT kernel/sysfile.d -MT kernel/sysfile.o
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/syscall.c -MF kernel/syscall.d -MT kernel/syscall.d -MT kernel/syscall.o
 rm -rf kernel/bio.o kernel/console.o kernel/exec.o kernel/file.o kernel/fs.o kernel/ide.o kernel/ioapic.o kernel/kalloc.o kernel/kbd.o kernel/lapic.o kernel/main.o kernel/mp.o kernel/picirq.o kernel/pipe.o kernel/proc.o kernel/spinlock.o kernel/string.o kernel/swtch.o kernel/syscall.o kernel/sysfile.o kernel/sysproc.o kernel/timer.o kernel/trapasm.o kernel/trap.o kernel/uart.o kernel/vectors.o kernel/vm.o kernel/bootmain.o kernel/bootasm.o kernel/multiboot.o kernel/data.o kernel/bootother.o kernel/initcode.o kernel/bio.d kernel/console.d kernel/exec.d kernel/file.d kernel/fs.d kernel/ide.d kernel/ioapic.d kernel/kalloc.d kernel/kbd.d kernel/lapic.d kernel/main.d kernel/mp.d kernel/picirq.d kernel/pipe.d kernel/proc.d kernel/spinlock.d kernel/string.d kernel/swtch.d kernel/syscall.d kernel/sysfile.d kernel/sysproc.d kernel/timer.d kernel/trapasm.d kernel/trap.d kernel/uart.d kernel/vectors.d kernel/vm.d kernel/bootmain.d kernel/bootasm.d kernel/multiboot.d kernel/data.d kernel/bootother.d kernel/initcode.d kernel/vectors.S kernel/bootblock kernel/bootblock.out kernel/bootother.out kernel/initcode.out kernel/kernel bootother initcode xv6.img user/bin user/cat user/echo user/forktest user/grep user/init user/kill user/ln user/ls user/mkdir user/rm user/sh user/stressfs user/tester user/usertests user/wc user/zombie user/cat.o user/echo.o user/forktest.o user/grep.o user/init.o user/kill.o user/ln.o user/ls.o user/mkdir.o user/rm.o user/sh.o user/stressfs.o user/tester.o user/usertests.o user/wc.o user/zombie.o user/ulib.o user/usys.o user/printf.o user/umalloc.o user/cat.d user/echo.d user/forktest.d user/grep.d user/init.d user/kill.d user/ln.d user/ls.d user/mkdir.d user/rm.d user/sh.d user/stressfs.d user/tester.d user/usertests.d user/wc.d user/zombie.d user/ulib.d user/usys.d user/printf.d user/umalloc.d tools/mkfs tools/mkfs.o tools/mkfs.d fs fs.img .gdbinit .bochsrc dist
 Trying to build project using make
 make
@@ -205,12 +197,18 @@ gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/picirq.o kernel/picirq.c
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/pipe.o kernel/pipe.c
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/proc.o kernel/proc.c
+kernel/proc.c: In function ‘getpinfo’:
+kernel/proc.c:467: warning: ‘ps’ may be used uninitialized in this function
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/spinlock.o kernel/spinlock.c
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/string.o kernel/string.c
 gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c kernel/swtch.S -o kernel/swtch.o
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/syscall.o kernel/syscall.c
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/sysfile.o kernel/sysfile.c
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/sysproc.o kernel/sysproc.c
+kernel/sysproc.c: In function ‘sys_settickets’:
+kernel/sysproc.c:99: warning: implicit declaration of function ‘settickets’
+kernel/sysproc.c: In function ‘sys_getpinfo’:
+kernel/sysproc.c:103: warning: implicit declaration of function ‘getpinfo’
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/timer.o kernel/timer.c
 gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c kernel/trapasm.S -o kernel/trapasm.o
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/trap.o kernel/trap.c
@@ -236,15 +234,15 @@ ld  -m    elf_i386 -nostdlib --omagic \
 dd if=/dev/zero of=xv6.img count=10000
 10000+0 records in
 10000+0 records out
-5120000 bytes (5.1 MB) copied, 0.021871 s, 234 MB/s
+5120000 bytes (5.1 MB) copied, 0.0393075 s, 130 MB/s
 dd if=kernel/bootblock of=xv6.img conv=notrunc
 1+0 records in
 1+0 records out
-512 bytes (512 B) copied, 4.5227e-05 s, 11.3 MB/s
+512 bytes (512 B) copied, 1.8459e-05 s, 27.7 MB/s
 dd if=kernel/kernel of=xv6.img seek=1 conv=notrunc
-253+1 records in
-253+1 records out
-129780 bytes (130 kB) copied, 0.000401485 s, 323 MB/s
+256+1 records in
+256+1 records out
+131300 bytes (131 kB) copied, 0.000423459 s, 310 MB/s
 gcc -c  -iquote include -Wall -ggdb  -o tools/mkfs.o tools/mkfs.c
 gcc  tools/mkfs.o -o tools/mkfs
 mkdir -p fs
@@ -304,24 +302,24 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/zombie fs/zombie
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
+sh
+wc
+grep
+ls
+ln
 zombie
 rm
-usertests
-mkdir
-wc
-README
+cat
+stressfs
 forktest
+README
+usertests
+kill
+mkdir
 init
 tester
-stressfs
-kill
-ls
-cat
-ln
-sh
-grep
 echo
-balloc: first 421 blocks have been allocated
+balloc: first 424 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/stressfs user/bin/grep user/bin/tester user/bin/kill user/bin/cat user/bin/mkdir user/bin/init user/bin/rm user/bin/echo user/bin/ls user/bin/ln user/bin/usertests user/bin/sh user/bin/wc user/bin/zombie
 
@@ -332,11 +330,11 @@ test build PASSED
 
 **********************************************************************
 
-Test basic
-call getsyscallinfo() from a user program
+Test settickets
+compile and run a user program with a settickets call
 
 **********************************************************************
-Running xv6 user progam /u/c/s/cs537-2/ta/tests/1b/basic.c
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/2b/settickets.c
 Trying to build project using make
 make
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
@@ -346,24 +344,196 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
+sh
+wc
+grep
+ls
+ln
 zombie
 rm
-usertests
-mkdir
-wc
-README
+cat
+stressfs
 forktest
+README
+usertests
+kill
+mkdir
 init
 tester
-stressfs
-kill
-ls
-cat
-ln
-sh
-grep
 echo
-balloc: first 421 blocks have been allocated
+balloc: first 425 blocks have been allocated
+balloc: write bitmap block at sector 28
+rm user/bin/tester
+make qemu-nox 
+Ctrl+a h for help
+/u/c/s/cs537-2/ta/tools/qemu -nographic -hdb fs.img xv6.img -smp 2
+Could not open option rom 'sgabios.bin': No such file or directory
+xv6...
+lapicinit: 1 0xfee00000
+cpu1: starting
+cpu0: starting
+init: starting sh
+$ tester
+tester
+TEST PASSED
+
+test settickets PASSED
+ (compile and run a user program with a settickets call)
+
+
+**********************************************************************
+
+Test getpinfo
+compile and run a user program with a getpinfo call
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/2b/getpinfo.c
+Trying to build project using make
+make
+gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/tester.c -MF user/tester.d -MT user/tester.d -MT user/tester.o
+gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/tester.o user/tester.c
+user/tester.c: In function ‘main’:
+user/tester.c:15: warning: passing argument 1 of ‘getpinfo’ makes integer from pointer without a cast
+user/user.h:30: note: expected ‘int’ but argument is of type ‘struct pstat *’
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/tester user/tester.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/tester fs/tester
+./tools/mkfs fs.img fs
+used 29 (bit 1 ninode 26) free 29 total 1024
+sh
+wc
+grep
+ls
+ln
+zombie
+rm
+cat
+stressfs
+forktest
+README
+usertests
+kill
+mkdir
+init
+tester
+echo
+balloc: first 425 blocks have been allocated
+balloc: write bitmap block at sector 28
+rm user/bin/tester
+make qemu-nox 
+Ctrl+a h for help
+/u/c/s/cs537-2/ta/tools/qemu -nographic -hdb fs.img xv6.img -smp 2
+Could not open option rom 'sgabios.bin': No such file or directory
+xv6...
+lapicinit: 1 0xfee00000
+cpu1: starting
+cpu0: starting
+init: starting sh
+$ tester
+tester
+pid 3 tester: trap 14 err 4 on cpu 1 eip 0x401 addr 0x45880c45--kill proc
+$ 
+
+test getpinfo FAILED
+ (compile and run a user program with a getpinfo call)
+ tester failed
+
+
+**********************************************************************
+
+Test getpinfo2
+check that getpinfo returns some reasonable values
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/2b/getpinfo2.c
+Trying to build project using make
+make
+gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/tester.c -MF user/tester.d -MT user/tester.d -MT user/tester.o
+gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/tester.o user/tester.c
+user/tester.c: In function ‘main’:
+user/tester.c:14: warning: passing argument 1 of ‘getpinfo’ makes integer from pointer without a cast
+user/user.h:30: note: expected ‘int’ but argument is of type ‘struct pstat *’
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/tester user/tester.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/tester fs/tester
+./tools/mkfs fs.img fs
+used 29 (bit 1 ninode 26) free 29 total 1024
+sh
+wc
+grep
+ls
+ln
+zombie
+rm
+cat
+stressfs
+forktest
+README
+usertests
+kill
+mkdir
+init
+tester
+echo
+balloc: first 426 blocks have been allocated
+balloc: write bitmap block at sector 28
+rm user/bin/tester
+make qemu-nox 
+Ctrl+a h for help
+/u/c/s/cs537-2/ta/tools/qemu -nographic -hdb fs.img xv6.img -smp 2
+Could not open option rom 'sgabios.bin': No such file or directory
+xv6...
+lapicinit: 1 0xfee00000
+cpu1: starting
+cpu0: starting
+init: starting sh
+$ tester
+tester
+pid 3 tester: trap 14 err 4 on cpu 1 eip 0x10a addr 0x1000002--kill proc
+$ 
+
+test getpinfo2 FAILED
+ (check that getpinfo returns some reasonable values)
+ tester failed
+
+
+**********************************************************************
+
+Test ticks
+check that processes are scheduled at correct ratio
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/2b/ticks.c
+Trying to build project using make
+make
+gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/tester.c -MF user/tester.d -MT user/tester.d -MT user/tester.o
+gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/tester.o user/tester.c
+user/tester.c: In function ‘main’:
+user/tester.c:52: warning: passing argument 1 of ‘getpinfo’ makes integer from pointer without a cast
+user/user.h:30: note: expected ‘int’ but argument is of type ‘struct pstat *’
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/tester user/tester.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/tester fs/tester
+./tools/mkfs fs.img fs
+used 29 (bit 1 ninode 26) free 29 total 1024
+sh
+wc
+grep
+ls
+ln
+zombie
+rm
+cat
+stressfs
+forktest
+README
+usertests
+kill
+mkdir
+init
+tester
+echo
+balloc: first 428 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox CPUS=1
@@ -375,202 +545,11 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
-TEST PASSED
-
-test basic PASSED
- (call getsyscallinfo() from a user program)
 
 
-**********************************************************************
+test ticks FAILED
+ (check that processes are scheduled at correct ratio)
+ User interrupted test
 
-Test getsyscallinfo
-repeated calls of getsyscallinfo()
-
-**********************************************************************
-Running xv6 user progam /u/c/s/cs537-2/ta/tests/1b/getsyscallinfo.c
-Trying to build project using make
-make
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG user/tester.c -MF user/tester.d -MT user/tester.d -MT user/tester.o
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/tester.o user/tester.c
-ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/tester user/tester.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
-cp user/bin/tester fs/tester
-./tools/mkfs fs.img fs
-used 29 (bit 1 ninode 26) free 29 total 1024
-zombie
-rm
-usertests
-mkdir
-wc
-README
-forktest
-init
-tester
-stressfs
-kill
-ls
-cat
-ln
-sh
-grep
-echo
-balloc: first 422 blocks have been allocated
-balloc: write bitmap block at sector 28
-rm user/bin/tester
-make qemu-nox CPUS=1
-Ctrl+a h for help
-/u/c/s/cs537-2/ta/tools/qemu -nographic -hdb fs.img xv6.img -smp 1
-Could not open option rom 'sgabios.bin': No such file or directory
-xv6...
-cpu0: starting
-init: starting sh
-$ tester
-tester
-calling (getsyscallinfo), should count 1 syscalls
-1) counted 1 syscalls
-2) counted 1 syscalls
-3) counted 1 syscalls
-TEST PASSED
-
-test getsyscallinfo PASSED
- (repeated calls of getsyscallinfo())
-
-
-**********************************************************************
-
-Test many
-count many other syscalls
-
-**********************************************************************
-Running xv6 user progam /u/c/s/cs537-2/ta/tests/1b/many.c
-Trying to build project using make
-make
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG user/tester.c -MF user/tester.d -MT user/tester.d -MT user/tester.o
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/tester.o user/tester.c
-ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/tester user/tester.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
-cp user/bin/tester fs/tester
-./tools/mkfs fs.img fs
-used 29 (bit 1 ninode 26) free 29 total 1024
-zombie
-rm
-usertests
-mkdir
-wc
-README
-forktest
-init
-tester
-stressfs
-kill
-ls
-cat
-ln
-sh
-grep
-echo
-balloc: first 433 blocks have been allocated
-balloc: write bitmap block at sector 28
-rm user/bin/tester
-make qemu-nox CPUS=1
-Ctrl+a h for help
-/u/c/s/cs537-2/ta/tools/qemu -nographic -hdb fs.img xv6.img -smp 1
-Could not open option rom 'sgabios.bin': No such file or directory
-xv6...
-cpu0: starting
-init: starting sh
-$ tester
-tester
-calling (fork, exit, wait), should count 4 syscalls
-1) counted 4 syscalls
-2) counted 4 syscalls
-3) counted 4 syscalls
-calling (pipe), should count 2 syscalls
-1) counted 2 syscalls
-2) counted 2 syscalls
-3) counted 2 syscalls
-calling (write), should count 2 syscalls
-1) counted 2 syscalls
-2) counted 2 syscalls
-3) counted 2 syscalls
-calling (read), should count 2 syscalls
-1) counted 2 syscalls
-2) counted 2 syscalls
-3) counted 2 syscalls
-calling (close), should count 3 syscalls
-1) counted 3 syscalls
-2) counted 3 syscalls
-3) counted 3 syscalls
-calling (fork, kill), should count 3 syscalls
-1) counted 3 syscalls
-2) counted 3 syscalls
-3) counted 3 syscalls
-calling (getpid), should count 2 syscalls
-1) counted 2 syscalls
-2) counted 2 syscalls
-3) counted 2 syscalls
-calling (sleep), should count 2 syscalls
-1) counted 2 syscalls
-2) counted 2 syscalls
-3) counted 2 syscalls
-calling (uptime), should count 2 syscalls
-1) counted 2 syscalls
-2) counted 2 syscalls
-3) counted 2 syscalls
-calling (open, dup), should count 3 syscalls
-1) counted 3 syscalls
-2) counted 3 syscalls
-3) counted 3 syscalls
-calling (fstat), should count 2 syscalls
-1) counted 2 syscalls
-2) counted 2 syscalls
-3) counted 2 syscalls
-calling (mkdir), should count 2 syscalls
-1) counted 2 syscalls
-2) counted 2 syscalls
-3) counted 2 syscalls
-calling (chdir), should count 2 syscalls
-1) counted 2 syscalls
-2) counted 2 syscalls
-3) counted 2 syscalls
-calling (link), should count 2 syscalls
-1) counted 2 syscalls
-2) counted 2 syscalls
-3) counted 2 syscalls
-calling (unlink), should count 2 syscalls
-1) counted 2 syscalls
-2) counted 2 syscalls
-3) counted 2 syscalls
-calling (exec), should count 2 syscalls
-1) counted 2 syscalls
-2) counted 2 syscalls
-3) counted 2 syscalls
-calling (mknod), should count 2 syscalls
-1) counted 2 syscalls
-2) counted 2 syscalls
-3) counted 2 syscalls
-calling (sbrk), should count 2 syscalls
-1) counted 2 syscalls
-2) counted 2 syscalls
-3) counted 2 syscalls
-TEST PASSED
-
-test many PASSED
- (count many other syscalls)
-
-**********************************************************************
-Summary:
-test build PASSED
- (build xv6 using make)
-
-test basic PASSED
- (call getsyscallinfo() from a user program)
-
-test getsyscallinfo PASSED
- (repeated calls of getsyscallinfo())
-
-test many PASSED
- (count many other syscalls)
-
-Passed 4 of 4 tests.
-Overall 4 of 4
+Skipped 0 tests.
+To keep testing after failing a test, use flag '-c' or '--continue'

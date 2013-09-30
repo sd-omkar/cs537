@@ -98,3 +98,8 @@ int sys_getsyscallinfo() {
 int sys_settickets(void) {
   return settickets(10);
 }
+
+int sys_getpinfo(void) {
+  return getpinfo();
+}
+
