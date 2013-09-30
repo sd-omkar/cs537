@@ -94,3 +94,15 @@ int sys_getsyscallinfo() {
   // get from some global counter
   return sysCallCount;
 }
+
+// set number of tickets for the process
+int sys_settickets(void) {
+  int num;
+  if (argint(0, &num) < 0 ) {
+    return -1;
+  }
+  if (num < -1)
+    return -1;
+  proc->tickets = num;
+  return 0;
+}

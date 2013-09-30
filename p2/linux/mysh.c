@@ -89,6 +89,7 @@ int main (int argc, char *argv[]) {
   while (fgets(input, IN_SIZE, in_file)) {
     // Input too large
     if (strlen(input) > 513) {
+      if (is_batch) write(STDOUT_FILENO, input, strlen(input));
       print_error();
       print_prompt();
       continue;
