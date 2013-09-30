@@ -197,8 +197,6 @@ gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/picirq.o kernel/picirq.c
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/pipe.o kernel/pipe.c
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/proc.o kernel/proc.c
-kernel/proc.c: In function ‘getpinfo’:
-kernel/proc.c:467: warning: ‘ps’ may be used uninitialized in this function
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/spinlock.o kernel/spinlock.c
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/string.o kernel/string.c
 gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c kernel/swtch.S -o kernel/swtch.o
@@ -234,15 +232,15 @@ ld  -m    elf_i386 -nostdlib --omagic \
 dd if=/dev/zero of=xv6.img count=10000
 10000+0 records in
 10000+0 records out
-5120000 bytes (5.1 MB) copied, 0.0393075 s, 130 MB/s
+5120000 bytes (5.1 MB) copied, 0.0236931 s, 216 MB/s
 dd if=kernel/bootblock of=xv6.img conv=notrunc
 1+0 records in
 1+0 records out
-512 bytes (512 B) copied, 1.8459e-05 s, 27.7 MB/s
+512 bytes (512 B) copied, 1.8665e-05 s, 27.4 MB/s
 dd if=kernel/kernel of=xv6.img seek=1 conv=notrunc
 256+1 records in
 256+1 records out
-131300 bytes (131 kB) copied, 0.000423459 s, 310 MB/s
+131304 bytes (131 kB) copied, 0.000470296 s, 279 MB/s
 gcc -c  -iquote include -Wall -ggdb  -o tools/mkfs.o tools/mkfs.c
 gcc  tools/mkfs.o -o tools/mkfs
 mkdir -p fs
@@ -302,23 +300,23 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/zombie fs/zombie
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
-wc
 grep
-ls
-ln
-zombie
-rm
-cat
-stressfs
-forktest
-README
-usertests
-kill
-mkdir
-init
-tester
 echo
+usertests
+zombie
+wc
+forktest
+init
+stressfs
+kill
+README
+rm
+mkdir
+ln
+tester
+cat
+ls
+sh
 balloc: first 424 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/stressfs user/bin/grep user/bin/tester user/bin/kill user/bin/cat user/bin/mkdir user/bin/init user/bin/rm user/bin/echo user/bin/ls user/bin/ln user/bin/usertests user/bin/sh user/bin/wc user/bin/zombie
@@ -344,23 +342,23 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
-wc
 grep
-ls
-ln
-zombie
-rm
-cat
-stressfs
-forktest
-README
-usertests
-kill
-mkdir
-init
-tester
 echo
+usertests
+zombie
+wc
+forktest
+init
+stressfs
+kill
+README
+rm
+mkdir
+ln
+tester
+cat
+ls
+sh
 balloc: first 425 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
@@ -400,23 +398,23 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
-wc
 grep
-ls
-ln
-zombie
-rm
-cat
-stressfs
-forktest
-README
-usertests
-kill
-mkdir
-init
-tester
 echo
+usertests
+zombie
+wc
+forktest
+init
+stressfs
+kill
+README
+rm
+mkdir
+ln
+tester
+cat
+ls
+sh
 balloc: first 425 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
@@ -431,12 +429,16 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
-pid 3 tester: trap 14 err 4 on cpu 1 eip 0x401 addr 0x45880c45--kill proc
-$ 
+pid: 1 hticks: 1
+ lticks: 1
+pid: 2 hticks: 1
+ lticks: 1
+pid: 3 hticks: 1
+ lticks: 1
+TEST PASSED
 
-test getpinfo FAILED
+test getpinfo PASSED
  (compile and run a user program with a getpinfo call)
- tester failed
 
 
 **********************************************************************
@@ -458,23 +460,23 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
-wc
 grep
-ls
-ln
-zombie
-rm
-cat
-stressfs
-forktest
-README
-usertests
-kill
-mkdir
-init
-tester
 echo
+usertests
+zombie
+wc
+forktest
+init
+stressfs
+kill
+README
+rm
+mkdir
+ln
+tester
+cat
+ls
+sh
 balloc: first 426 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
@@ -489,12 +491,13 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
-pid 3 tester: trap 14 err 4 on cpu 1 eip 0x10a addr 0x1000002--kill proc
-$ 
+pid: 1 hticks: 1 lticks:1
+pid: 2 hticks: 1 lticks:1
+pid: 3 hticks: 1 lticks:1
+TEST PASSED
 
-test getpinfo2 FAILED
+test getpinfo2 PASSED
  (check that getpinfo returns some reasonable values)
- tester failed
 
 
 **********************************************************************
@@ -516,23 +519,23 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
-wc
 grep
-ls
-ln
-zombie
-rm
-cat
-stressfs
-forktest
-README
-usertests
-kill
-mkdir
-init
-tester
 echo
+usertests
+zombie
+wc
+forktest
+init
+stressfs
+kill
+README
+rm
+mkdir
+ln
+tester
+cat
+ls
+sh
 balloc: first 428 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
@@ -545,11 +548,32 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
-
+lticks child 1: 1
+lticks child 2: 1
+user/tester.c:75 check (ratio > .25 && ratio < .75) failed: ratio should be about 1/2
+$ 
 
 test ticks FAILED
  (check that processes are scheduled at correct ratio)
- User interrupted test
+ tester failed
 
-Skipped 0 tests.
-To keep testing after failing a test, use flag '-c' or '--continue'
+**********************************************************************
+Summary:
+test build PASSED
+ (build xv6 using make)
+
+test settickets PASSED
+ (compile and run a user program with a settickets call)
+
+test getpinfo PASSED
+ (compile and run a user program with a getpinfo call)
+
+test getpinfo2 PASSED
+ (check that getpinfo returns some reasonable values)
+
+test ticks FAILED
+ (check that processes are scheduled at correct ratio)
+ tester failed
+
+Passed 4 of 5 tests.
+Overall 4 of 5

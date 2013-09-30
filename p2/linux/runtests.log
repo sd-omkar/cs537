@@ -23,7 +23,7 @@ Test basic
 run a single command with no arguments
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/basic/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/basic/in
 
 
 test basic PASSED
@@ -36,7 +36,7 @@ Test blank
 an empty batch file
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/blank/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/blank/in
 
 
 test blank PASSED
@@ -49,7 +49,7 @@ Test multiline
 two single line commands
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/multiline/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/multiline/in
 
 
 test multiline PASSED
@@ -62,7 +62,7 @@ Test parseargs
 a command with an argument
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/parseargs/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/parseargs/in
 
 
 test parseargs PASSED
@@ -75,7 +75,7 @@ Test parseargs2
 a command with many arguments
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/parseargs2/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/parseargs2/in
 
 
 test parseargs2 PASSED
@@ -88,7 +88,7 @@ Test parseargs3
 successfully parse indirection and background symbols
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/parseargs3/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/parseargs3/in
 
 
 test parseargs3 PASSED
@@ -101,7 +101,7 @@ Test exit
 the builtin exit command
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/exit/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/exit/in
 
 
 test exit PASSED
@@ -114,7 +114,7 @@ Test pwd
 the builtin pwd command
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/pwd/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/pwd/in
 
 
 test pwd PASSED
@@ -127,7 +127,7 @@ Test cd
 cd with argument
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/cd/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/cd/in
 
 
 test cd PASSED
@@ -140,7 +140,7 @@ Test cd2
 cd without argument
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/cd2/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/cd2/in
 
 
 test cd2 PASSED
@@ -153,7 +153,7 @@ Test whitespace
 serveral commands with extra whitespace
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/whitespace/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/whitespace/in
 
 
 test whitespace PASSED
@@ -166,7 +166,7 @@ Test whitespace2
 builtin commands with extra whitespace
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/whitespace2/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/whitespace2/in
 
 
 test whitespace2 PASSED
@@ -179,7 +179,7 @@ Test args
 too many arguments to mysh
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/args/in /bogus
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/args/in /bogus
 
 
 test args PASSED
@@ -192,7 +192,7 @@ Test args2
 invalid batch file path
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /bogus
+/tmp/tmpciaNbW/p/./mysh /bogus
 
 
 test args2 PASSED
@@ -205,7 +205,7 @@ Test longline
 maximum length line
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/longline/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/longline/in
 
 
 test longline PASSED
@@ -218,7 +218,7 @@ Test toolong
 a line that is too long
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/toolong/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/toolong/in
 
 
 test toolong PASSED
@@ -231,7 +231,7 @@ Test badprog
 bad executable path as command
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/badprog/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/badprog/in
 
 
 test badprog PASSED
@@ -244,7 +244,7 @@ Test errout
 a called program produces error output, but no errors from the shell itself
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/errout/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/errout/in
 
 
 test errout PASSED
@@ -257,7 +257,7 @@ Test badcd
 invalid path to cd
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/badcd/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/badcd/in
 
 
 test badcd PASSED
@@ -270,7 +270,7 @@ Test badpwd
 invalid arguments to pwd
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/badpwd/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/badpwd/in
 
 
 test badpwd PASSED
@@ -283,7 +283,7 @@ Test badexit
 invalid arguments to exit
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/badexit/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/badexit/in
 
 
 test badexit PASSED
@@ -296,7 +296,7 @@ Test redirect
 simple redirection using >
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/redirect/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/redirect/in
 
 
 test redirect PASSED
@@ -309,7 +309,7 @@ Test redirect2
 redirection and mutiple arguments
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/redirect2/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/redirect2/in
 
 
 test redirect2 PASSED
@@ -322,7 +322,7 @@ Test badredir
 redirect to invalid path
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/badredir/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/badredir/in
 
 
 test badredir PASSED
@@ -335,7 +335,7 @@ Test badredir2
 redirect to multiple paths
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/badredir2/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/badredir2/in
 
 
 test badredir2 PASSED
@@ -350,7 +350,7 @@ simple command in interactive mode
 **********************************************************************
 Running mysh with 1 command: see /u/c/s/cs537-2/ta/tests/2a/interactive/in
 
-/tmp/tmpw8EaYE/p/./mysh
+/tmp/tmpciaNbW/p/./mysh
 
 
 test interactive PASSED
@@ -365,7 +365,7 @@ series of commands in interactive mode
 **********************************************************************
 Running mysh with several commands: see /u/c/s/cs537-2/ta/tests/2a/interactive2/in
 
-/tmp/tmpw8EaYE/p/./mysh
+/tmp/tmpciaNbW/p/./mysh
 
 
 test interactive2 PASSED
@@ -378,7 +378,7 @@ Test background
 basic background process
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/background/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/background/in
 
 
 test background PASSED
@@ -391,7 +391,7 @@ Test background2
 background process followed by wait
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/background2/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/background2/in
 
 
 test background2 PASSED
@@ -404,7 +404,7 @@ Test background3
 command following wait
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/background3/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/background3/in
 
 
 test background3 PASSED
@@ -417,7 +417,7 @@ Test background4
 check that wait waits correctly
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/background4/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/background4/in
 
 
 test background4 PASSED
@@ -430,7 +430,7 @@ Test waitnone
 wait with no background jobs
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/waitnone/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/waitnone/in
 
 
 test waitnone PASSED
@@ -443,7 +443,7 @@ Test badwait
 invalid arguments to wait
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/badwait/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/badwait/in
 
 
 test badwait PASSED
@@ -456,7 +456,7 @@ Test fun
 test the fun feature (python script)
 
 **********************************************************************
-/tmp/tmpw8EaYE/p/./mysh /u/c/s/cs537-2/ta/tests/2a/fun/in
+/tmp/tmpciaNbW/p/./mysh /u/c/s/cs537-2/ta/tests/2a/fun/in
 
 
 test fun PASSED

@@ -46,6 +46,9 @@ allocproc(void)
 
 found:
   p->state = EMBRYO;
+  p->tickets = 1;
+  p->hticks = 1;
+  p->lticks = 1;
   p->pid = nextpid++;
   release(&ptable.lock);
 
@@ -461,6 +464,8 @@ int getpinfo(void) {
   struct proc *p;
   int i;
 
+  if (argptr(0, (void *)&ps, sizeof(*ps)) < 0)
+    return -1;
   acquire(&ptable.lock);
   for (i=0; i<NPROC; i++) {
     p = &ptable.proc[i];
