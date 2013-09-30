@@ -443,4 +443,12 @@ procdump(void)
   }
 }
 
-
+int settickets(int num) {
+  int x;
+  if (argint(0, &x) < 0)
+    return -1;
+  if (num < 1)
+    return -1;
+  proc->tickets += num;
+  return 0;
+}
