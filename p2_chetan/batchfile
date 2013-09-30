@@ -1,0 +1,5 @@
+ls
+pwd
+ls -la > new.txt
+sleep 5 &
+wait

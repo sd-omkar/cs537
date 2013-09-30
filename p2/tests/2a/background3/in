@@ -1,0 +1,3 @@
+/bin/uname > 1.out &
+wait
+seq 3

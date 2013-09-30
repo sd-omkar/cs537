@@ -1,0 +1,9 @@
+python ./decho.py 2 delayed &
+python ./decho.py 4 delayedmore &
+/bin/echo now
+now
+wait
+delayed
+delayedmore
+/bin/echo later
+later

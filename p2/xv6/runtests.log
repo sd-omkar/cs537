@@ -1,0 +1,126 @@
+
+**********************************************************************
+
+Test build
+build xv6 using make
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+make: *** No rule to make target `clean'.  Stop.
+test build FAILED
+Trying to build project using make
+make
+make: *** No targets specified and no makefile found.  Stop.
+make xv6.img fs.img
+make: *** No rule to make target `xv6.img'.  Stop.
+test build FAILED
+test build FAILED
+test build FAILED
+
+
+test build FAILED
+ (build xv6 using make)
+ make clean failed (error 2)
+ make failed (error 2)
+ required file 'xv6.img' does not exist after make
+ required file 'fs.img' does not exist after make
+
+
+**********************************************************************
+
+Test basic
+call getsyscallinfo() from a user program
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/1b/basic.c
+test basic FAILED
+Traceback (most recent call last):
+  File "/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tools/testing/test.py", line 183, in run_test
+    test.run()
+  File "/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/1b/xv6.py", line 17, in run
+    shutil.copy(tester_path, self.project_path + "/user/tester.c")
+  File "/usr/lib64/python2.6/shutil.py", line 84, in copy
+    copyfile(src, dst)
+  File "/usr/lib64/python2.6/shutil.py", line 51, in copyfile
+    with open(dst, 'wb') as fdst:
+IOError: [Errno 2] No such file or directory: '/tmp/tmpTiatE4/p/user/tester.c'
+
+
+test basic FAILED
+ (call getsyscallinfo() from a user program)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpTiatE4/p/user/tester.c'
+
+
+**********************************************************************
+
+Test getsyscallinfo
+repeated calls of getsyscallinfo()
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/1b/getsyscallinfo.c
+test getsyscallinfo FAILED
+Traceback (most recent call last):
+  File "/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tools/testing/test.py", line 183, in run_test
+    test.run()
+  File "/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/1b/xv6.py", line 17, in run
+    shutil.copy(tester_path, self.project_path + "/user/tester.c")
+  File "/usr/lib64/python2.6/shutil.py", line 84, in copy
+    copyfile(src, dst)
+  File "/usr/lib64/python2.6/shutil.py", line 51, in copyfile
+    with open(dst, 'wb') as fdst:
+IOError: [Errno 2] No such file or directory: '/tmp/tmpTiatE4/p/user/tester.c'
+
+
+test getsyscallinfo FAILED
+ (repeated calls of getsyscallinfo())
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpTiatE4/p/user/tester.c'
+
+
+**********************************************************************
+
+Test many
+count many other syscalls
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/1b/many.c
+test many FAILED
+Traceback (most recent call last):
+  File "/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tools/testing/test.py", line 183, in run_test
+    test.run()
+  File "/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/1b/xv6.py", line 17, in run
+    shutil.copy(tester_path, self.project_path + "/user/tester.c")
+  File "/usr/lib64/python2.6/shutil.py", line 84, in copy
+    copyfile(src, dst)
+  File "/usr/lib64/python2.6/shutil.py", line 51, in copyfile
+    with open(dst, 'wb') as fdst:
+IOError: [Errno 2] No such file or directory: '/tmp/tmpTiatE4/p/user/tester.c'
+
+
+test many FAILED
+ (count many other syscalls)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpTiatE4/p/user/tester.c'
+
+**********************************************************************
+Summary:
+test build FAILED
+ (build xv6 using make)
+ make clean failed (error 2)
+ make failed (error 2)
+ required file 'xv6.img' does not exist after make
+ required file 'fs.img' does not exist after make
+
+test basic FAILED
+ (call getsyscallinfo() from a user program)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpTiatE4/p/user/tester.c'
+
+test getsyscallinfo FAILED
+ (repeated calls of getsyscallinfo())
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpTiatE4/p/user/tester.c'
+
+test many FAILED
+ (count many other syscalls)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpTiatE4/p/user/tester.c'
+
+Passed 0 of 4 tests.
+Overall 0 of 4

@@ -1,0 +1,5 @@
+python ./decho.py 2 delayed &
+python ./decho.py 4 delayedmore &
+/bin/echo now
+wait
+/bin/echo later

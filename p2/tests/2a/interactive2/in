@@ -1,0 +1,7 @@
+echo Let me see: > 1.out
+echo four times five is twelve, and four times six is thirteen, and four times seven is-- >1.out
+expr 4 x 7
+expr 4 * 7 % 24 + 10
+seq -s , 18 3 30
+exit
+echo goodbye!

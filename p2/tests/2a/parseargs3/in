@@ -1,0 +1,4 @@
+rm -f 1.out
+echo hello>1.out&
+wait
+cat 1.out

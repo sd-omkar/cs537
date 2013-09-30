@@ -1,0 +1,4 @@
+This test should fail because it's called as
+./mysh in /bogus
+
+So "in" is a valid batch file, but /bogus is an extra argument.

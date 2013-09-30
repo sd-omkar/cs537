@@ -1,0 +1,64 @@
+ uname
+Linux
+  uname
+Linux
+/bin/ls  /u/
+_
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+/bin/ls   /u/
+_
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+/usr/bin/which cp 
+/bin/cp
+/usr/bin/which cp  
+/bin/cp

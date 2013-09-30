@@ -1,0 +1,1 @@
+/bin/ls -l --human-readable --no-group -i -p -Q --reverse /u/
