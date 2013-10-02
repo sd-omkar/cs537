@@ -297,6 +297,7 @@ scheduler(void)
 
       if (p->queue == 2 && high_count > 0)
         continue;
+      int j = 1;
       // Switch to chosen process.  It is the process's job
       // to release ptable.lock and then reacquire it
       // before jumping back to us.
@@ -306,17 +307,25 @@ scheduler(void)
       if (p->queue == 1)
         p->hticks++;
       else
-        p->lticks++;
+        p->lticks += j;
       swtch(&cpu->scheduler, proc->context);
       switchkvm();
 
       // Process is done running for now.
       // It should have changed its p->state before coming back.
-      proc = 0;
       if (p->queue ==1) {
         p->queue = 2;
         high_count--;
       }
+      else if (1==j && p->state == RUNNABLE){
+        proc = p;
+        p->state = RUNNING;
+        p->lticks++;
+        switchuvm(p);
+        swtch(&cpu->scheduler, proc->context);
+        switchkvm();
+      }
+      proc = 0;
     }
     release(&ptable.lock);
 
