@@ -197,6 +197,9 @@ gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/picirq.o kernel/picirq.c
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/pipe.o kernel/pipe.c
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/proc.o kernel/proc.c
+kernel/proc.c: In function ‘scheduler’:
+kernel/proc.c:285: warning: implicit declaration of function ‘random’
+kernel/proc.c:309: warning: implicit declaration of function ‘settickets’
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/spinlock.o kernel/spinlock.c
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/string.o kernel/string.c
 gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c kernel/swtch.S -o kernel/swtch.o
@@ -232,15 +235,15 @@ ld  -m    elf_i386 -nostdlib --omagic \
 dd if=/dev/zero of=xv6.img count=10000
 10000+0 records in
 10000+0 records out
-5120000 bytes (5.1 MB) copied, 0.0236931 s, 216 MB/s
+5120000 bytes (5.1 MB) copied, 0.0233423 s, 219 MB/s
 dd if=kernel/bootblock of=xv6.img conv=notrunc
 1+0 records in
 1+0 records out
-512 bytes (512 B) copied, 1.8665e-05 s, 27.4 MB/s
+512 bytes (512 B) copied, 1.9549e-05 s, 26.2 MB/s
 dd if=kernel/kernel of=xv6.img seek=1 conv=notrunc
-256+1 records in
-256+1 records out
-131304 bytes (131 kB) copied, 0.000470296 s, 279 MB/s
+257+1 records in
+257+1 records out
+131859 bytes (132 kB) copied, 0.000437776 s, 301 MB/s
 gcc -c  -iquote include -Wall -ggdb  -o tools/mkfs.o tools/mkfs.c
 gcc  tools/mkfs.o -o tools/mkfs
 mkdir -p fs
@@ -301,22 +304,22 @@ cp user/bin/zombie fs/zombie
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 grep
-echo
+stressfs
+tester
+init
 usertests
 zombie
-wc
-forktest
-init
-stressfs
 kill
 README
-rm
-mkdir
-ln
-tester
-cat
+forktest
 ls
+echo
 sh
+mkdir
+wc
+rm
+ln
+cat
 balloc: first 424 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/stressfs user/bin/grep user/bin/tester user/bin/kill user/bin/cat user/bin/mkdir user/bin/init user/bin/rm user/bin/echo user/bin/ls user/bin/ln user/bin/usertests user/bin/sh user/bin/wc user/bin/zombie
@@ -343,22 +346,22 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 grep
-echo
+stressfs
+tester
+init
 usertests
 zombie
-wc
-forktest
-init
-stressfs
 kill
 README
-rm
-mkdir
-ln
-tester
-cat
+forktest
 ls
+echo
 sh
+mkdir
+wc
+rm
+ln
+cat
 balloc: first 425 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
@@ -399,22 +402,22 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 grep
-echo
+stressfs
+tester
+init
 usertests
 zombie
-wc
-forktest
-init
-stressfs
 kill
 README
-rm
-mkdir
-ln
-tester
-cat
+forktest
 ls
+echo
 sh
+mkdir
+wc
+rm
+ln
+cat
 balloc: first 425 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
@@ -429,11 +432,11 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
-pid: 1 hticks: 1
+pid: 1 hticks: 28
  lticks: 1
-pid: 2 hticks: 1
+pid: 2 hticks: 17
  lticks: 1
-pid: 3 hticks: 1
+pid: 3 hticks: 17
  lticks: 1
 TEST PASSED
 
@@ -461,22 +464,22 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 grep
-echo
+stressfs
+tester
+init
 usertests
 zombie
-wc
-forktest
-init
-stressfs
 kill
 README
-rm
-mkdir
-ln
-tester
-cat
+forktest
 ls
+echo
 sh
+mkdir
+wc
+rm
+ln
+cat
 balloc: first 426 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
@@ -491,9 +494,9 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
-pid: 1 hticks: 1 lticks:1
-pid: 2 hticks: 1 lticks:1
-pid: 3 hticks: 1 lticks:1
+pid: 1 hticks: 20 lticks:1
+pid: 2 hticks: 24 lticks:1
+pid: 3 hticks: 11 lticks:1
 TEST PASSED
 
 test getpinfo2 PASSED
@@ -520,22 +523,22 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 grep
-echo
+stressfs
+tester
+init
 usertests
 zombie
-wc
-forktest
-init
-stressfs
 kill
 README
-rm
-mkdir
-ln
-tester
-cat
+forktest
 ls
+echo
 sh
+mkdir
+wc
+rm
+ln
+cat
 balloc: first 428 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
