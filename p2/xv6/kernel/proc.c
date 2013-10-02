@@ -47,10 +47,10 @@ allocproc(void)
 found:
   p->state = EMBRYO;
   p->tickets = 1;
-  p->hticks = 1;
-  p->lticks = 1;
+  p->hticks = 0;
+  p->lticks = 0;
+  p->queue = 1;
   p->pid = nextpid++;
-  p->queue = 1; //indicates that the the job is first placed in the high priority queue
   release(&ptable.lock);
 
   // Allocate kernel stack if possible.
@@ -262,23 +262,19 @@ void
 scheduler(void)
 {
   struct proc *p;
-  int queue_flag=2;
-  int tickets=0;
+
   for(;;){
     // Enable interrupts on this processor.
     sti();
-    tickets = 0;
-    queue_flag=2;
-   
+
+    // Loop over process table looking for process to run.
     acquire(&ptable.lock);
+    int tickets = 0;
+
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      if(p->queue == 1)
-	queue_flag=1; // indicates that there are processes in the 1st queue
-    }
-    // Count the number of tickets
-    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      if((p->state == RUNNABLE))
-	tickets += p->tickets;
+      if(p->state != RUNNABLE)
+        continue;
+      tickets += p->tickets;
     }
 
     if (tickets > 0) {
@@ -287,46 +283,11 @@ scheduler(void)
         winner *= -1;
       tickets = winner % tickets;
     }
-	
-    //run for the 1st priority queue	
-    if(queue_flag==1){
-    // Loop over process table looking for process to run.
-    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      if((p->state != RUNNABLE)||(p->queue != 1))
-        continue;
-      
-      tickets -= p->tickets;
-      if (tickets > 0)
-        continue;
-      // Switch to chosen process.  It is the process's job
-      // to release ptable.lock and then reacquire it
-      // before jumping back to us.
-      proc = p;
-      p->hticks=p->hticks+1;
-      switchuvm(p);
-      p->state = RUNNING;
-      if (p->tickets <= 0)
-        settickets(1);
-      p->tickets -= 1;
-      swtch(&cpu->scheduler, proc->context);
-      switchkvm();
-      // Process is done running for now.
-      // It should have changed its p->state before coming back.
-      // If the process has not completed with its execution then demote to lower priority
-      if(p->state == RUNNING)
-	      p->queue=2;
 
-      proc = 0;
-      break;
-    }
-    }
-    //else run for the 2nd priority queue
-    else{
-    // Loop over process table looking for process to run.
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      if((p->state != RUNNABLE)||(p->queue != 2))
+      if(p->state != RUNNABLE)
         continue;
-      
+
       tickets -= p->tickets;
       if (tickets > 0)
         continue;
@@ -334,22 +295,24 @@ scheduler(void)
       // to release ptable.lock and then reacquire it
       // before jumping back to us.
       proc = p;
-      p->lticks=p->lticks+1;
       switchuvm(p);
       p->state = RUNNING;
-      if (p->tickets <= 0)
-        settickets(1);
-      p->tickets -= 1;
+      if (p->queue == 1)
+        p->hticks++;
+      else
+        p->lticks++;
       swtch(&cpu->scheduler, proc->context);
       switchkvm();
+
       // Process is done running for now.
       // It should have changed its p->state before coming back.
       proc = 0;
+      p->queue = 2;
     }
-   }
     release(&ptable.lock);
-  }//for the infinite loop
-}//function finish
+
+  }
+}
 
 // Enter scheduler.  Must hold only ptable.lock
 // and have changed proc->state.
