@@ -270,11 +270,14 @@ scheduler(void)
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
     int tickets = 0;
+    int high_count = 0;
 
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
       if(p->state != RUNNABLE)
         continue;
       tickets += p->tickets;
+      if (p->queue == 1)
+        high_count++;
     }
 
     if (tickets > 0) {
@@ -290,6 +293,9 @@ scheduler(void)
 
       tickets -= p->tickets;
       if (tickets > 0)
+        continue;
+
+      if (p->queue == 2 && high_count > 0)
         continue;
       // Switch to chosen process.  It is the process's job
       // to release ptable.lock and then reacquire it
@@ -307,7 +313,10 @@ scheduler(void)
       // Process is done running for now.
       // It should have changed its p->state before coming back.
       proc = 0;
-      p->queue = 2;
+      if (p->queue ==1) {
+        p->queue = 2;
+        high_count--;
+      }
     }
     release(&ptable.lock);
 
