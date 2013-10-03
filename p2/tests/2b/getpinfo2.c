@@ -11,6 +11,7 @@ main(int argc, char *argv[])
 {
    struct pstat st;
 
+   sleep(10);
    check(getpinfo(&st) == 0, "getpinfo");
 
    int count = 0;
