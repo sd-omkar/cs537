@@ -1,0 +1,565 @@
+
+**********************************************************************
+
+Test build
+build project using make
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+rm *.o
+Trying to build project using make
+make
+gcc -c -fpic mem.c -Wall
+gcc -shared -o libmem.so mem.o
+gcc -lmem -L. mymain.c -o myprogram -Wall
+
+
+test build PASSED
+ (build project using make)
+ file 'libmem.so' exists after make clean, removing
+
+
+**********************************************************************
+
+Test init
+call Mem_Init with size = 1 page
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/init
+
+
+test init PASSED
+ (call Mem_Init with size = 1 page)
+
+
+**********************************************************************
+
+Test init2
+init that should be rounded up to 1 page
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/init2
+
+
+test init2 PASSED
+ (init that should be rounded up to 1 page)
+
+
+**********************************************************************
+
+Test badinit
+bad argument to Mem_Init
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/badinit
+ERROR
+
+
+test badinit PASSED
+ (bad argument to Mem_Init)
+
+
+**********************************************************************
+
+Test badinit2
+bad argument to Mem_Init
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/badinit2
+ERROR
+
+
+test badinit2 PASSED
+ (bad argument to Mem_Init)
+
+
+**********************************************************************
+
+Test doubleinit
+call init twice
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/doubleinit
+ERROR
+
+
+test doubleinit PASSED
+ (call init twice)
+
+
+**********************************************************************
+
+Test alloc
+a simple 8 byte allocation
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/alloc
+
+
+test alloc PASSED
+ (a simple 8 byte allocation)
+
+
+**********************************************************************
+
+Test alloc2
+a few aligned allocations
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/alloc2
+
+
+test alloc2 PASSED
+ (a few aligned allocations)
+
+
+**********************************************************************
+
+Test alloc3
+many odd sized allocations
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/alloc3
+
+
+test alloc3 PASSED
+ (many odd sized allocations)
+
+
+**********************************************************************
+
+Test free
+a simple allocation followed by a free
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/free
+
+
+test free PASSED
+ (a simple allocation followed by a free)
+
+
+**********************************************************************
+
+Test free2
+a few aligned allocations and frees
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/free2
+
+
+test free2 PASSED
+ (a few aligned allocations and frees)
+
+
+**********************************************************************
+
+Test badfree
+freeing a pointer that was not returned by Mem_Alloc
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/badfree
+
+
+test badfree PASSED
+ (freeing a pointer that was not returned by Mem_Alloc)
+
+
+**********************************************************************
+
+Test align
+check first pointer returned is 8-byte aligned
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/align
+
+
+test align PASSED
+ (check first pointer returned is 8-byte aligned)
+
+
+**********************************************************************
+
+Test align2
+a few allocations checked for alignment
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/align2
+
+
+test align2 PASSED
+ (a few allocations checked for alignment)
+
+
+**********************************************************************
+
+Test align3
+many odd sized allocations checked for alignment
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/align3
+
+
+test align3 PASSED
+ (many odd sized allocations checked for alignment)
+
+
+**********************************************************************
+
+Test writeable
+write to a chunk from Mem_Alloc
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/writeable
+
+
+test writeable PASSED
+ (write to a chunk from Mem_Alloc)
+
+
+**********************************************************************
+
+Test writeable2
+align misaligned requests, don't overlap
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/writeable2
+
+
+test writeable2 PASSED
+ (align misaligned requests, don't overlap)
+
+
+**********************************************************************
+
+Test bestfit
+use smallest free space for allocation
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/bestfit
+
+
+test bestfit PASSED
+ (use smallest free space for allocation)
+
+
+**********************************************************************
+
+Test bestfit2
+use best fit free space for allocation
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/bestfit2
+
+
+test bestfit2 PASSED
+ (use best fit free space for allocation)
+
+
+**********************************************************************
+
+Test worstfit
+use largest free space for allocation
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/worstfit
+
+
+test worstfit PASSED
+ (use largest free space for allocation)
+
+
+**********************************************************************
+
+Test worstfit2
+use worst fit free space for allocation
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/worstfit2
+
+
+test worstfit2 PASSED
+ (use worst fit free space for allocation)
+
+
+**********************************************************************
+
+Test firstfit
+use first free space for allocation
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/firstfit
+
+
+test firstfit PASSED
+ (use first free space for allocation)
+
+
+**********************************************************************
+
+Test firstfit2
+use first fit free space for allocation
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/firstfit2
+
+
+test firstfit2 PASSED
+ (use first fit free space for allocation)
+
+
+**********************************************************************
+
+Test nospace
+second allocation is too big to fit
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/nospace
+
+
+test nospace PASSED
+ (second allocation is too big to fit)
+
+
+**********************************************************************
+
+Test coalesce
+check for coalesce free space
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/coalesce
+
+
+test coalesce PASSED
+ (check for coalesce free space)
+
+
+**********************************************************************
+
+Test coalesce2
+check for coalesce free space
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/coalesce2
+
+
+test coalesce2 PASSED
+ (check for coalesce free space)
+
+
+**********************************************************************
+
+Test coalesce3
+check for coalesce free space
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/coalesce3
+
+
+test coalesce3 PASSED
+ (check for coalesce free space)
+
+
+**********************************************************************
+
+Test coalesce4
+check for coalesce free space (last chunk)
+
+**********************************************************************
+/afs/cs.wisc.edu/p/course/cs537-remzi/ta/tests/3a/tests/coalesce4
+
+
+test coalesce4 PASSED
+ (check for coalesce free space (last chunk))
+
+
+**********************************************************************
+
+Test random
+psuedo-random sequence of allocs and frees
+
+**********************************************************************
+/u/c/s/cs537-2/ta/tests/3a/random 0 10 0
+time: 0.00216293334961
+
+
+test random PASSED
+ (psuedo-random sequence of allocs and frees)
+
+
+**********************************************************************
+
+Test random2
+psuedo-random sequence of allocs and frees
+
+**********************************************************************
+/u/c/s/cs537-2/ta/tests/3a/random 0 1000 1
+time: 0.00433301925659
+
+
+test random2 PASSED
+ (psuedo-random sequence of allocs and frees)
+
+
+**********************************************************************
+
+Test random3
+psuedo-random sequence of allocs and frees
+
+**********************************************************************
+/u/c/s/cs537-2/ta/tests/3a/random 0 100000 1
+time: 0.783879995346
+
+
+test random3 PASSED
+ (psuedo-random sequence of allocs and frees)
+
+
+**********************************************************************
+
+Test random4
+psuedo-random sequence of allocs and frees
+
+**********************************************************************
+/u/c/s/cs537-2/ta/tests/3a/random 1 500000 1
+time: 3.91262483597
+
+
+test random4 PASSED
+ (psuedo-random sequence of allocs and frees)
+
+
+**********************************************************************
+
+Test random5
+psuedo-random sequence of allocs and frees
+
+**********************************************************************
+/u/c/s/cs537-2/ta/tests/3a/random 1 2000000 0
+time: 14.2715010643
+
+
+test random5 PASSED
+ (psuedo-random sequence of allocs and frees)
+
+
+**********************************************************************
+
+Test prohibit
+check for prohibited library functions
+
+**********************************************************************
+objdump --dynamic-syms libmem.so
+
+
+test prohibit PASSED
+ (check for prohibited library functions)
+
+**********************************************************************
+Summary:
+test build PASSED
+ (build project using make)
+ file 'libmem.so' exists after make clean, removing
+
+test init PASSED
+ (call Mem_Init with size = 1 page)
+
+test init2 PASSED
+ (init that should be rounded up to 1 page)
+
+test badinit PASSED
+ (bad argument to Mem_Init)
+
+test badinit2 PASSED
+ (bad argument to Mem_Init)
+
+test doubleinit PASSED
+ (call init twice)
+
+test alloc PASSED
+ (a simple 8 byte allocation)
+
+test alloc2 PASSED
+ (a few aligned allocations)
+
+test alloc3 PASSED
+ (many odd sized allocations)
+
+test free PASSED
+ (a simple allocation followed by a free)
+
+test free2 PASSED
+ (a few aligned allocations and frees)
+
+test badfree PASSED
+ (freeing a pointer that was not returned by Mem_Alloc)
+
+test align PASSED
+ (check first pointer returned is 8-byte aligned)
+
+test align2 PASSED
+ (a few allocations checked for alignment)
+
+test align3 PASSED
+ (many odd sized allocations checked for alignment)
+
+test writeable PASSED
+ (write to a chunk from Mem_Alloc)
+
+test writeable2 PASSED
+ (align misaligned requests, don't overlap)
+
+test bestfit PASSED
+ (use smallest free space for allocation)
+
+test bestfit2 PASSED
+ (use best fit free space for allocation)
+
+test worstfit PASSED
+ (use largest free space for allocation)
+
+test worstfit2 PASSED
+ (use worst fit free space for allocation)
+
+test firstfit PASSED
+ (use first free space for allocation)
+
+test firstfit2 PASSED
+ (use first fit free space for allocation)
+
+test nospace PASSED
+ (second allocation is too big to fit)
+
+test coalesce PASSED
+ (check for coalesce free space)
+
+test coalesce2 PASSED
+ (check for coalesce free space)
+
+test coalesce3 PASSED
+ (check for coalesce free space)
+
+test coalesce4 PASSED
+ (check for coalesce free space (last chunk))
+
+test random PASSED
+ (psuedo-random sequence of allocs and frees)
+
+test random2 PASSED
+ (psuedo-random sequence of allocs and frees)
+
+test random3 PASSED
+ (psuedo-random sequence of allocs and frees)
+
+test random4 PASSED
+ (psuedo-random sequence of allocs and frees)
+
+test random5 PASSED
+ (psuedo-random sequence of allocs and frees)
+
+test prohibit PASSED
+ (check for prohibited library functions)
+
+Passed 34 of 34 tests.
+Overall 34 of 34

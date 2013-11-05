@@ -19,237 +19,172 @@ test build PASSED
 
 **********************************************************************
 
-Test arg
-bad arguments
-
-**********************************************************************
-/tmp/tmp5dr0iP/p/fastsort
-
-
-test arg PASSED
- (bad arguments)
-
-
-**********************************************************************
-
-Test arg2
-bad arguments
-
-**********************************************************************
-/tmp/tmp5dr0iP/p/fastsort a b c d
-
-
-test arg2 PASSED
- (bad arguments)
-
-
-**********************************************************************
-
-Test badin
-bad input file
-
-**********************************************************************
-/tmp/tmp5dr0iP/p/fastsort -i /invalid/path/l0L3qu -o outfile
-
-
-test badin PASSED
- (bad input file)
-
-
-**********************************************************************
-
-Test badout
-bad output file
-
-**********************************************************************
-/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /invalid/path/l0L3qu
-
-
-test badout PASSED
- (bad output file)
-
-
-**********************************************************************
-
-Test empty
-empty input file
-
-**********************************************************************
-Generating input file
-/u/c/s/cs537-2/ta/tests/1a/generate -s 0 -n 0 -o /tmp/tmp5dr0iP/p/infile
-Running fastsort
-/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /tmp/tmp5dr0iP/p/outfile
-Fastsort completed in 0.00161194801331 seconds
-Checking output
-
-
-test empty PASSED
- (empty input file)
-
-
-**********************************************************************
-
-Test one
-a single record
-
-**********************************************************************
-Generating input file
-/u/c/s/cs537-2/ta/tests/1a/generate -s 0 -n 1 -o /tmp/tmp5dr0iP/p/infile
-Running fastsort
-/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /tmp/tmp5dr0iP/p/outfile
-Fastsort completed in 0.0018470287323 seconds
-Checking output
-
-
-test one PASSED
- (a single record)
-
-
-**********************************************************************
-
-Test five1
-five records
-
-**********************************************************************
-Generating input file
-/u/c/s/cs537-2/ta/tests/1a/generate -s 1 -n 5 -o /tmp/tmp5dr0iP/p/infile
-Running fastsort
-/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /tmp/tmp5dr0iP/p/outfile
-Fastsort completed in 0.00159406661987 seconds
-Checking output
-
-
-test five1 PASSED
- (five records)
-
-
-**********************************************************************
-
-Test five2
-five records
-
-**********************************************************************
-Generating input file
-/u/c/s/cs537-2/ta/tests/1a/generate -s 2 -n 5 -o /tmp/tmp5dr0iP/p/infile
-Running fastsort
-/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /tmp/tmp5dr0iP/p/outfile
-Fastsort completed in 0.00167512893677 seconds
-Checking output
-
-
-test five2 PASSED
- (five records)
-
-
-**********************************************************************
-
-Test medium
-100 records
-
-**********************************************************************
-Generating input file
-/u/c/s/cs537-2/ta/tests/1a/generate -s 3 -n 100 -o /tmp/tmp5dr0iP/p/infile
-Running fastsort
-/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /tmp/tmp5dr0iP/p/outfile
-Fastsort completed in 0.00174498558044 seconds
-Checking output
-
-
-test medium PASSED
- (100 records)
-
-
-**********************************************************************
-
-Test large
-10k records
-
-**********************************************************************
-Generating input file
-/u/c/s/cs537-2/ta/tests/1a/generate -s 4 -n 10000 -o /tmp/tmp5dr0iP/p/infile
-Running fastsort
-/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /tmp/tmp5dr0iP/p/outfile
-Fastsort completed in 0.0063099861145 seconds
-Checking output
-
-
-test large PASSED
- (10k records)
-
-
-**********************************************************************
-
-Test verylarge
+Test canary
 100k records
 
 **********************************************************************
 Generating input file
-/u/c/s/cs537-2/ta/tests/1a/generate -s 5 -n 100000 -o /tmp/tmp5dr0iP/p/infile
+/u/c/s/cs537-2/ta/tests/1a-contest/generate -s 0 -n 100000 -o /tmp/tmpA89DOz/p/infile
 Running fastsort
-/tmp/tmp5dr0iP/p/fastsort -i /tmp/tmp5dr0iP/p/infile -o /tmp/tmp5dr0iP/p/outfile
-Fastsort completed in 0.0676031112671 seconds
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0585999488831 seconds
 Checking output
 
 
-test verylarge PASSED
+test canary PASSED
  (100k records)
 
 
 **********************************************************************
 
-Test dup
-duplicate records
+Test contest
+contest
 
 **********************************************************************
+Generating input file
+/u/c/s/cs537-2/ta/tests/1a-contest/generate -s 0 -n 100000 -o /tmp/tmpA89DOz/p/infile
 Running fastsort
-/tmp/tmp5dr0iP/p/fastsort -i /u/c/s/cs537-2/ta/tests/1a/dupdata -o /tmp/tmp5dr0iP/p/outfile
-Fastsort completed in 0.0278511047363 seconds
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0638620853424 seconds
 Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0589199066162 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0583028793335 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0581710338593 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0593140125275 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0583698749542 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0594258308411 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0583820343018 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0589480400085 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0585780143738 seconds
+Checking output
+Generating input file
+/u/c/s/cs537-2/ta/tests/1a-contest/generate -s 1 -n 100000 -o /tmp/tmpA89DOz/p/infile
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0598909854889 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0591161251068 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0588989257812 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0587160587311 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.058581829071 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.059249162674 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0587229728699 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0596618652344 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0589790344238 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0590898990631 seconds
+Checking output
+Generating input file
+/u/c/s/cs537-2/ta/tests/1a-contest/generate -s 2 -n 100000 -o /tmp/tmpA89DOz/p/infile
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0597641468048 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0592751502991 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.059534072876 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0602178573608 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0606210231781 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.062332868576 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0709059238434 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0644769668579 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0641551017761 seconds
+Checking output
+Running fastsort
+/tmp/tmpA89DOz/p/fastsort -i /tmp/tmpA89DOz/p/infile -o /tmp/tmpA89DOz/p/outfile
+Fastsort completed in 0.0615329742432 seconds
+Checking output
+best   0.0581710338593
+median 0.0592621564865
+worst  0.0709059238434
 
 
-test dup PASSED
- (duplicate records)
+test contest PASSED
+ (contest)
 
 **********************************************************************
 Summary:
 test build PASSED
  (build project using make)
 
-test arg PASSED
- (bad arguments)
-
-test arg2 PASSED
- (bad arguments)
-
-test badin PASSED
- (bad input file)
-
-test badout PASSED
- (bad output file)
-
-test empty PASSED
- (empty input file)
-
-test one PASSED
- (a single record)
-
-test five1 PASSED
- (five records)
-
-test five2 PASSED
- (five records)
-
-test medium PASSED
- (100 records)
-
-test large PASSED
- (10k records)
-
-test verylarge PASSED
+test canary PASSED
  (100k records)
 
-test dup PASSED
- (duplicate records)
+test contest PASSED
+ (contest)
 
-Passed 13 of 13 tests.
-Overall 13 of 13
+Passed 3 of 3 tests.
+Overall 3 of 3

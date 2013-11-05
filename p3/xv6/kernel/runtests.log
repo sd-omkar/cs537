@@ -1,0 +1,325 @@
+
+**********************************************************************
+
+Test build
+build xv6 using make
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+make: *** No rule to make target `clean'.  Stop.
+Trying to build project using make
+make
+make: *** No targets specified and no makefile found.  Stop.
+
+
+test build FAILED
+ (build xv6 using make)
+ file 'bootasm.o' exists after make clean, removing
+ file 'bootmain.o' exists after make clean, removing
+ file 'bio.o' exists after make clean, removing
+ file 'console.o' exists after make clean, removing
+ file 'exec.o' exists after make clean, removing
+ file 'file.o' exists after make clean, removing
+ file 'fs.o' exists after make clean, removing
+ file 'ide.o' exists after make clean, removing
+ file 'ioapic.o' exists after make clean, removing
+ file 'kalloc.o' exists after make clean, removing
+ file 'kbd.o' exists after make clean, removing
+ file 'lapic.o' exists after make clean, removing
+ file 'main.o' exists after make clean, removing
+ file 'mp.o' exists after make clean, removing
+ file 'picirq.o' exists after make clean, removing
+ file 'pipe.o' exists after make clean, removing
+ file 'proc.o' exists after make clean, removing
+ file 'spinlock.o' exists after make clean, removing
+ file 'string.o' exists after make clean, removing
+ file 'swtch.o' exists after make clean, removing
+ file 'syscall.o' exists after make clean, removing
+ file 'sysfile.o' exists after make clean, removing
+ file 'sysproc.o' exists after make clean, removing
+ file 'timer.o' exists after make clean, removing
+ file 'trapasm.o' exists after make clean, removing
+ file 'trap.o' exists after make clean, removing
+ file 'uart.o' exists after make clean, removing
+ file 'vectors.o' exists after make clean, removing
+ file 'vm.o' exists after make clean, removing
+ file 'multiboot.o' exists after make clean, removing
+ file 'data.o' exists after make clean, removing
+ file 'bootother.o' exists after make clean, removing
+ file 'initcode.o' exists after make clean, removing
+ make failed (error 2)
+ required file 'xv6.img' does not exist after make
+ required file 'fs.img' does not exist after make
+
+
+**********************************************************************
+
+Test null
+null pointer dereference should kill process
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/3b/tests/null.c
+IOError: [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+test null FAILED
+ (null pointer dereference should kill process)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+**********************************************************************
+
+Test null2
+any dereference from first page should fault
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/3b/tests/null2.c
+IOError: [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+test null2 FAILED
+ (any dereference from first page should fault)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+**********************************************************************
+
+Test stack
+stack should be at high end of address space
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/3b/tests/stack.c
+IOError: [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+test stack FAILED
+ (stack should be at high end of address space)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+**********************************************************************
+
+Test stack2
+stack should grow towards lower addresses as usual
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/3b/tests/stack2.c
+IOError: [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+test stack2 FAILED
+ (stack should grow towards lower addresses as usual)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+**********************************************************************
+
+Test stack3
+stack should grow automatically on a page fault
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/3b/tests/stack3.c
+IOError: [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+test stack3 FAILED
+ (stack should grow automatically on a page fault)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+**********************************************************************
+
+Test stack4
+stack should not grow into heap (program must terminate)
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/3b/tests/stack4.c
+IOError: [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+test stack4 FAILED
+ (stack should not grow into heap (program must terminate))
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+**********************************************************************
+
+Test heap
+heap can grow to 1 page below stack
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/3b/tests/heap.c
+IOError: [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+test heap FAILED
+ (heap can grow to 1 page below stack)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+**********************************************************************
+
+Test heap2
+heap must not grow into the page below stack
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/3b/tests/heap2.c
+IOError: [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+test heap2 FAILED
+ (heap must not grow into the page below stack)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+**********************************************************************
+
+Test bounds
+syscall argument checks (null page)
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/3b/tests/bounds.c
+IOError: [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+test bounds FAILED
+ (syscall argument checks (null page))
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+**********************************************************************
+
+Test bounds2
+syscall argument checks (code/heap boundaries)
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/3b/tests/bounds2.c
+IOError: [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+test bounds2 FAILED
+ (syscall argument checks (code/heap boundaries))
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+**********************************************************************
+
+Test bounds3
+syscall argument checks (stack boundaries)
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/3b/tests/bounds3.c
+IOError: [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+test bounds3 FAILED
+ (syscall argument checks (stack boundaries))
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+**********************************************************************
+
+Test bounds4
+syscall argument checks (string arg)
+
+**********************************************************************
+Running xv6 user progam /u/c/s/cs537-2/ta/tests/3b/tests/bounds4.c
+IOError: [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+
+test bounds4 FAILED
+ (syscall argument checks (string arg))
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+**********************************************************************
+Summary:
+test build FAILED
+ (build xv6 using make)
+ file 'bootasm.o' exists after make clean, removing
+ file 'bootmain.o' exists after make clean, removing
+ file 'bio.o' exists after make clean, removing
+ file 'console.o' exists after make clean, removing
+ file 'exec.o' exists after make clean, removing
+ file 'file.o' exists after make clean, removing
+ file 'fs.o' exists after make clean, removing
+ file 'ide.o' exists after make clean, removing
+ file 'ioapic.o' exists after make clean, removing
+ file 'kalloc.o' exists after make clean, removing
+ file 'kbd.o' exists after make clean, removing
+ file 'lapic.o' exists after make clean, removing
+ file 'main.o' exists after make clean, removing
+ file 'mp.o' exists after make clean, removing
+ file 'picirq.o' exists after make clean, removing
+ file 'pipe.o' exists after make clean, removing
+ file 'proc.o' exists after make clean, removing
+ file 'spinlock.o' exists after make clean, removing
+ file 'string.o' exists after make clean, removing
+ file 'swtch.o' exists after make clean, removing
+ file 'syscall.o' exists after make clean, removing
+ file 'sysfile.o' exists after make clean, removing
+ file 'sysproc.o' exists after make clean, removing
+ file 'timer.o' exists after make clean, removing
+ file 'trapasm.o' exists after make clean, removing
+ file 'trap.o' exists after make clean, removing
+ file 'uart.o' exists after make clean, removing
+ file 'vectors.o' exists after make clean, removing
+ file 'vm.o' exists after make clean, removing
+ file 'multiboot.o' exists after make clean, removing
+ file 'data.o' exists after make clean, removing
+ file 'bootother.o' exists after make clean, removing
+ file 'initcode.o' exists after make clean, removing
+ make failed (error 2)
+ required file 'xv6.img' does not exist after make
+ required file 'fs.img' does not exist after make
+
+test null FAILED
+ (null pointer dereference should kill process)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+test null2 FAILED
+ (any dereference from first page should fault)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+test stack FAILED
+ (stack should be at high end of address space)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+test stack2 FAILED
+ (stack should grow towards lower addresses as usual)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+test stack3 FAILED
+ (stack should grow automatically on a page fault)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+test stack4 FAILED
+ (stack should not grow into heap (program must terminate))
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+test heap FAILED
+ (heap can grow to 1 page below stack)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+test heap2 FAILED
+ (heap must not grow into the page below stack)
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+test bounds FAILED
+ (syscall argument checks (null page))
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+test bounds2 FAILED
+ (syscall argument checks (code/heap boundaries))
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+test bounds3 FAILED
+ (syscall argument checks (stack boundaries))
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+test bounds4 FAILED
+ (syscall argument checks (string arg))
+ Unexcpected exception [Errno 2] No such file or directory: '/tmp/tmpVX70pg/p/user/tester.c'
+
+Passed 0 of 13 tests.
+Overall 0 of 13
