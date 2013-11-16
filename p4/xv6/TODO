@@ -1,0 +1,8 @@
+include/syscall.h
+include/types.h
+
+kernel/defs.h
+kernel/proc.c
+kernel/sysproc.c
+kernel/syscall.c
+kernel/sysfunc.h
