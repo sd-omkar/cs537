@@ -18,6 +18,7 @@ extern void forkret(void);
 extern void trapret(void);
 
 static void wakeup1(void *chan);
+struct spinlock lgp;
 
 void
 pinit(void)
@@ -107,6 +108,8 @@ int
 growproc(int n)
 {
   uint sz;
+  struct proc *p;
+  pde_t *temp = proc->pgdir;
   
   sz = proc->sz;
   if(n > 0){
@@ -118,12 +121,8 @@ growproc(int n)
   }
   proc->sz = sz;
   switchuvm(proc);
-  return 0;
 
   //TODO
-  struct proc *p;
-  struct spinlock lgp;
-  pde_t *temp = proc->pgdir;
   acquire(&ptable.lock);
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
     if(p->pgdir == temp){
@@ -133,6 +132,8 @@ growproc(int n)
       release(&lgp);
      }
   }
+  release(&ptable.lock);
+  return 0;
 }
 
 // Create a new process copying p as the parent.
@@ -237,10 +238,10 @@ wait(void)
         pid = p->pid;
         kfree(p->kstack);
         p->kstack = 0;
-        if(p->pgdir != proc->pgdir)
+        //if(p->pgdir != proc->pgdir)
           freevm(p->pgdir);
-        else
-          return pid;
+        //else
+          //return pid;
         p->state = UNUSED;
         p->pid = 0;
         p->parent = 0;
