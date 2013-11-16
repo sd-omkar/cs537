@@ -146,7 +146,7 @@ int sys_wakecv(void) {
   if(argptr(0, (void *)&cv, sizeof(void *)) < 0)
     return -1;
 
-  wakeup(cv);
+  wakeup2(cv);
 
   return 0;
 }
