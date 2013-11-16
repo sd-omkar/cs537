@@ -133,17 +133,17 @@ int thread_join() {
 }
 
 void cv_wait(cond_t *cv, lock_t *cv_lock) {
-  lock_acquire(&(cv->lock));
+  //lock_acquire(&(cv->lock));
   /*
   int pid = getpid();
   cv->queue[cv->tail] = pid;
   ++(cv->tail);
   cv->tail = cv->tail % 1000;
   */
-  lock_release(cv_lock);
-  sleepcv(cv);
-  lock_acquire(cv_lock);
-  lock_release(&(cv->lock));
+  //lock_release(cv_lock);
+  sleepcv(cv, cv_lock);
+  //lock_acquire(cv_lock);
+  //lock_release(&(cv->lock));
   return;
 }
 

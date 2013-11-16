@@ -10,6 +10,10 @@ struct proc;
 struct spinlock;
 struct stat;
 
+typedef struct {
+  uint flag;
+} lock_t;
+
 // bio.c
 void            binit(void);
 struct buf*     bread(uint, uint);

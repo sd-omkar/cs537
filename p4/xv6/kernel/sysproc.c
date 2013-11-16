@@ -123,17 +123,20 @@ int sys_join(void) {
 }
 
 int sys_sleepcv(void) {
-  void *cv;
+  void *cv, *temp;
+
   if(argptr(0, (void *)&cv, sizeof(void *)) < 0)
     return -1;
 
-  //struct spinlock *lk;
-  //initlock(lk, "cv");
-  //acquire(lk);
+  if(argptr(1, (void *)&temp, sizeof(void *)) < 0)
+    return -1;
+  lock_t *lock = (lock_t *)temp;
+  xchg(&(lock->flag), 0);
+
   acquire(&tickslock);
   sleep(cv, &tickslock);
-  //release(lk);
   release(&tickslock);
+  while(xchg(&(lock->flag), 1) != 0);
   return 0;
 } 
 

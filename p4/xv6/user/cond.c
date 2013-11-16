@@ -1,5 +1,4 @@
 /* test cv_wait and cv_signal, cannot leave cv_wait without lock */
-   //kill(ppid); 
 #include "types.h"
 #include "user.h"
 
@@ -17,6 +16,7 @@ cond_t cond;
    printf(1, "%s: %d ", __FILE__, __LINE__); \
    printf(1, "assert failed (%s)\n", # x); \
    printf(1, "TEST FAILED\n"); \
+   kill(ppid); \
    exit(); \
 }
 

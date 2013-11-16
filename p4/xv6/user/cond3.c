@@ -37,7 +37,6 @@ main(int argc, char *argv[])
    }
 
    sleep(50);
-   printf(1, "Here\n");
 
    for(i = 0; i < nthreads; i++) {
      lock_acquire(&lock);
@@ -63,7 +62,6 @@ worker(void *arg_ptr) {
   lock_acquire(&lock);
   cv_wait(&cond, &lock);
   global++;
-  printf(1, "global = %d", global);
   lock_release(&lock);
   exit();
 }

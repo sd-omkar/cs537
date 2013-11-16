@@ -38,7 +38,7 @@ int sleep(int);
 int uptime(void);
 int clone(void (*start_routine)(void*), void *, void *);
 int join(void**);
-int sleepcv(cond_t *);
+int sleepcv(cond_t *, lock_t *);
 int wakecv(cond_t *);
 
 // user library functions (ulib.c)
