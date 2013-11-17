@@ -381,6 +381,33 @@ sleep(void *chan, struct spinlock *lk)
   }
 }
 
+void
+sleep2(void *chan, struct spinlock *lk)
+{
+  if(proc == 0)
+    panic("sleep");
+
+  if(lk != &ptable.lock){  //DOC: sleeplock0
+    acquire(&ptable.lock);  //DOC: sleeplock1
+    release(lk);
+  }
+
+  // Go to sleep.
+  ((cond_t *)chan)->lock->flag = 0;
+  proc->chan = chan;
+  proc->state = SLEEPING;
+  sched();
+
+  // Tidy up.
+  proc->chan = 0;
+
+  // Reacquire original lock.
+  if(lk != &ptable.lock){  //DOC: sleeplock2
+    release(&ptable.lock);
+    acquire(lk);
+  }
+}
+
 // Wake up all processes sleeping on chan.
 // The ptable lock must be held.
 static void

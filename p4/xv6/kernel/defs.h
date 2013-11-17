@@ -14,6 +14,10 @@ typedef struct {
   uint flag;
 } lock_t;
 
+typedef struct {
+  lock_t *lock;
+} cond_t;
+
 // bio.c
 void            binit(void);
 struct buf*     bread(uint, uint);
@@ -109,6 +113,7 @@ void            procdump(void);
 void            scheduler(void) __attribute__((noreturn));
 void            sched(void);
 void            sleep(void*, struct spinlock*);
+void            sleep2(void*, struct spinlock*);
 void            userinit(void);
 int             wait(void);
 void            wakeup(void*);

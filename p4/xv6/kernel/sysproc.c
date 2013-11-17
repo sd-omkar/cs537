@@ -131,11 +131,16 @@ int sys_sleepcv(void) {
   if(argptr(1, (void *)&temp, sizeof(void *)) < 0)
     return -1;
   lock_t *lock = (lock_t *)temp;
-  xchg(&(lock->flag), 0);
 
   acquire(&tickslock);
-  sleep(cv, &tickslock);
+
+  //xchg(&(lock->flag), 0);
+  ((cond_t *)cv)->lock = lock;
+
+  sleep2(cv, &tickslock);
+
   release(&tickslock);
+
   while(xchg(&(lock->flag), 1) != 0);
   return 0;
 } 

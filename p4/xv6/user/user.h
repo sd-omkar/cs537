@@ -8,10 +8,7 @@ typedef struct {
 } lock_t;
 
 typedef struct {
-  int queue[1000];
-  int head;
-  int tail;
-  lock_t lock;
+  lock_t *lock;
 } cond_t;
 
 // system calls
