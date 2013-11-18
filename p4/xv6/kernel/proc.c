@@ -512,11 +512,21 @@ int join(void **stack) {
       haveKids = 1;
 
       if (p->state == ZOMBIE) {
-        void *stackAddr = (void *)p->parent->tf->esp + 7*sizeof(void*);
-        *(uint *)stackAddr = p->tf->ebp;
-        *(uint *)stackAddr += 3 * sizeof(void *) - PGSIZE;
-        //TODO modify **stack
         pid = p->pid;
+        int *tempAddr = 0x1FD8;
+        //*tempAddr = pid;
+        //int temp = *tempAddr;
+        //cprintf("tempAddr data = %d\n", *tempAddr);
+        void *stackAddr = (void *)p->parent->tf->esp + 7*sizeof(void*);
+        //cprintf("stackAddr = %p\n", stackAddr);
+        //cprintf("tempAddr data = %d\n", *tempAddr);
+        *(uint *)stackAddr = p->tf->ebp;
+        //cprintf("stackAddr = %p\n", stackAddr);
+        //cprintf("tempAddr data = %d\n", *tempAddr);
+        *(uint *)stackAddr += 3 * sizeof(void *) - PGSIZE;
+        //cprintf("stackAddr = %p\n", stackAddr);
+        //cprintf("tempAddr data = %d\n", *tempAddr);
+        //TODO modify **stack
         kfree(p->kstack);
         p->kstack = 0;
         p->state = UNUSED;
@@ -524,17 +534,10 @@ int join(void **stack) {
         p->parent = 0;
         p->name[0] = 0;
         p->killed = 0;
-        
-        if (!proc->killed) {
-          release(&ptable.lock);
-          *stack = p->stack;
-          //cprintf("Stack in join: %p\n", *stack);
-          return pid;
-        }
-        else { 
-          release(&ptable.lock);
-          return -1;
-        }
+        *stack = p->stack;
+        *tempAddr = pid;
+        release(&ptable.lock);
+        return pid;
       }
     }
     

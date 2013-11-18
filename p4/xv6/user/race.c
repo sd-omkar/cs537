@@ -38,7 +38,7 @@ main(int argc, char *argv[])
   assert((pid1 = thread_create(produce, NULL)) > 0);
   assert((pid2 = thread_create(consume, NULL)) > 0);
 
-  for(i = 0; i < 5; i++) {
+  for(i = 0; i < 500; i++) {
     result <<= 1;
     sleep(1);
   }
@@ -58,17 +58,13 @@ void
 produce(void *arg) {
   while(1) {
     lock_acquire(&lock);
-    while(bufsize == N) {
-      printf(1, "P wait\n");
+    while(bufsize == N)
       cv_wait(&nonfull, &lock);
-    }
 
     result <<= 1;
     result |= 1;
-    printf(1, "P %p\n", result);
 
     bufsize++;
-    printf(1, "P signal\n");
     cv_signal(&nonempty);
     lock_release(&lock);
   }
@@ -78,18 +74,14 @@ void
 consume(void *arg) {
   while(1) {
     lock_acquire(&lock);
-    while(bufsize == 0) {
-      printf(1, "C wait\n");
+    while(bufsize == 0)
       cv_wait(&nonempty, &lock);
-    }
 
     result <<= 1;
     result |= 1;
-    printf(1, "C %p\n", result);
 
     bufsize--;
     cv_signal(&nonfull);
-    printf(1, "C signal\n");
     lock_release(&lock);
   }
 }

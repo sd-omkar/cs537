@@ -24,7 +24,7 @@ CC = gcc
 # enable extra warnings
 CFLAGS += -Wall
 # treat warnings as errors
-CFLAGS += -Werror
+#CFLAGS += -Werror
 # produce debugging information for use by gdb
 CFLAGS += -ggdb
 

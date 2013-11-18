@@ -21,11 +21,8 @@ USER_PROGS := \
 	join2\
 	join3\
 	join4\
-	cond\
-	cond2\
-	cond3\
-	cond4\
-	multi
+	my_join2\
+	race
 
 USER_PROGS := $(addprefix user/, $(USER_PROGS))
 

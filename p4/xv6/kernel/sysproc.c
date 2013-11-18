@@ -118,7 +118,9 @@ int sys_join(void) {
   if(argptr(0, (void *)&stack, sizeof(void *)) < 0)
     return -1;
 
-  return join(stack);
+  int ret = join(stack);
+  //cprintf("kernel ret = %d\n", ret);
+  return ret;
 }
 
 int sys_sleepcv(void) {
