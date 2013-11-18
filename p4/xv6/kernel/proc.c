@@ -499,12 +499,6 @@ procdump(void)
 int join(void **stack) {
   // TODO
       
-  //cprintf("sz = %d\n", proc->sz);
-  //cprintf("stack = %d\n", *stack);
-  if (proc->sz - (uint)*stack < 4) {
-    return -1;
-  }
-
   struct proc *p;
   int haveKids, pid;
 
@@ -534,7 +528,7 @@ int join(void **stack) {
         if (!proc->killed) {
           release(&ptable.lock);
           *stack = p->stack;
-          cprintf("Stack in join: %p\n", *stack);
+          //cprintf("Stack in join: %p\n", *stack);
           return pid;
         }
         else { 
