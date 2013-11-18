@@ -230,7 +230,7 @@ wait(void)
     // Scan through table looking for zombie children.
     havekids = 0;
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      if(p->parent != proc)
+      if(p->parent != proc || p->pgdir == proc->pgdir)
         continue;
       havekids = 1;
       if(p->state == ZOMBIE){
@@ -238,10 +238,6 @@ wait(void)
         pid = p->pid;
         kfree(p->kstack);
         p->kstack = 0;
-        //if(p->pgdir != proc->pgdir)
-          freevm(p->pgdir);
-        //else
-          //return pid;
         p->state = UNUSED;
         p->pid = 0;
         p->parent = 0;
@@ -382,18 +378,15 @@ sleep(void *chan, struct spinlock *lk)
 }
 
 void
-sleep2(void *chan, struct spinlock *lk)
+sleep2(void *chan, lock_t *lock)
 {
   if(proc == 0)
     panic("sleep");
 
-  if(lk != &ptable.lock){  //DOC: sleeplock0
-    acquire(&ptable.lock);  //DOC: sleeplock1
-    release(lk);
-  }
+  acquire(&ptable.lock);  //DOC: sleeplock1
 
   // Go to sleep.
-  ((cond_t *)chan)->lock->flag = 0;
+  lock->flag = 0;
   proc->chan = chan;
   proc->state = SLEEPING;
   sched();
@@ -401,11 +394,8 @@ sleep2(void *chan, struct spinlock *lk)
   // Tidy up.
   proc->chan = 0;
 
-  // Reacquire original lock.
-  if(lk != &ptable.lock){  //DOC: sleeplock2
-    release(&ptable.lock);
-    acquire(lk);
-  }
+  release(&ptable.lock);
+  while(xchg(&lock->flag, 1) != 0);
 }
 
 // Wake up all processes sleeping on chan.
@@ -508,6 +498,13 @@ procdump(void)
 
 int join(void **stack) {
   // TODO
+      
+  //cprintf("sz = %d\n", proc->sz);
+  //cprintf("stack = %d\n", *stack);
+  if (proc->sz - (uint)*stack < 4) {
+    return -1;
+  }
+
   struct proc *p;
   int haveKids, pid;
 
@@ -516,8 +513,7 @@ int join(void **stack) {
     haveKids = 0;
 
     for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
-      if (p->parent != proc || p->pgdir != p->parent->pgdir)
-      //if (p->parent != proc)
+      if (p->parent != proc || p->pgdir != proc->pgdir || proc->pid == p->pid)
         continue;
       haveKids = 1;
 
@@ -526,8 +522,6 @@ int join(void **stack) {
         *(uint *)stackAddr = p->tf->ebp;
         *(uint *)stackAddr += 3 * sizeof(void *) - PGSIZE;
         //TODO modify **stack
-        *stack = p->stack;
-        //cprintf("Stack in join: %p\n", *stack);
         pid = p->pid;
         kfree(p->kstack);
         p->kstack = 0;
@@ -537,8 +531,16 @@ int join(void **stack) {
         p->name[0] = 0;
         p->killed = 0;
         
-        release(&ptable.lock);
-        return pid;
+        if (!proc->killed) {
+          release(&ptable.lock);
+          *stack = p->stack;
+          cprintf("Stack in join: %p\n", *stack);
+          return pid;
+        }
+        else { 
+          release(&ptable.lock);
+          return -1;
+        }
       }
     }
     

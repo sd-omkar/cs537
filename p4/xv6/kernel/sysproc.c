@@ -114,10 +114,9 @@ int sys_clone(void) {
 int sys_join(void) {
   // TODO
   void **stack;
-  int stackArg;
 
-  stackArg = argint(0, &stackArg);
-  stack = (void **)stackArg;
+  if(argptr(0, (void *)&stack, sizeof(void *)) < 0)
+    return -1;
 
   return join(stack);
 }
@@ -132,16 +131,11 @@ int sys_sleepcv(void) {
     return -1;
   lock_t *lock = (lock_t *)temp;
 
-  acquire(&tickslock);
-
-  //xchg(&(lock->flag), 0);
   ((cond_t *)cv)->lock = lock;
 
-  sleep2(cv, &tickslock);
+  sleep2(cv, lock);
 
-  release(&tickslock);
-
-  while(xchg(&(lock->flag), 1) != 0);
+  //while(xchg(&(lock->flag), 1) != 0);
   return 0;
 } 
 

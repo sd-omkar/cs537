@@ -20,7 +20,12 @@ USER_PROGS := \
 	join\
 	join2\
 	join3\
-	join4
+	join4\
+	cond\
+	cond2\
+	cond3\
+	cond4\
+	multi
 
 USER_PROGS := $(addprefix user/, $(USER_PROGS))
 

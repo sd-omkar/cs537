@@ -36,6 +36,8 @@ main(int argc, char *argv[])
 
    sbrk(PGSIZE);
    void **join_stack = (void**) ((uint)sbrk(0) - 4);
+   printf(1, "join stack = %d\n", join_stack);
+   printf(1, "join stack +2 = %d\n", (void**)((uint)join_stack+2));
    assert(join((void**)((uint)join_stack + 2)) == -1);
    assert(join(join_stack) == clone_pid);
    assert(stack == *join_stack);

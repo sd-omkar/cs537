@@ -7,9 +7,7 @@ build xv6 using make
 **********************************************************************
 Trying to clean project using make clean
 make clean
-gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/proc.c -MF kernel/proc.d -MT kernel/proc.d -MT kernel/proc.o
-rm -rf kernel/bio.o kernel/console.o kernel/exec.o kernel/file.o kernel/fs.o kernel/ide.o kernel/ioapic.o kernel/kalloc.o kernel/kbd.o kernel/lapic.o kernel/main.o kernel/mp.o kernel/picirq.o kernel/pipe.o kernel/proc.o kernel/spinlock.o kernel/string.o kernel/swtch.o kernel/syscall.o kernel/sysfile.o kernel/sysproc.o kernel/timer.o kernel/trapasm.o kernel/trap.o kernel/uart.o kernel/vectors.o kernel/vm.o kernel/bootmain.o kernel/bootasm.o kernel/multiboot.o kernel/data.o kernel/bootother.o kernel/initcode.o kernel/bio.d kernel/console.d kernel/exec.d kernel/file.d kernel/fs.d kernel/ide.d kernel/ioapic.d kernel/kalloc.d kernel/kbd.d kernel/lapic.d kernel/main.d kernel/mp.d kernel/picirq.d kernel/pipe.d kernel/proc.d kernel/spinlock.d kernel/string.d kernel/swtch.d kernel/syscall.d kernel/sysfile.d kernel/sysproc.d kernel/timer.d kernel/trapasm.d kernel/trap.d kernel/uart.d kernel/vectors.d kernel/vm.d kernel/bootmain.d kernel/bootasm.d kernel/multiboot.d kernel/data.d kernel/bootother.d kernel/initcode.d kernel/vectors.S kernel/bootblock kernel/bootblock.out kernel/bootother.out kernel/initcode.out kernel/kernel bootother initcode xv6.img user/bin user/cat user/echo user/forktest user/grep user/init user/kill user/ln user/ls user/mkdir user/rm user/sh user/stressfs user/tester user/usertests user/wc user/zombie user/join user/join2 user/join3 user/join4 user/cat.o user/echo.o user/forktest.o user/grep.o user/init.o user/kill.o user/ln.o user/ls.o user/mkdir.o user/rm.o user/sh.o user/stressfs.o user/tester.o user/usertests.o user/wc.o user/zombie.o user/join.o user/join2.o user/join3.o user/join4.o user/ulib.o user/usys.o user/printf.o user/umalloc.o user/cat.d user/echo.d user/forktest.d user/grep.d user/init.d user/kill.d user/ln.d user/ls.d user/mkdir.d user/rm.d user/sh.d user/stressfs.d user/tester.d user/usertests.d user/wc.d user/zombie.d user/join.d user/join2.d user/join3.d user/join4.d user/ulib.d user/usys.d user/printf.d user/umalloc.d tools/mkfs tools/mkfs.o tools/mkfs.d fs fs.img .gdbinit .bochsrc dist
+rm -rf kernel/bio.o kernel/console.o kernel/exec.o kernel/file.o kernel/fs.o kernel/ide.o kernel/ioapic.o kernel/kalloc.o kernel/kbd.o kernel/lapic.o kernel/main.o kernel/mp.o kernel/picirq.o kernel/pipe.o kernel/proc.o kernel/spinlock.o kernel/string.o kernel/swtch.o kernel/syscall.o kernel/sysfile.o kernel/sysproc.o kernel/timer.o kernel/trapasm.o kernel/trap.o kernel/uart.o kernel/vectors.o kernel/vm.o kernel/bootmain.o kernel/bootasm.o kernel/multiboot.o kernel/data.o kernel/bootother.o kernel/initcode.o kernel/bio.d kernel/console.d kernel/exec.d kernel/file.d kernel/fs.d kernel/ide.d kernel/ioapic.d kernel/kalloc.d kernel/kbd.d kernel/lapic.d kernel/main.d kernel/mp.d kernel/picirq.d kernel/pipe.d kernel/proc.d kernel/spinlock.d kernel/string.d kernel/swtch.d kernel/syscall.d kernel/sysfile.d kernel/sysproc.d kernel/timer.d kernel/trapasm.d kernel/trap.d kernel/uart.d kernel/vectors.d kernel/vm.d kernel/bootmain.d kernel/bootasm.d kernel/multiboot.d kernel/data.d kernel/bootother.d kernel/initcode.d kernel/vectors.S kernel/bootblock kernel/bootblock.out kernel/bootother.out kernel/initcode.out kernel/kernel bootother initcode xv6.img user/bin user/cat user/echo user/forktest user/grep user/init user/kill user/ln user/ls user/mkdir user/rm user/sh user/stressfs user/tester user/usertests user/wc user/zombie user/join user/join2 user/join3 user/join4 user/cond user/cond2 user/cond3 user/cond4 user/multi user/cat.o user/echo.o user/forktest.o user/grep.o user/init.o user/kill.o user/ln.o user/ls.o user/mkdir.o user/rm.o user/sh.o user/stressfs.o user/tester.o user/usertests.o user/wc.o user/zombie.o user/join.o user/join2.o user/join3.o user/join4.o user/cond.o user/cond2.o user/cond3.o user/cond4.o user/multi.o user/ulib.o user/usys.o user/printf.o user/umalloc.o user/cat.d user/echo.d user/forktest.d user/grep.d user/init.d user/kill.d user/ln.d user/ls.d user/mkdir.d user/rm.d user/sh.d user/stressfs.d user/tester.d user/usertests.d user/wc.d user/zombie.d user/join.d user/join2.d user/join3.d user/join4.d user/cond.d user/cond2.d user/cond3.d user/cond4.d user/multi.d user/ulib.d user/usys.d user/printf.d user/umalloc.d tools/mkfs tools/mkfs.o tools/mkfs.d fs fs.img .gdbinit .bochsrc dist
 Trying to build project using make
 make
 Makefile:149: kernel/bio.d: No such file or directory
@@ -65,6 +63,11 @@ Makefile:149: user/join.d: No such file or directory
 Makefile:149: user/join2.d: No such file or directory
 Makefile:149: user/join3.d: No such file or directory
 Makefile:149: user/join4.d: No such file or directory
+Makefile:149: user/cond.d: No such file or directory
+Makefile:149: user/cond2.d: No such file or directory
+Makefile:149: user/cond3.d: No such file or directory
+Makefile:149: user/cond4.d: No such file or directory
+Makefile:149: user/multi.d: No such file or directory
 Makefile:149: user/ulib.d: No such file or directory
 Makefile:149: user/usys.d: No such file or directory
 Makefile:149: user/printf.d: No such file or directory
@@ -80,6 +83,16 @@ gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno
 		-M -MG user/usys.S -MF user/usys.d -MT user/usys.d -MT user/usys.o
 gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
 		-M -MG user/ulib.c -MF user/ulib.d -MT user/ulib.d -MT user/ulib.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/multi.c -MF user/multi.d -MT user/multi.d -MT user/multi.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/cond4.c -MF user/cond4.d -MT user/cond4.d -MT user/cond4.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/cond3.c -MF user/cond3.d -MT user/cond3.d -MT user/cond3.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/cond2.c -MF user/cond2.d -MT user/cond2.d -MT user/cond2.o
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
+		-M -MG user/cond.c -MF user/cond.d -MT user/cond.d -MT user/cond.o
 gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
 		-M -MG user/join4.c -MF user/join4.d -MT user/join4.d -MT user/join4.o
 gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
@@ -242,15 +255,15 @@ ld  -m    elf_i386 -nostdlib --omagic \
 dd if=/dev/zero of=xv6.img count=10000
 10000+0 records in
 10000+0 records out
-5120000 bytes (5.1 MB) copied, 0.0220347 s, 232 MB/s
+5120000 bytes (5.1 MB) copied, 0.0220648 s, 232 MB/s
 dd if=kernel/bootblock of=xv6.img conv=notrunc
 1+0 records in
 1+0 records out
-512 bytes (512 B) copied, 1.8315e-05 s, 28.0 MB/s
+512 bytes (512 B) copied, 1.8279e-05 s, 28.0 MB/s
 dd if=kernel/kernel of=xv6.img seek=1 conv=notrunc
-257+1 records in
-257+1 records out
-131660 bytes (132 kB) copied, 0.000395926 s, 333 MB/s
+256+1 records in
+256+1 records out
+131576 bytes (132 kB) copied, 0.000400409 s, 329 MB/s
 gcc -c  -iquote include -Wall -Werror -ggdb  -o tools/mkfs.o tools/mkfs.c
 gcc  tools/mkfs.o -o tools/mkfs
 mkdir -p fs
@@ -320,16 +333,36 @@ cp user/bin/join3 fs/join3
 gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/join4.o user/join4.c
 ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/join4 user/join4.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
 cp user/bin/join4 fs/join4
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/cond.o user/cond.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/cond user/cond.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/cond fs/cond
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/cond2.o user/cond2.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/cond2 user/cond2.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/cond2 fs/cond2
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/cond3.o user/cond3.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/cond3 user/cond3.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/cond3 fs/cond3
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/cond4.o user/cond4.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/cond4 user/cond4.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/cond4 fs/cond4
+gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/multi.o user/multi.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/multi user/multi.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/multi fs/multi
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -343,9 +376,9 @@ wc
 join2
 sh
 kill
-balloc: first 570 blocks have been allocated
+balloc: first 700 blocks have been allocated
 balloc: write bitmap block at sector 28
-rm user/bin/stressfs user/bin/join2 user/bin/grep user/bin/tester user/bin/join user/bin/kill user/bin/cat user/bin/mkdir user/bin/init user/bin/join4 user/bin/rm user/bin/join3 user/bin/echo user/bin/ls user/bin/ln user/bin/usertests user/bin/sh user/bin/wc user/bin/zombie
+rm user/bin/cond3 user/bin/stressfs user/bin/join2 user/bin/grep user/bin/tester user/bin/join user/bin/kill user/bin/cond user/bin/cat user/bin/mkdir user/bin/multi user/bin/cond2 user/bin/init user/bin/join4 user/bin/rm user/bin/join3 user/bin/echo user/bin/ls user/bin/ln user/bin/usertests user/bin/sh user/bin/wc user/bin/cond4 user/bin/zombie
 
 
 test build PASSED
@@ -369,13 +402,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -389,7 +427,7 @@ wc
 join2
 sh
 kill
-balloc: first 572 blocks have been allocated
+balloc: first 702 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -404,7 +442,8 @@ init: starting sh
 $ tester
 tester
 TEST PASSED
-
+zombie!
+$ 
 
 test clone PASSED
  (clone and verify that address space is shared)
@@ -427,13 +466,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -447,7 +491,7 @@ wc
 join2
 sh
 kill
-balloc: first 573 blocks have been allocated
+balloc: first 703 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -462,7 +506,8 @@ init: starting sh
 $ tester
 tester
 TEST PASSED
-
+zombie!
+$ 
 
 test clone2 PASSED
  (clone and play with the argument)
@@ -485,13 +530,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -505,7 +555,7 @@ wc
 join2
 sh
 kill
-balloc: first 574 blocks have been allocated
+balloc: first 704 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -543,13 +593,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -563,7 +618,7 @@ wc
 join2
 sh
 kill
-balloc: first 573 blocks have been allocated
+balloc: first 703 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -601,13 +656,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -621,7 +681,7 @@ wc
 join2
 sh
 kill
-balloc: first 573 blocks have been allocated
+balloc: first 703 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -636,7 +696,8 @@ init: starting sh
 $ tester
 tester
 TEST PASSED
-
+zombie!
+$ 
 
 test stack PASSED
  (set up stack correctly (and without extra items))
@@ -659,13 +720,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -679,7 +745,7 @@ wc
 join2
 sh
 kill
-balloc: first 574 blocks have been allocated
+balloc: first 704 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -693,15 +759,14 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
+Stack in join: 8000
 8000
-0
-user/tester.c: 42 assert failed (stack == join_stack)
-TEST FAILED
+8000
+TEST PASSED
+$ 
 
-
-test join FAILED
+test join PASSED
  (clone and join syscalls)
- tester failed
 
 
 **********************************************************************
@@ -721,13 +786,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -741,7 +811,7 @@ wc
 join2
 sh
 kill
-balloc: first 574 blocks have been allocated
+balloc: first 704 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -755,7 +825,8 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
-user/tester.c: 39 assert failed (join((void**)((uint)join_stack + 2)) == -1)
+Stack in join: 8000
+user/tester.c: 40 assert failed (join(join_stack) == clone_pid)
 TEST FAILED
 
 
@@ -781,13 +852,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -801,7 +877,7 @@ wc
 join2
 sh
 kill
-balloc: first 572 blocks have been allocated
+balloc: first 702 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -816,7 +892,7 @@ init: starting sh
 $ tester
 tester
 TEST PASSED
-
+zombie
 
 test join3 PASSED
  (join should not handle child processes (forked))
@@ -839,13 +915,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -859,7 +940,7 @@ wc
 join2
 sh
 kill
-balloc: first 574 blocks have been allocated
+balloc: first 704 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -873,16 +954,12 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
-xv6...
-lapicinit: 1 0xfee00000
-cpu1: starting
-cpu0: starting
-init: starting sh
-$ 
+Stack in join: 8000
+TEST PASSED
 
-test join4 FAILED
+
+test join4 PASSED
  (join, not wait, should handle threads)
- tester failed
 
 
 **********************************************************************
@@ -902,13 +979,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -922,7 +1004,7 @@ wc
 join2
 sh
 kill
-balloc: first 573 blocks have been allocated
+balloc: first 703 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -936,6 +1018,7 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
+Stack in join: 8000
 TEST PASSED
 
 
@@ -960,13 +1043,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -980,7 +1068,7 @@ wc
 join2
 sh
 kill
-balloc: first 573 blocks have been allocated
+balloc: first 703 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -994,6 +1082,2006 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
+Stack in join: 8000
 TEST PASSED
 
 
@@ -1018,13 +3106,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -1038,7 +3131,7 @@ wc
 join2
 sh
 kill
-balloc: first 575 blocks have been allocated
+balloc: first 705 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1052,16 +3145,41 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
-pid 31 tester: trap 14 err 4 on cpu 1 eip 0x3 addr 0x7d8314ed--kill proc
-pid 32 tester: trap 14 err 4 on cpu 1 eip 0x3 addr 0x7d8314ee--kill proc
-pid 33 tester: trap 14 err 4 on cpu 1 eip 0x3 addr 0x7d8314ef--kill proc
-pid 9 tester: trap 14 err 5 on cpu 0 eip 0xcf63 addr 0x3af5d8--kill proc
-pid 3 tester: trap 14 err 5 on cpu 0 eip 0x1f97 addr 0xffffffc8--kill proc
-$ 
+Stack in join: 8000
+Stack in join: 6000
+Stack in join: 4000
+Stack in join: 10000
+Stack in join: e000
+Stack in join: 18000
+Stack in join: 16000
+Stack in join: 14000
+Stack in join: 20000
+Stack in join: 1e000
+Stack in join: 1c000
+Stack in join: 28000
+Stack in join: 26000
+Stack in join: 24000
+Stack in join: 30000
+Stack in join: 2e000
+Stack in join: 2c000
+Stack in join: 38000
+Stack in join: 36000
+Stack in join: 34000
+Stack in join: 40000
+Stack in join: 3e000
+Stack in join: 3c000
+Stack in join: 46000
+Stack in join: 50000
+Stack in join: 4e000
+Stack in join: c000
+Stack in join: 48000
+Stack in join: 44000
+Stack in join: 4c000
+TEST PASSED
 
-test multi FAILED
+
+test multi PASSED
  (multiple threads with some depth of function calls)
- tester failed
 
 
 **********************************************************************
@@ -1081,13 +3199,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -1101,7 +3224,7 @@ wc
 join2
 sh
 kill
-balloc: first 573 blocks have been allocated
+balloc: first 703 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1115,6 +3238,36 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
+Stack in join: 8000
+Stack in join: 6000
+Stack in join: 4000
+Stack in join: 10000
+Stack in join: e000
+Stack in join: 18000
+Stack in join: 16000
+Stack in join: 14000
+Stack in join: 20000
+Stack in join: 1e000
+Stack in join: 1c000
+Stack in join: 28000
+Stack in join: 26000
+Stack in join: 24000
+Stack in join: 30000
+Stack in join: 2e000
+Stack in join: 2c000
+Stack in join: 38000
+Stack in join: 36000
+Stack in join: 34000
+Stack in join: 40000
+Stack in join: 3e000
+Stack in join: 46000
+Stack in join: 44000
+Stack in join: 50000
+Stack in join: 4e000
+Stack in join: 4c000
+Stack in join: 3c000
+Stack in join: c000
+Stack in join: 48000
 TEST PASSED
 
 
@@ -1139,13 +3292,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -1159,7 +3317,7 @@ wc
 join2
 sh
 kill
-balloc: first 573 blocks have been allocated
+balloc: first 703 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1173,6 +3331,7 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
+Stack in join: 8000
 TEST PASSED
 
 
@@ -1197,13 +3356,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -1217,7 +3381,7 @@ wc
 join2
 sh
 kill
-balloc: first 573 blocks have been allocated
+balloc: first 703 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1231,7 +3395,9 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
+Stack in join: 8000
 TEST PASSED
+
 
 test cond2 PASSED
  (test cv_wait and cv_signal, don't wakeup on wrong cv)
@@ -1254,13 +3420,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -1274,7 +3445,7 @@ wc
 join2
 sh
 kill
-balloc: first 574 blocks have been allocated
+balloc: first 704 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1288,8 +3459,38 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
+Stack in join: 8000
+Stack in join: 6000
+Stack in join: 4000
+Stack in join: 10000
+Stack in join: e000
+Stack in join: c000
+Stack in join: 18000
+Stack in join: 16000
+Stack in join: 14000
+Stack in join: 20000
+Stack in join: 1e000
+Stack in join: 1c000
+Stack in join: 28000
+Stack in join: 26000
+Stack in join: 24000
+Stack in join: 30000
+Stack in join: 2e000
+Stack in join: 2c000
+Stack in join: 38000
+Stack in join: 36000
+Stack in join: 34000
+Stack in join: 40000
+Stack in join: 3e000
+Stack in join: 3c000
+Stack in join: 48000
+Stack in join: 46000
+Stack in join: 44000
+Stack in join: 50000
+Stack in join: 4e000
+Stack in join: 4c000
 TEST PASSED
-
+$ 
 
 test cond3 PASSED
  (test cv_wait and cv_signal, signal, don't broadcast)
@@ -1312,13 +3513,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -1332,7 +3538,7 @@ wc
 join2
 sh
 kill
-balloc: first 575 blocks have been allocated
+balloc: first 705 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1346,6 +3552,7 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
+Stack in join: 8000
 
 
 test race FAILED
@@ -1370,13 +3577,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -1390,7 +3602,7 @@ wc
 join2
 sh
 kill
-balloc: first 573 blocks have been allocated
+balloc: first 703 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1405,7 +3617,9 @@ init: starting sh
 $ tester
 tester
 pid 4 tester: trap 14 err 5 on cpu 1 eip 0xffffffff addr 0xffffffff--kill proc
+Stack in join: 8000
 TEST PASSED
+
 
 test noexit PASSED
  (no exit call in thread, should trap at bogus address)
@@ -1428,13 +3642,18 @@ cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
 join3
+multi
 rm
+cond
 stressfs
 tester
 grep
 join
+cond4
 init
+cond3
 join4
+cond2
 mkdir
 cat
 zombie
@@ -1448,7 +3667,7 @@ wc
 join2
 sh
 kill
-balloc: first 574 blocks have been allocated
+balloc: first 704 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1462,6 +3681,36 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
+Stack in join: 8000
+Stack in join: 6000
+Stack in join: 4000
+Stack in join: 10000
+Stack in join: e000
+Stack in join: c000
+Stack in join: 18000
+Stack in join: 16000
+Stack in join: 14000
+Stack in join: 20000
+Stack in join: 1e000
+Stack in join: 1c000
+Stack in join: 28000
+Stack in join: 26000
+Stack in join: 24000
+Stack in join: 30000
+Stack in join: 2e000
+Stack in join: 2c000
+Stack in join: 38000
+Stack in join: 36000
+Stack in join: 34000
+Stack in join: 40000
+Stack in join: 3e000
+Stack in join: 3c000
+Stack in join: 48000
+Stack in join: 46000
+Stack in join: 44000
+Stack in join: 50000
+Stack in join: 4e000
+Stack in join: 4c000
 TEST PASSED
 
 
@@ -1488,9 +3737,8 @@ test badclone PASSED
 test stack PASSED
  (set up stack correctly (and without extra items))
 
-test join FAILED
+test join PASSED
  (clone and join syscalls)
- tester failed
 
 test join2 FAILED
  (join argument checking)
@@ -1499,9 +3747,8 @@ test join2 FAILED
 test join3 PASSED
  (join should not handle child processes (forked))
 
-test join4 FAILED
+test join4 PASSED
  (join, not wait, should handle threads)
- tester failed
 
 test thread PASSED
  (thread user library functions)
@@ -1509,9 +3756,8 @@ test thread PASSED
 test thread2 PASSED
  (memory leaks from thread library?)
 
-test multi FAILED
+test multi PASSED
  (multiple threads with some depth of function calls)
- tester failed
 
 test locks PASSED
  (test lock correctness)
@@ -1535,5 +3781,5 @@ test noexit PASSED
 test size PASSED
  (check that address space size is updated in threads)
 
-Passed 15 of 20 tests.
-Overall 15 of 20
+Passed 18 of 20 tests.
+Overall 18 of 20
