@@ -17,11 +17,9 @@ USER_PROGS := \
 	usertests\
 	wc\
 	zombie\
-	join\
-	join2\
-	join3\
-	join4\
-	my_join2\
+	cond\
+	cond2\
+	cond3\
 	race
 
 USER_PROGS := $(addprefix user/, $(USER_PROGS))

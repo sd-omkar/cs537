@@ -1,0 +1,157 @@
+/home.html
+/home.html
+/home.html
+/home.html
+/home.html
+/home.html
+Header: HTTP/1.0 200 OK
+Header: Server: CS537 Web Server
+Length = 253
+Header: Content-Length: 253
+Header: Content-Type: text/html
+<html>
+
+<head>
+  <title>537 Test Web Page</title>
+</head>
+
+<body>
+
+<h2> 537 Test Web Page</h2>
+
+<p> Test web page: simply awesome.</p>
+
+<p> Click <a href="http://www.cs.wisc.edu/~remzi"> here</a> for something
+even more awesome.</p>
+
+</body>
+</html>
+
+
+
+Header: HTTP/1.0 200 OK
+Header: Server: CS537 Web Server
+Length = 253
+Header: Content-Length: 253
+Header: Content-Type: text/html
+<html>
+
+<head>
+  <title>537 Test Web Page</title>
+</head>
+
+<body>
+
+<h2> 537 Test Web Page</h2>
+
+<p> Test web page: simply awesome.</p>
+
+<p> Click <a href="http://www.cs.wisc.edu/~remzi"> here</a> for something
+even more awesome.</p>
+
+</body>
+</html>
+
+
+
+Header: HTTP/1.0 200 OK
+Header: Server: CS537 Web Server
+Length = 253
+Header: Content-Length: 253
+Header: Content-Type: text/html
+<html>
+
+<head>
+  <title>537 Test Web Page</title>
+</head>
+
+<body>
+
+<h2> 537 Test Web Page</h2>
+
+<p> Test web page: simply awesome.</p>
+
+<p> Click <a href="http://www.cs.wisc.edu/~remzi"> here</a> for something
+even more awesome.</p>
+
+</body>
+</html>
+
+
+
+Header: HTTP/1.0 200 OK
+Header: Server: CS537 Web Server
+Length = 253
+Header: Content-Length: 253
+Header: Content-Type: text/html
+<html>
+
+<head>
+  <title>537 Test Web Page</title>
+</head>
+
+<body>
+
+<h2> 537 Test Web Page</h2>
+
+<p> Test web page: simply awesome.</p>
+
+<p> Click <a href="http://www.cs.wisc.edu/~remzi"> here</a> for something
+even more awesome.</p>
+
+</body>
+</html>
+
+
+
+Header: HTTP/1.0 200 OK
+Header: Server: CS537 Web Server
+Length = 253
+Header: Content-Length: 253
+Header: Content-Type: text/html
+<html>
+
+<head>
+  <title>537 Test Web Page</title>
+</head>
+
+<body>
+
+<h2> 537 Test Web Page</h2>
+
+<p> Test web page: simply awesome.</p>
+
+<p> Click <a href="http://www.cs.wisc.edu/~remzi"> here</a> for something
+even more awesome.</p>
+
+</body>
+</html>
+
+
+
+Header: HTTP/1.0 200 OK
+Header: Server: CS537 Web Server
+Length = 253
+Header: Content-Length: 253
+Header: Content-Type: text/html
+<html>
+
+<head>
+  <title>537 Test Web Page</title>
+</head>
+
+<body>
+
+<h2> 537 Test Web Page</h2>
+
+<p> Test web page: simply awesome.</p>
+
+<p> Click <a href="http://www.cs.wisc.edu/~remzi"> here</a> for something
+even more awesome.</p>
+
+</body>
+</html>
+
+
+
+main: end

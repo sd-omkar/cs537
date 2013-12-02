@@ -133,7 +133,7 @@ int sys_sleepcv(void) {
     return -1;
   lock_t *lock = (lock_t *)temp;
 
-  ((cond_t *)cv)->lock = lock;
+  //((cond_t *)cv)->lock = lock;
 
   sleep2(cv, lock);
 

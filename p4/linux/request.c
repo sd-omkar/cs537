@@ -147,26 +147,19 @@ void requestServeStatic(int fd, char *filename, int filesize)
 }
 
 // handle a request
-void requestHandle(int fd)
+void requestHandle(int fd,char* buf)
 {
-
    int is_static;
    struct stat sbuf;
-   char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE];
+   char method[MAXLINE], uri[MAXLINE], version[MAXLINE];
    char filename[MAXLINE], cgiargs[MAXLINE];
-   rio_t rio;
-
-   Rio_readinitb(&rio, fd);
-   Rio_readlineb(&rio, buf, MAXLINE);
    sscanf(buf, "%s %s %s", method, uri, version);
-
-   printf("%s %s %s\n", method, uri, version);
+//   printf("%s %s %s\n", method, uri, version);
 
    if (strcasecmp(method, "GET")) {
       requestError(fd, method, "501", "Not Implemented", "CS537 Server does not implement this method");
       return;
    }
-   requestReadhdrs(&rio);
 
    is_static = requestParseURI(uri, filename, cgiargs);
    if (stat(filename, &sbuf) < 0) {
@@ -188,5 +181,3 @@ void requestHandle(int fd)
       requestServeDynamic(fd, filename, cgiargs);
    }
 }
-
-

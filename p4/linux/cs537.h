@@ -47,6 +47,24 @@ typedef struct {
 } rio_t;
 /* $end rio_t */
 
+struct server_reg_t {
+ int algo;             // 0 - FIFO, 1 - SFNF, 2 - SFF
+ int buff_put_ind;     // in case of FIFO used to indicate index to insert into
+ int buff_get_ind;     // in case of FIFO used to indicate index to pop element
+ int buff_count;       // size of the buffer that is filled - valid for all algos
+ int* buffer;	       // stores the fd values
+ int buffer_sz;	       // total buffer size
+ int* valid;           // used in SFNF and SFF - to indicate if buffer spot is filled
+ int* size_filename;   // corresponding size of filename
+ int* size_file;       // corresponding size of file
+ int port;	       // port number used for transactions
+ int thread_num;       // number of threads
+ pthread_cond_t* empty;// condition signal
+ pthread_cond_t* fill; // condition signal
+ pthread_mutex_t* mutex;//mutex lock
+ char** fileinfo;	// used to store the pointers to request buffer
+};
+
 /* External variables */
 extern int h_errno;    /* defined by BIND for DNS errors */ 
 extern char **environ; /* defined by libc */
@@ -120,5 +138,11 @@ int open_listenfd(int portno);
 /* Wrappers for client/server helper functions */
 int Open_clientfd(char *hostname, int port);
 int Open_listenfd(int port); 
+
+void getargs2(struct server_reg_t* server_reg,int argc, char *argv[]);
+void put(int value,struct server_reg_t* server_reg,char* buff_ptr,int file_sz,int filename_sz);
+int get(struct server_reg_t* server_reg,char** buff_ptr);
+//void producer(int fd,struct server_reg_t* server_reg,char* buff_ptr);
+//void *consumer(void* arg);
 
 #endif /* __CSAPP_H__ */

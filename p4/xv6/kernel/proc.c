@@ -382,20 +382,48 @@ sleep2(void *chan, lock_t *lock)
 {
   if(proc == 0)
     panic("sleep");
-
+  
   acquire(&ptable.lock);  //DOC: sleeplock1
 
   // Go to sleep.
-  lock->flag = 0;
-  proc->chan = chan;
-  proc->state = SLEEPING;
-  sched();
+  //cprintf("sleeping %d\n", proc->pid);
+  
+  if(0 == 1) {
+    proc->chan = chan;
+    //cprintf("sleep %d\n", proc->pid);
+    proc->state = SLEEPING;
+  
+    int intena;
+    if(!holding(&ptable.lock))
+      panic("sched ptable.lock");
+    if(cpu->ncli != 1)
+      panic("sched locks");
+    if(proc->state == RUNNING)
+      panic("sched running");
+    if(readeflags()&FL_IF)
+      panic("sched interruptible");
+    intena = cpu->intena;
+    swtch(&proc->context, cpu->scheduler);
+  
+    lock->flag = 0;
+    cpu->intena = intena;
+  }
+  else {
+    proc->chan = chan;
+    //cprintf("sleep %d\n", proc->pid);
+    proc->state = SLEEPING;
+    lock->flag = 0;
+    sched();
+  }
 
   // Tidy up.
   proc->chan = 0;
 
+  cprintf("wake %d\n", proc->pid);
   release(&ptable.lock);
   while(xchg(&lock->flag, 1) != 0);
+  //cprintf("waking %d\n", proc->pid);
+  
 }
 
 // Wake up all processes sleeping on chan.

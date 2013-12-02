@@ -56,11 +56,9 @@ Makefile:149: user/tester.d: No such file or directory
 Makefile:149: user/usertests.d: No such file or directory
 Makefile:149: user/wc.d: No such file or directory
 Makefile:149: user/zombie.d: No such file or directory
-Makefile:149: user/join.d: No such file or directory
-Makefile:149: user/join2.d: No such file or directory
-Makefile:149: user/join3.d: No such file or directory
-Makefile:149: user/join4.d: No such file or directory
-Makefile:149: user/my_join2.d: No such file or directory
+Makefile:149: user/cond.d: No such file or directory
+Makefile:149: user/cond2.d: No such file or directory
+Makefile:149: user/cond3.d: No such file or directory
 Makefile:149: user/race.d: No such file or directory
 Makefile:149: user/ulib.d: No such file or directory
 Makefile:149: user/usys.d: No such file or directory
@@ -80,15 +78,11 @@ gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
 		-M -MG user/race.c -MF user/race.d -MT user/race.d -MT user/race.o
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG user/my_join2.c -MF user/my_join2.d -MT user/my_join2.d -MT user/my_join2.o
+		-M -MG user/cond3.c -MF user/cond3.d -MT user/cond3.d -MT user/cond3.o
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG user/join4.c -MF user/join4.d -MT user/join4.d -MT user/join4.o
+		-M -MG user/cond2.c -MF user/cond2.d -MT user/cond2.d -MT user/cond2.o
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG user/join3.c -MF user/join3.d -MT user/join3.d -MT user/join3.o
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG user/join2.c -MF user/join2.d -MT user/join2.d -MT user/join2.o
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG user/join.c -MF user/join.d -MT user/join.d -MT user/join.o
+		-M -MG user/cond.c -MF user/cond.d -MT user/cond.d -MT user/cond.o
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
 		-M -MG user/zombie.c -MF user/zombie.d -MT user/zombie.d -MT user/zombie.o
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
@@ -188,7 +182,7 @@ gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing
 		-M -MG kernel/console.c -MF kernel/console.d -MT kernel/console.d -MT kernel/console.o
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
 		-M -MG kernel/bio.c -MF kernel/bio.d -MT kernel/bio.d -MT kernel/bio.o
-rm -rf kernel/bio.o kernel/console.o kernel/exec.o kernel/file.o kernel/fs.o kernel/ide.o kernel/ioapic.o kernel/kalloc.o kernel/kbd.o kernel/lapic.o kernel/main.o kernel/mp.o kernel/picirq.o kernel/pipe.o kernel/proc.o kernel/spinlock.o kernel/string.o kernel/swtch.o kernel/syscall.o kernel/sysfile.o kernel/sysproc.o kernel/timer.o kernel/trapasm.o kernel/trap.o kernel/uart.o kernel/vectors.o kernel/vm.o kernel/bootmain.o kernel/bootasm.o kernel/multiboot.o kernel/data.o kernel/bootother.o kernel/initcode.o kernel/bio.d kernel/console.d kernel/exec.d kernel/file.d kernel/fs.d kernel/ide.d kernel/ioapic.d kernel/kalloc.d kernel/kbd.d kernel/lapic.d kernel/main.d kernel/mp.d kernel/picirq.d kernel/pipe.d kernel/proc.d kernel/spinlock.d kernel/string.d kernel/swtch.d kernel/syscall.d kernel/sysfile.d kernel/sysproc.d kernel/timer.d kernel/trapasm.d kernel/trap.d kernel/uart.d kernel/vectors.d kernel/vm.d kernel/bootmain.d kernel/bootasm.d kernel/multiboot.d kernel/data.d kernel/bootother.d kernel/initcode.d kernel/vectors.S kernel/bootblock kernel/bootblock.out kernel/bootother.out kernel/initcode.out kernel/kernel bootother initcode xv6.img user/bin user/cat user/echo user/forktest user/grep user/init user/kill user/ln user/ls user/mkdir user/rm user/sh user/stressfs user/tester user/usertests user/wc user/zombie user/join user/join2 user/join3 user/join4 user/my_join2 user/race user/cat.o user/echo.o user/forktest.o user/grep.o user/init.o user/kill.o user/ln.o user/ls.o user/mkdir.o user/rm.o user/sh.o user/stressfs.o user/tester.o user/usertests.o user/wc.o user/zombie.o user/join.o user/join2.o user/join3.o user/join4.o user/my_join2.o user/race.o user/ulib.o user/usys.o user/printf.o user/umalloc.o user/cat.d user/echo.d user/forktest.d user/grep.d user/init.d user/kill.d user/ln.d user/ls.d user/mkdir.d user/rm.d user/sh.d user/stressfs.d user/tester.d user/usertests.d user/wc.d user/zombie.d user/join.d user/join2.d user/join3.d user/join4.d user/my_join2.d user/race.d user/ulib.d user/usys.d user/printf.d user/umalloc.d tools/mkfs tools/mkfs.o tools/mkfs.d fs fs.img .gdbinit .bochsrc dist
+rm -rf kernel/bio.o kernel/console.o kernel/exec.o kernel/file.o kernel/fs.o kernel/ide.o kernel/ioapic.o kernel/kalloc.o kernel/kbd.o kernel/lapic.o kernel/main.o kernel/mp.o kernel/picirq.o kernel/pipe.o kernel/proc.o kernel/spinlock.o kernel/string.o kernel/swtch.o kernel/syscall.o kernel/sysfile.o kernel/sysproc.o kernel/timer.o kernel/trapasm.o kernel/trap.o kernel/uart.o kernel/vectors.o kernel/vm.o kernel/bootmain.o kernel/bootasm.o kernel/multiboot.o kernel/data.o kernel/bootother.o kernel/initcode.o kernel/bio.d kernel/console.d kernel/exec.d kernel/file.d kernel/fs.d kernel/ide.d kernel/ioapic.d kernel/kalloc.d kernel/kbd.d kernel/lapic.d kernel/main.d kernel/mp.d kernel/picirq.d kernel/pipe.d kernel/proc.d kernel/spinlock.d kernel/string.d kernel/swtch.d kernel/syscall.d kernel/sysfile.d kernel/sysproc.d kernel/timer.d kernel/trapasm.d kernel/trap.d kernel/uart.d kernel/vectors.d kernel/vm.d kernel/bootmain.d kernel/bootasm.d kernel/multiboot.d kernel/data.d kernel/bootother.d kernel/initcode.d kernel/vectors.S kernel/bootblock kernel/bootblock.out kernel/bootother.out kernel/initcode.out kernel/kernel bootother initcode xv6.img user/bin user/cat user/echo user/forktest user/grep user/init user/kill user/ln user/ls user/mkdir user/rm user/sh user/stressfs user/tester user/usertests user/wc user/zombie user/cond user/cond2 user/cond3 user/race user/cat.o user/echo.o user/forktest.o user/grep.o user/init.o user/kill.o user/ln.o user/ls.o user/mkdir.o user/rm.o user/sh.o user/stressfs.o user/tester.o user/usertests.o user/wc.o user/zombie.o user/cond.o user/cond2.o user/cond3.o user/race.o user/ulib.o user/usys.o user/printf.o user/umalloc.o user/cat.d user/echo.d user/forktest.d user/grep.d user/init.d user/kill.d user/ln.d user/ls.d user/mkdir.d user/rm.d user/sh.d user/stressfs.d user/tester.d user/usertests.d user/wc.d user/zombie.d user/cond.d user/cond2.d user/cond3.d user/race.d user/ulib.d user/usys.d user/printf.d user/umalloc.d tools/mkfs tools/mkfs.o tools/mkfs.d fs fs.img .gdbinit .bochsrc dist
 Trying to build project using make
 make
 Makefile:149: kernel/bio.d: No such file or directory
@@ -240,11 +234,9 @@ Makefile:149: user/tester.d: No such file or directory
 Makefile:149: user/usertests.d: No such file or directory
 Makefile:149: user/wc.d: No such file or directory
 Makefile:149: user/zombie.d: No such file or directory
-Makefile:149: user/join.d: No such file or directory
-Makefile:149: user/join2.d: No such file or directory
-Makefile:149: user/join3.d: No such file or directory
-Makefile:149: user/join4.d: No such file or directory
-Makefile:149: user/my_join2.d: No such file or directory
+Makefile:149: user/cond.d: No such file or directory
+Makefile:149: user/cond2.d: No such file or directory
+Makefile:149: user/cond3.d: No such file or directory
 Makefile:149: user/race.d: No such file or directory
 Makefile:149: user/ulib.d: No such file or directory
 Makefile:149: user/usys.d: No such file or directory
@@ -264,15 +256,11 @@ gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
 		-M -MG user/race.c -MF user/race.d -MT user/race.d -MT user/race.o
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG user/my_join2.c -MF user/my_join2.d -MT user/my_join2.d -MT user/my_join2.o
+		-M -MG user/cond3.c -MF user/cond3.d -MT user/cond3.d -MT user/cond3.o
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG user/join4.c -MF user/join4.d -MT user/join4.d -MT user/join4.o
+		-M -MG user/cond2.c -MF user/cond2.d -MT user/cond2.d -MT user/cond2.o
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG user/join3.c -MF user/join3.d -MT user/join3.d -MT user/join3.o
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG user/join2.c -MF user/join2.d -MT user/join2.d -MT user/join2.o
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG user/join.c -MF user/join.d -MT user/join.d -MT user/join.o
+		-M -MG user/cond.c -MF user/cond.d -MT user/cond.d -MT user/cond.o
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
 		-M -MG user/zombie.c -MF user/zombie.d -MT user/zombie.d -MT user/zombie.o
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
@@ -397,7 +385,7 @@ gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/pipe.o kernel/pipe.c
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/proc.o kernel/proc.c
 kernel/proc.c: In function ‘join’:
-kernel/proc.c:516: warning: initialization makes pointer from integer without a cast
+kernel/proc.c:544: warning: initialization makes pointer from integer without a cast
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/spinlock.o kernel/spinlock.c
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o kernel/string.o kernel/string.c
 gcc  -I include -nostdinc -ggdb  -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c kernel/swtch.S -o kernel/swtch.o
@@ -429,15 +417,15 @@ ld  -m    elf_i386 -nostdlib --omagic \
 dd if=/dev/zero of=xv6.img count=10000
 10000+0 records in
 10000+0 records out
-5120000 bytes (5.1 MB) copied, 0.0212151 s, 241 MB/s
+5120000 bytes (5.1 MB) copied, 0.0217446 s, 235 MB/s
 dd if=kernel/bootblock of=xv6.img conv=notrunc
 1+0 records in
 1+0 records out
-512 bytes (512 B) copied, 2.4177e-05 s, 21.2 MB/s
+512 bytes (512 B) copied, 1.9546e-05 s, 26.2 MB/s
 dd if=kernel/kernel of=xv6.img seek=1 conv=notrunc
-257+1 records in
-257+1 records out
-131612 bytes (132 kB) copied, 0.000380791 s, 346 MB/s
+256+1 records in
+256+1 records out
+131564 bytes (132 kB) copied, 0.0003969 s, 331 MB/s
 gcc -c  -iquote include -Wall -ggdb  -o tools/mkfs.o tools/mkfs.c
 gcc  tools/mkfs.o -o tools/mkfs
 mkdir -p fs
@@ -495,52 +483,44 @@ cp user/bin/wc fs/wc
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/zombie.o user/zombie.c
 ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/zombie user/zombie.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
 cp user/bin/zombie fs/zombie
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/join.o user/join.c
-ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/join user/join.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
-cp user/bin/join fs/join
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/join2.o user/join2.c
-ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/join2 user/join2.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
-cp user/bin/join2 fs/join2
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/join3.o user/join3.c
-ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/join3 user/join3.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
-cp user/bin/join3 fs/join3
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/join4.o user/join4.c
-ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/join4 user/join4.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
-cp user/bin/join4 fs/join4
-gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/my_join2.o user/my_join2.c
-ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/my_join2 user/my_join2.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
-cp user/bin/my_join2 fs/my_join2
+gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/cond.o user/cond.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/cond user/cond.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/cond fs/cond
+gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/cond2.o user/cond2.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/cond2 user/cond2.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/cond2 fs/cond2
+gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/cond3.o user/cond3.c
+ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/cond3 user/cond3.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+cp user/bin/cond3 fs/cond3
 gcc  -I include -nostdinc -Wall -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 -c -o user/race.o user/race.c
 ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --output=user/bin/race user/race.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
 cp user/bin/race fs/race
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 623 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 571 blocks have been allocated
 balloc: write bitmap block at sector 28
-rm user/bin/stressfs user/bin/join2 user/bin/my_join2 user/bin/grep user/bin/tester user/bin/join user/bin/kill user/bin/mkdir user/bin/cat user/bin/init user/bin/join4 user/bin/rm user/bin/race user/bin/join3 user/bin/echo user/bin/ls user/bin/ln user/bin/usertests user/bin/sh user/bin/wc user/bin/zombie
+rm user/bin/cond3 user/bin/stressfs user/bin/grep user/bin/tester user/bin/kill user/bin/cond user/bin/cat user/bin/mkdir user/bin/cond2 user/bin/init user/bin/rm user/bin/race user/bin/echo user/bin/ls user/bin/ln user/bin/usertests user/bin/sh user/bin/wc user/bin/zombie
 
 
 test build PASSED
@@ -563,30 +543,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 625 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 573 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -601,8 +579,6 @@ init: starting sh
 $ tester
 tester
 TEST PASSED
-zombie!
-$ 
 
 test clone PASSED
  (clone and verify that address space is shared)
@@ -624,30 +600,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 626 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 574 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -684,30 +658,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 627 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 575 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -722,7 +694,7 @@ init: starting sh
 $ tester
 tester
 TEST PASSED
-z
+
 
 test clone3 PASSED
  (clone copies file descriptors, but doesn't share)
@@ -744,30 +716,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 626 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 574 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -804,30 +774,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 626 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 574 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -842,8 +810,6 @@ init: starting sh
 $ tester
 tester
 TEST PASSED
-zombie!
-
 
 test stack PASSED
  (set up stack correctly (and without extra items))
@@ -865,30 +831,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 627 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 575 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -927,30 +891,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 627 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 575 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -965,7 +927,7 @@ init: starting sh
 $ tester
 tester
 TEST PASSED
-$ 
+
 
 test join2 PASSED
  (join argument checking)
@@ -987,30 +949,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 625 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 573 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1025,7 +985,8 @@ init: starting sh
 $ tester
 tester
 TEST PASSED
-zombie
+$ zombie!
+
 
 test join3 PASSED
  (join should not handle child processes (forked))
@@ -1047,30 +1008,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 627 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 575 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1085,7 +1044,7 @@ init: starting sh
 $ tester
 tester
 TEST PASSED
-
+$ 
 
 test join4 PASSED
  (join, not wait, should handle threads)
@@ -1107,30 +1066,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 626 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 574 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1145,7 +1102,7 @@ init: starting sh
 $ tester
 tester
 TEST PASSED
-
+$ 
 
 test thread PASSED
  (thread user library functions)
@@ -1167,30 +1124,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 626 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 574 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1227,30 +1182,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 628 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 576 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1287,30 +1240,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 626 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 574 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1325,7 +1276,7 @@ init: starting sh
 $ tester
 tester
 TEST PASSED
-
+$
 
 test locks PASSED
  (test lock correctness)
@@ -1347,30 +1298,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 626 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 574 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1384,8 +1333,9 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
+wake 4
 TEST PASSED
-$
+$ 
 
 test cond PASSED
  (test cv_wait and cv_signal, cannot leave cv_wait without lock)
@@ -1407,30 +1357,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 626 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 574 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1444,6 +1392,7 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
+wake 4
 TEST PASSED
 $ 
 
@@ -1467,30 +1416,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 627 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 575 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1504,6 +1451,36 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
+wake 4
+wake 5
+wake 6
+wake 7
+wake 8
+wake 9
+wake 10
+wake 11
+wake 12
+wake 13
+wake 14
+wake 15
+wake 16
+wake 17
+wake 18
+wake 19
+wake 20
+wake 21
+wake 22
+wake 23
+wake 24
+wake 25
+wake 26
+wake 27
+wake 28
+wake 29
+wake 30
+wake 31
+wake 32
+wake 33
 TEST PASSED
 
 
@@ -1527,30 +1504,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 628 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 575 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1564,11 +1539,9778 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+wake 5
+wake 4
+FFFFFFFF
+TEST PASSED
+wake 5
 
 
-test race FAILED
+test race PASSED
  (race condition in CV? (must atomically release lock and sleep))
- Timelimit (10.0s) exceeded
 
 
 **********************************************************************
@@ -1587,30 +11329,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 626 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 574 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1624,7 +11364,7 @@ cpu0: starting
 init: starting sh
 $ tester
 tester
-pid 4 tester: trap 14 err 5 on cpu 0 eip 0xffffffff addr 0xffffffff--kill proc
+pid 4 tester: trap 14 err 5 on cpu 1 eip 0xffffffff addr 0xffffffff--kill proc
 TEST PASSED
 
 
@@ -1648,30 +11388,28 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x0 --o
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-ln
-join
-grep
-join3
-my_join2
-kill
-race
-tester
-sh
-join4
 usertests
-mkdir
-zombie
-rm
-echo
-join2
-wc
-stressfs
-README
-ls
 forktest
+wc
+rm
+README
 init
+mkdir
+ls
+tester
+stressfs
+sh
 cat
-balloc: first 627 blocks have been allocated
+cond
+cond3
+cond2
+race
+ln
+grep
+kill
+echo
+zombie
+balloc: first 575 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1686,7 +11424,7 @@ init: starting sh
 $ tester
 tester
 TEST PASSED
-
+$ 
 
 test size PASSED
  (check that address space size is updated in threads)
@@ -1744,9 +11482,8 @@ test cond2 PASSED
 test cond3 PASSED
  (test cv_wait and cv_signal, signal, don't broadcast)
 
-test race FAILED
+test race PASSED
  (race condition in CV? (must atomically release lock and sleep))
- Timelimit (10.0s) exceeded
 
 test noexit PASSED
  (no exit call in thread, should trap at bogus address)
@@ -1754,5 +11491,5 @@ test noexit PASSED
 test size PASSED
  (check that address space size is updated in threads)
 
-Passed 19 of 20 tests.
-Overall 19 of 20
+Passed 20 of 20 tests.
+Overall 20 of 20

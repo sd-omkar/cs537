@@ -38,8 +38,9 @@ main(int argc, char *argv[])
   assert((pid1 = thread_create(produce, NULL)) > 0);
   assert((pid2 = thread_create(consume, NULL)) > 0);
 
-  for(i = 0; i < 500; i++) {
+  for(i = 0; i < 1; i++) {
     result <<= 1;
+    //printf(1, "sleep main = %d\n", ppid);
     sleep(1);
   }
 

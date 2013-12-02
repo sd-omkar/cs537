@@ -1,5 +1,5 @@
 #include "cs537.h"
-
+#include <pthread.h>
 /************************** 
  * Error-handling functions
  **************************/
@@ -134,7 +134,6 @@ int Select(int  n, fd_set *readfds, fd_set *writefds,
            fd_set *exceptfds, struct timeval *timeout) 
 {
     int rc;
-
     if ((rc = select(n, readfds, writefds, exceptfds, timeout)) < 0)
         unix_error("Select error");
     return rc;
@@ -541,7 +540,7 @@ int Open_clientfd(char *hostname, int port)
 
     if ((rc = open_clientfd(hostname, port)) < 0) {
         if (rc == -1)
-            unix_error("Open_clientfd Unix error");
+            unix_error("New open_clientfd Unix error");
         else        
             dns_error("Open_clientfd DNS error");
     }
@@ -556,5 +555,114 @@ int Open_listenfd(int port)
         unix_error("Open_listenfd error");
     return rc;
 }
+void getargs2(struct server_reg_t* server_reg,int argc, char *argv[])
+{
+    if (argc != 5) {
+	fprintf(stderr, "Usage: server <portnum> <threads> <buffers> <schedulalg>\n");
+	exit(1);
+    }
+    server_reg->port = atoi(argv[1]);
+    server_reg->thread_num = atoi(argv[2]);
+    server_reg->buffer_sz = atoi(argv[3]);
+    if(strcmp("FIFO",argv[4])==0)
+    	server_reg->algo = 0;
+    else if(strcmp("SFNF",argv[4])==0)
+	server_reg->algo=1;
+    else if(strcmp("SFF",argv[4])==0)
+	server_reg->algo=2;
+    else{
+	printf("Invalid scheduling algorithm :%s\n",argv[4]);
+	exit(1);
+    }		
+    printf("Port = %d\nThreads = %d\nBuffer = %d\nAlgo = %s\n",server_reg->port,server_reg->thread_num,server_reg->buffer_sz,argv[4]);
+}
+
+void put(int value,struct server_reg_t* server_reg,char* buff,int file_sz,int filename_sz) {
+ int i=0;
+ switch(server_reg->algo){
+ case 0: server_reg->buffer[server_reg->buff_put_ind] = value;
+ 	 server_reg->fileinfo[server_reg->buff_put_ind]=buff;
+	 server_reg->buff_put_ind = (server_reg->buff_put_ind + 1) % server_reg->buffer_sz;
+ 	 server_reg->buff_count++;
+ 	 break;
+ case 1: for(i=0;i<server_reg->buffer_sz;i++){
+		if(server_reg->valid[i]==0){
+			 server_reg->valid[i]=1;
+			 server_reg->buffer[i] = value;
+		 	 server_reg->fileinfo[i]=buff;
+			 server_reg->size_file[i]=file_sz;
+			 server_reg->size_filename[i]=filename_sz;
+		 	 server_reg->buff_count++;
+			 break;
+		}
+	 }	 
+ 	 break;
+ case 2: for(i=0;i<server_reg->buffer_sz;i++){
+		if(server_reg->valid[i]==0){
+			 server_reg->valid[i]=1;
+			 server_reg->buffer[i] = value;
+		 	 server_reg->fileinfo[i]=buff;
+			 server_reg->size_file[i]=file_sz;
+			 server_reg->size_filename[i]=filename_sz;
+		 	 server_reg->buff_count++;
+			 break;
+		}
+	 }	 
+ 	 break;
+ default:break;
+ }
+ }
 
 
+ int get(struct server_reg_t* server_reg,char** buff_ptr) {
+ int tmp; 
+ int i=0;
+ int temp_val=-1,temp_ind=0;;
+ switch(server_reg->algo){
+ case 0: tmp = server_reg->buffer[server_reg->buff_get_ind];
+	 *buff_ptr = server_reg->fileinfo[server_reg->buff_get_ind];
+	 server_reg->buff_get_ind = (server_reg->buff_get_ind + 1) % server_reg->buffer_sz;
+	 server_reg->buff_count--;
+	 break;
+ case 1: for(i=0;i<server_reg->buffer_sz;i++){
+		if(server_reg->valid[i]==1){
+			 if(temp_val==-1){
+				temp_val=server_reg->size_filename[i];
+				temp_ind=i;
+			 }
+			 else{
+				if(server_reg->size_filename[i]<temp_val){
+					temp_val=server_reg->size_filename[i];
+					temp_ind=i;
+				}
+			 }
+		}
+	 }
+	 server_reg->valid[temp_ind] = 0;
+	 *buff_ptr = server_reg->fileinfo[temp_ind];
+	 tmp = server_reg->buffer[temp_ind];
+         server_reg->buff_count--;	 
+ 	 break;
+ case 2: for(i=0;i<server_reg->buffer_sz;i++){
+		if(server_reg->valid[i]==1){
+			 if(temp_val==-1){
+				temp_val=server_reg->size_file[i];
+				temp_ind=i;
+			 }
+			 else{
+				if(server_reg->size_file[i]<temp_val){
+					temp_val=server_reg->size_file[i];
+					temp_ind=i;
+				}
+			 }
+		}
+	 }
+	 server_reg->valid[temp_ind] = 0;
+	 *buff_ptr = server_reg->fileinfo[temp_ind];
+	 tmp = server_reg->buffer[temp_ind];
+         server_reg->buff_count--;	 
+ 	 break;
+ default:break;
+ }
+ return tmp;
+ }
