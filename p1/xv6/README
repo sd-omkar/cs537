@@ -1,74 +1,48 @@
-xv6 README for CS 537
+xv6 is a re-implementation of Dennis Ritchie's and Ken Thompson's Unix
+Version 6 (v6).  xv6 loosely follows the structure and style of v6,
+but is implemented for a modern x86-based multiprocessor using ANSI C.
 
-From the xv6 readme:
-   xv6 is a re-implementation of Dennis Ritchie's and Ken Thompson's Unix
-   Version 6 (v6).  xv6 loosely follows the structure and style of v6,
-   but is implemented for a modern x86-based multiprocessor using ANSI C.
+ACKNOWLEDGMENTS
 
-For more information on xv6, see the website:
-   http://pdos.csail.mit.edu/6.828/xv6/
+xv6 is inspired by John Lions's Commentary on UNIX 6th Edition (Peer
+to Peer Communications; ISBN: 1-57398-013-7; 1st edition (June 14,
+2000)). See also http://pdos.csail.mit.edu/6.828/2007/v6.html, which
+provides pointers to on-line resources for v6.
 
-To obtain the xv6 source code, copy the tarball and then extract it:
-   cp ~cs537-2/ta/xv6/xv6.tar.gz .
-   tar -xzf xv6.tar.gz
-   cd xv6
+xv6 borrows code from the following sources:
+    JOS (asm.h, elf.h, mmu.h, bootasm.S, ide.c, console.c, and others)
+    Plan 9 (bootother.S, mp.h, mp.c, lapic.c)
+    FreeBSD (ioapic.c)
+    NetBSD (console.c)
 
-Please use the source code provided here. This version has been modified
-to run correctly on the mumble lab and to operate with the grading scripts.
+The following people made contributions:
+    Russ Cox (context switching, locking)
+    Cliff Frey (MP)
+    Xiao Yu (MP)
+    Nickolai Zeldovich
+    Austin Clements
 
-To build the xv6 kernel, bootloader, and user programs run:
-   make
+In addition, we are grateful for the patches contributed by Greg
+Price, Yandong Mao, and Hitoshi Mitake.
 
-In order to easily run xv6, we will use the emulator QEMU (qemu.org).
-QEMU will emulate an x86 processor and devices like the display and 
-disks. QEMU also provides support for debugging via gdb. QEMU is 
-available on the mumble lab computers (but not on other lab computers).
+The code in the files that constitute xv6 is
+Copyright 2006-2007 Frans Kaashoek, Robert Morris, and Russ Cox.
 
-The xv6 makefile has target setup for running in QEMU. To start xv6 in
-QEMU, just run:
-   make qemu
+ERROR REPORTS
 
-This will create disk images, start QEMU, and boot xv6. The QEMU window
-is the virtual terminal for the emualted computer. Serial communication
-is displayed in the terminal where you ran "make qemu". 
+If you spot errors or have suggestions for improvement, please send
+email to Frans Kaashoek and Robert Morris (kaashoek,rtm@csail.mit.edu). 
 
-Once xv6 boots, it starts the shell "sh". You can then run user commands,
-such as "ls".
+BUILDING AND RUNNING XV6
 
-To stop the emulation, just close the QEMU window (xv6 does not have a 
-shutdown command)
+To build xv6 on an x86 ELF machine (like Linux or FreeBSD), run "make".
+On non-x86 or non-ELF machines (like OS X, even on x86), you will
+need to install a cross-compiler gcc suite capable of producing x86 ELF
+binaries.  See http://pdos.csail.mit.edu/6.828/2007/tools.html.
+Then run "make TOOLPREFIX=i386-jos-elf-".
 
-To debug xv6 using gdb, run:
-   make qemu-gdb
+To run xv6, you can use Bochs or QEMU, both PC simulators.
+Bochs makes debugging easier, but QEMU is much faster. 
+To run in Bochs, run "make bochs" and then type "c" at the bochs prompt.
+To run in QEMU, run "make qemu".
 
-Then open another terminal and navigate to your xv6 directory. Now run:
-   gdb
-
-At this point you can add breakpoints in gdb. Some examples:
-   break main.c:main
-   break bootasm.S:start
-   break trap
-   break alltraps
-
-To start or continue running the emulation, in gdb run:
-   continue
-or just
-   c
-
-To pause the emulation, press Ctrl-C from within gdb. Once the emulation
-is paused, you can set more breakpoints, step through the code, or examine
-memory (break, step, print, x). See the gdb manual for a full set of
-commands and help (http://sourceware.org/gdb/current/onlinedocs/gdb/).
-
-Note that make is smart about re-compiling. If you update source files, 
-simply run make again and the correct commands will be run to re-build 
-the object files and executables. If you add new source files, you may
-need to update the Makefile to include those files. If you modify the 
-Makefile itself (or any part of the build configuration), you should do 
-a clean build to ensure that all files are compiled using the new rules.
-To do this run:
-   make clean
-   make
-
-For more information on make, see the manual 
-(http://www.gnu.org/software/make/manual/make.html).

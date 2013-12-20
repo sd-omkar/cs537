@@ -386,11 +386,9 @@ sleep2(void *chan, lock_t *lock)
   acquire(&ptable.lock);  //DOC: sleeplock1
 
   // Go to sleep.
-  //cprintf("sleeping %d\n", proc->pid);
   
   if(0 == 1) {
     proc->chan = chan;
-    //cprintf("sleep %d\n", proc->pid);
     proc->state = SLEEPING;
   
     int intena;
@@ -410,7 +408,6 @@ sleep2(void *chan, lock_t *lock)
   }
   else {
     proc->chan = chan;
-    //cprintf("sleep %d\n", proc->pid);
     proc->state = SLEEPING;
     lock->flag = 0;
     sched();
@@ -419,10 +416,8 @@ sleep2(void *chan, lock_t *lock)
   // Tidy up.
   proc->chan = 0;
 
-  cprintf("wake %d\n", proc->pid);
   release(&ptable.lock);
   while(xchg(&lock->flag, 1) != 0);
-  //cprintf("waking %d\n", proc->pid);
   
 }
 
@@ -544,16 +539,9 @@ int join(void **stack) {
         int *tempAddr = 0x1FD8;
         //*tempAddr = pid;
         //int temp = *tempAddr;
-        //cprintf("tempAddr data = %d\n", *tempAddr);
         void *stackAddr = (void *)p->parent->tf->esp + 7*sizeof(void*);
-        //cprintf("stackAddr = %p\n", stackAddr);
-        //cprintf("tempAddr data = %d\n", *tempAddr);
         *(uint *)stackAddr = p->tf->ebp;
-        //cprintf("stackAddr = %p\n", stackAddr);
-        //cprintf("tempAddr data = %d\n", *tempAddr);
         *(uint *)stackAddr += 3 * sizeof(void *) - PGSIZE;
-        //cprintf("stackAddr = %p\n", stackAddr);
-        //cprintf("tempAddr data = %d\n", *tempAddr);
         //TODO modify **stack
         kfree(p->kstack);
         p->kstack = 0;

@@ -1,0 +1,30 @@
+User:    cpatil
+Partner: omkar
+Test build 1
+Test shutdown 1
+Test creat 1
+Test write 1
+Test stat 1
+Test overwrite 1
+Test maxfile 1
+Test maxfile2 1
+Test sparse 1
+Test stat2 1
+Test dir1 1
+Test dir2 1
+Test baddir 1
+Test baddir2 1
+Test unlink 1
+Test unlink2 1
+Test empty 1
+Test name 1
+Test persist 1
+Test drop 0
+Test bigdir 1
+Test bigdir2 1
+Test deep 0
+Test complex 1
+Test complex2 1
+Test persist2 1
+Test free 1
+Overall 25 of 27

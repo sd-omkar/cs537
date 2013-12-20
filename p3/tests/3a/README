@@ -1,0 +1,13 @@
+To run:
+1) Navigate to the directory that contains your mem.c and Makefile (and mem.h, which should match ours)
+2) Run the script "runtests" that can be found in ~cs537-2/ta/tests/3a/. You may
+   copy it to another location if you prefer.
+3) Remember that you can pass the "-h" flag to the script to see more 
+   testing options.
+
+===========================
+!If you are failing a test!
+===========================
+All of the tests for 3a are in ta/tests/3a/tests/. You can see what we
+are testing and you can debug your solution by copying our C file test,
+compiling, and running with gdb.

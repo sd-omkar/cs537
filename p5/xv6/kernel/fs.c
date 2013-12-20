@@ -21,6 +21,9 @@
 #include "fs.h"
 #include "file.h"
 
+#define FLAG1 0x00FFFFFF
+#define FLAG2 0x00FFFFFFF
+
 #define min(a, b) ((a) < (b) ? (a) : (b))
 static void itrunc(struct inode*);
 
@@ -327,7 +330,7 @@ bmap(struct inode *ip, uint bn)
       ip->addrs[bn] = addr = balloc(ip->dev);
     //TODO
     if(ip->type == T_CHECKED)
-      addr &= 0x00FFFFFF;
+      addr &= FLAG1;
     return addr;
   }
   bn -= NDIRECT;
@@ -341,14 +344,14 @@ bmap(struct inode *ip, uint bn)
     if((addr = a[bn]) == 0){
       //TODO
       if(ip->type == T_CHECKED)
-        addr &= 0x00FFFFFF;
+        addr &= FLAG1;
       a[bn] = addr = balloc(ip->dev);
       bwrite(bp);
     }
     brelse(bp);
     //TODO
     if(ip->type == T_CHECKED)
-      addr &= 0x00FFFFFF;
+      addr &= FLAG1;
     return addr;
   }
 
@@ -368,23 +371,23 @@ itrunc(struct inode *ip)
   for(i = 0; i < NDIRECT; i++){
     if(ip->addrs[i]){
       //TODO
-      bfree(ip->dev, ((ip->addrs[i]) & 0x00FFFFFFF));
+      bfree(ip->dev, ((ip->addrs[i]) & FLAG2));
       ip->addrs[i] = 0;
     }
   }
   
   if(ip->addrs[NDIRECT]){
     //TODO
-    bp = bread(ip->dev, (ip->addrs[NDIRECT] & 0x00FFFFFFF));
+    bp = bread(ip->dev, (ip->addrs[NDIRECT] & FLAG2));
     a = (uint*)bp->data;
     for(j = 0; j < NINDIRECT; j++){
       if(a[j])
         //TODO
-        bfree(ip->dev, (a[j] & 0x00FFFFFFF));
+        bfree(ip->dev, (a[j] & FLAG2));
     }
     brelse(bp);
     //TODO
-    bfree(ip->dev, (ip->addrs[NDIRECT] & 0x00FFFFFFF));
+    bfree(ip->dev, (ip->addrs[NDIRECT] & FLAG2));
     ip->addrs[NDIRECT] = 0;
   }
 
@@ -401,13 +404,16 @@ stati(struct inode *ip, struct stat *st)
   st->type = ip->type;
   st->nlink = ip->nlink;
   st->size = ip->size;
+  
   //TODO
+  /*
   if(ip->type == T_CHECKED ) {
     uchar sum = NULL;
     uchar sum2 = NULL;
     int i;
     uint addr, *a;
     struct buf *bp;
+    
     for(i=0; i<(NDIRECT+1); i++) {
       sum = NULL;
       addr = ip->addrs[i];
@@ -430,7 +436,37 @@ stati(struct inode *ip, struct stat *st)
       }
     }
     st->checksum = sum2;
-    cprintf("st->checksum: %d\n", st->checksum);
+    //cprintf("st->checksum: %d\n", st->checksum);
+  }*/
+  if(ip->type == T_CHECKED) {
+  uchar checksum = NULL;
+  uchar checksum2 = NULL;
+    int i;
+    uint addr, *a;
+    struct buf *bp;
+    for(i = 0; i < (NDIRECT+1); i++) {
+      checksum2 = NULL;
+      addr = ip->addrs[i];
+      if(i == NDIRECT){
+	bp = bread(ip->dev, ip->addrs[NDIRECT]);
+	a = (uint*)bp->data;
+	int j;
+	for(j = 0; j < (BSIZE/sizeof(uint)); j++) {
+	  checksum2 ^= (uchar)((a[j] & 0xFF000000) >> 24);
+	}
+	checksum ^= checksum2;
+	brelse(bp);
+      } else {
+        uint temp;
+	checksum2 = NULL;
+	temp = ip->addrs[i] & 0xFF000000;
+	temp = (temp >> 24);
+	checksum2 =  (uchar) temp;
+	checksum ^= checksum2;
+      }
+    }
+    st->checksum = checksum;
+    cprintf("st->checksum:%d\n",st->checksum);
   }
 }
 
@@ -547,7 +583,7 @@ writei(struct inode *ip, char *src, uint off, uint n)
       uint bn = (off/BSIZE);
 
       if(bn < NDIRECT) {
-        ip->addrs[off/BSIZE] &= 0x00FFFFFF;
+        ip->addrs[off/BSIZE] &= FLAG1;
         ip->addrs[off/BSIZE] |= sum2;
       }
 
@@ -555,7 +591,7 @@ writei(struct inode *ip, char *src, uint off, uint n)
       if(bn < NINDIRECT) {
         bp2 = bread(ip->dev, ip->addrs[NDIRECT]);
         a = (uint *)bp2->data;
-        a[bn] &= 0x00FFFFFF;
+        a[bn] &= FLAG1;
         a[bn] |= sum2;
         bwrite(bp2);
         brelse(bp2);

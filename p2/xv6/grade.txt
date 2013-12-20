@@ -1,0 +1,8 @@
+User:    cpatil
+Partner: omkar
+Test build 1
+Test settickets 1
+Test getpinfo 1
+Test getpinfo2 1
+Test ticks 1
+Overall 5 of 5

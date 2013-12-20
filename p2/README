@@ -1,0 +1,27 @@
+Project 2:
+
+Name:   Omkar Deshmukh
+ID:     9069798065
+Email:  omkar@cs.wisc.edu
+
+Partner:
+Name:   Chetan Patil
+ID:     9070037685
+Email:  cpatil@cs.wisc.edu
+
+Description:
+
+A)
+Provided 2 files: mysh.c and Makefile
+
+B)
+Along with xv6 source code, provided data files and plots in data.png in the p2 handin directory
+The data was generated bu running modified version of ticks.c from the test suite. The file is
+in user/ directory of xv6. For the first plot, ratio of tickets was 2:4, while for the other
+one it was 2:8. The program ticks take sleep count as the argument. Both, this behavior and
+tickets ration can be changed from user/ticks.
+The scheduler was tested with processes which fairly require a longer duratioion of time compared
+to the time slice allotted by the the scheduler. Hence the processer remain in the higher priority
+only for the first slice and hence the hticks=1 for these processes. The graph presented with this 
+assignment depicts the lticks against the sleep time length. So all the data on the graph
+corresponds to the lower priority queue that is with proc->queue=2.

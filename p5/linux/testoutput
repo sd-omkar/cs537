@@ -1,0 +1,662 @@
+
+**********************************************************************
+
+Test build
+build project using make
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+rm -f server.o udp.o client.o server client libmfs.so mfs.o out.o
+Trying to build project using make
+make
+gcc -fpic -c udp.c -o udp.o
+gcc -shared -o libudp.so udp.o	
+gcc -fpic -c -o mfs.o mfs.c -Wall -ludp -L.
+gcc -shared -o libmfs.so mfs.o udp.o
+gcc    -c -o server.o server.c
+gcc -Wall -c server.c -o server.o -lmfs -L.
+gcc  -o server server.o udp.o 
+gcc    -c -o client.o client.c
+gcc -Wall -c client.c -o client.o -lmfs -L.
+gcc  -o client client.o udp.o 
+
+
+test build PASSED
+ (build project using make)
+
+
+**********************************************************************
+
+Test shutdown
+init server and client then call shutdown
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test shutdown FAILED
+ (init server and client then call shutdown)
+ server died immediately
+
+
+**********************************************************************
+
+Test creat
+creat a file and check with lookup
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test creat FAILED
+ (creat a file and check with lookup)
+ server died immediately
+
+
+**********************************************************************
+
+Test write
+write then read one block
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test write FAILED
+ (write then read one block)
+ server died immediately
+
+
+**********************************************************************
+
+Test stat
+stat a regular file
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test stat FAILED
+ (stat a regular file)
+ server died immediately
+
+
+**********************************************************************
+
+Test overwrite
+overwrite a block
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test overwrite FAILED
+ (overwrite a block)
+ server died immediately
+
+
+**********************************************************************
+
+Test maxfile
+write largest possible file
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test maxfile FAILED
+ (write largest possible file)
+ server died immediately
+
+
+**********************************************************************
+
+Test maxfile2
+write more blocks than possible
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test maxfile2 FAILED
+ (write more blocks than possible)
+ server died immediately
+
+
+**********************************************************************
+
+Test sparse
+write first and last block
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test sparse FAILED
+ (write first and last block)
+ server died immediately
+
+
+**********************************************************************
+
+Test stat2
+stat a sparse file
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test stat2 FAILED
+ (stat a sparse file)
+ server died immediately
+
+
+**********************************************************************
+
+Test dir1
+check root for dot entries
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test dir1 FAILED
+ (check root for dot entries)
+ server died immediately
+
+
+**********************************************************************
+
+Test dir2
+create a new directory and check it
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test dir2 FAILED
+ (create a new directory and check it)
+ server died immediately
+
+
+**********************************************************************
+
+Test baddir
+try to create a file with a file parent inode
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test baddir FAILED
+ (try to create a file with a file parent inode)
+ server died immediately
+
+
+**********************************************************************
+
+Test baddir2
+try to lookup a file with a file parent inode
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test baddir2 FAILED
+ (try to lookup a file with a file parent inode)
+ server died immediately
+
+
+**********************************************************************
+
+Test unlink
+unlink a file
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test unlink FAILED
+ (unlink a file)
+ server died immediately
+
+
+**********************************************************************
+
+Test unlink2
+unlink a directory
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test unlink2 FAILED
+ (unlink a directory)
+ server died immediately
+
+
+**********************************************************************
+
+Test empty
+unlink a non-empty directory
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test empty FAILED
+ (unlink a non-empty directory)
+ server died immediately
+
+
+**********************************************************************
+
+Test name
+name too long
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test name FAILED
+ (name too long)
+ server died immediately
+
+
+**********************************************************************
+
+Test persist
+restart server after creating a file
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test persist FAILED
+ (restart server after creating a file)
+ server died immediately
+
+
+**********************************************************************
+
+Test drop
+drop every other packet sent by client
+
+**********************************************************************
+Trying to clean project using make clean
+make clean
+rm -f server.o udp.o client.o server client libmfs.so mfs.o out.o
+Trying to build project using make
+make
+gcc -fpic -c udp.c -o udp.o
+gcc -shared -o libudp.so udp.o	
+gcc -fpic -c -o mfs.o mfs.c -Wall -ludp -L.
+gcc -shared -o libmfs.so mfs.o udp.o
+gcc    -c -o server.o server.c
+gcc -Wall -c server.c -o server.o -lmfs -L.
+gcc  -o server server.o udp.o 
+gcc    -c -o client.o client.c
+gcc -Wall -c client.c -o client.o -lmfs -L.
+gcc  -o client client.o udp.o 
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+Trying to clean project using make clean
+make clean
+rm -f server.o udp.o client.o server client libmfs.so mfs.o out.o
+Trying to build project using make
+make
+gcc -fpic -c udp.c -o udp.o
+gcc -shared -o libudp.so udp.o	
+gcc -fpic -c -o mfs.o mfs.c -Wall -ludp -L.
+gcc -shared -o libmfs.so mfs.o udp.o
+gcc    -c -o server.o server.c
+gcc -Wall -c server.c -o server.o -lmfs -L.
+gcc  -o server server.o udp.o 
+gcc    -c -o client.o client.c
+gcc -Wall -c client.c -o client.o -lmfs -L.
+gcc  -o client client.o udp.o 
+
+
+test drop FAILED
+ (drop every other packet sent by client)
+ server died immediately
+
+
+**********************************************************************
+
+Test bigdir
+create a directory with max number of files
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test bigdir FAILED
+ (create a directory with max number of files)
+ server died immediately
+
+
+**********************************************************************
+
+Test bigdir2
+create a directory with more files than possible
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test bigdir2 FAILED
+ (create a directory with more files than possible)
+ server died immediately
+
+
+**********************************************************************
+
+Test deep
+create many deeply nested directories
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test deep FAILED
+ (create many deeply nested directories)
+ server died immediately
+
+
+**********************************************************************
+
+Test complex
+a long sequence of creats and writes followed by a check
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test complex FAILED
+ (a long sequence of creats and writes followed by a check)
+ server died immediately
+
+
+**********************************************************************
+
+Test complex2
+a long sequence of creats and writes followed by a check
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test complex2 FAILED
+ (a long sequence of creats and writes followed by a check)
+ server died immediately
+
+
+**********************************************************************
+
+Test persist2
+restart server after creating many dirs and files
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test persist2 FAILED
+ (restart server after creating many dirs and files)
+ server died immediately
+
+
+**********************************************************************
+
+Test free
+check that inodes and direcrtory entries are freed
+
+**********************************************************************
+/tmp/tmp3Uas4F/p/server 26311 testimage
+bind: Address already in use
+bind: Address already in use
+server: server.c:21: main: Assertion `sd > -1' failed.
+Chetan's server starting testimage on 26311
+Failure: server died immediately
+
+
+test free FAILED
+ (check that inodes and direcrtory entries are freed)
+ server died immediately
+
+**********************************************************************
+Summary:
+test build PASSED
+ (build project using make)
+
+test shutdown FAILED
+ (init server and client then call shutdown)
+ server died immediately
+
+test creat FAILED
+ (creat a file and check with lookup)
+ server died immediately
+
+test write FAILED
+ (write then read one block)
+ server died immediately
+
+test stat FAILED
+ (stat a regular file)
+ server died immediately
+
+test overwrite FAILED
+ (overwrite a block)
+ server died immediately
+
+test maxfile FAILED
+ (write largest possible file)
+ server died immediately
+
+test maxfile2 FAILED
+ (write more blocks than possible)
+ server died immediately
+
+test sparse FAILED
+ (write first and last block)
+ server died immediately
+
+test stat2 FAILED
+ (stat a sparse file)
+ server died immediately
+
+test dir1 FAILED
+ (check root for dot entries)
+ server died immediately
+
+test dir2 FAILED
+ (create a new directory and check it)
+ server died immediately
+
+test baddir FAILED
+ (try to create a file with a file parent inode)
+ server died immediately
+
+test baddir2 FAILED
+ (try to lookup a file with a file parent inode)
+ server died immediately
+
+test unlink FAILED
+ (unlink a file)
+ server died immediately
+
+test unlink2 FAILED
+ (unlink a directory)
+ server died immediately
+
+test empty FAILED
+ (unlink a non-empty directory)
+ server died immediately
+
+test name FAILED
+ (name too long)
+ server died immediately
+
+test persist FAILED
+ (restart server after creating a file)
+ server died immediately
+
+test drop FAILED
+ (drop every other packet sent by client)
+ server died immediately
+
+test bigdir FAILED
+ (create a directory with max number of files)
+ server died immediately
+
+test bigdir2 FAILED
+ (create a directory with more files than possible)
+ server died immediately
+
+test deep FAILED
+ (create many deeply nested directories)
+ server died immediately
+
+test complex FAILED
+ (a long sequence of creats and writes followed by a check)
+ server died immediately
+
+test complex2 FAILED
+ (a long sequence of creats and writes followed by a check)
+ server died immediately
+
+test persist2 FAILED
+ (restart server after creating many dirs and files)
+ server died immediately
+
+test free FAILED
+ (check that inodes and direcrtory entries are freed)
+ server died immediately
+
+Passed 1 of 27 tests.
+Overall 1 of 27

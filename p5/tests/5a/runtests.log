@@ -1,0 +1,27 @@
+build - build project using make
+shutdown - init server and client then call shutdown
+creat - creat a file and check with lookup
+write - write then read one block
+stat - stat a regular file
+overwrite - overwrite a block
+maxfile - write largest possible file
+maxfile2 - write more blocks than possible
+sparse - write first and last block
+stat2 - stat a sparse file
+dir1 - check root for dot entries
+dir2 - create a new directory and check it
+baddir - try to create a file with a file parent inode
+baddir2 - try to lookup a file with a file parent inode
+unlink - unlink a file
+unlink2 - unlink a directory
+empty - unlink a non-empty directory
+name - name too long
+persist - restart server after creating a file
+drop - drop every other packet sent by client
+bigdir - create a directory with max number of files
+bigdir2 - create a directory with more files than possible
+deep - create many deeply nested directories
+complex - a long sequence of creats and writes followed by a check
+complex2 - a long sequence of creats and writes followed by a check
+persist2 - restart server after creating many dirs and files
+free - check that inodes and direcrtory entries are freed

@@ -1,0 +1,31 @@
+Project 3:
+
+Name:   Omkar Deshmukh
+ID:     9069798065
+Email:  omkar@cs.wisc.edu
+
+Partner:
+Name:   Chetan Patil
+ID:     9070037685
+Email:  cpatil@cs.wisc.edu
+
+Project 3a - Brief description
+4 functions have been added to the xv6 which perform functions very similar to their existing counterparts:
+Mem_Init()
+Mem_Alloc(size,style)
+Mem_Free(ptr)
+Mem_Dump()
+We developed the code by testing each function in steps and comparing with the existing functions.
+We have tried to optimize the code for better performance and by using limited header overhead.
+Finally the functions were verified with testscripts made available.
+
+Project 3b:
+We initially concentrated on working with the NULL deference and then gradually extrapollated to working on reallocating the 
+address space components into the desired functions.
+We wrote custom test functions to verify at multiple levels.
+We then spent a significant amount of time in understanding the functioning of the system calls and interrupt handling and 
+gradually developed on the concepts to make sure that we are able to catch the interrupts that are of interest to us. 
+Then we had to make several additions such as the new function called growstack() and also made modification to handle 
+specific trap conditions. 
+We spent a huge time working on the boundary conditions and verifying that they are appropriate to the specification.
+Finally we tested all the test cases using the modified xv6 and were successful in implementation.

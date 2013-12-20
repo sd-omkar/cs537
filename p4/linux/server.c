@@ -83,6 +83,9 @@ int main(int argc, char *argv[])
     server_reg.size_filename = malloc(sizeof(int)*server_reg.buffer_sz); //allocate memory to store sizes of filenames
     server_reg.size_file = malloc(sizeof(int)*server_reg.buffer_sz); //allocate memory to store file size
     pthread_t p[server_reg.thread_num];	// create worker threads
+    int xx=0;
+    for(xx=0;xx<server_reg.buffer_sz;xx++)
+	server_reg.valid[xx]=0;
 
     int filebuffer_size=server_reg.buffer_sz+2;
     char fileinfo_buffer[filebuffer_size][MAXLINE];

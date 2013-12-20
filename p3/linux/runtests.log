@@ -381,7 +381,7 @@ psuedo-random sequence of allocs and frees
 
 **********************************************************************
 /u/c/s/cs537-2/ta/tests/3a/random 0 10 0
-time: 0.00216293334961
+time: 0.00216102600098
 
 
 test random PASSED
@@ -395,7 +395,7 @@ psuedo-random sequence of allocs and frees
 
 **********************************************************************
 /u/c/s/cs537-2/ta/tests/3a/random 0 1000 1
-time: 0.00433301925659
+time: 0.00439405441284
 
 
 test random2 PASSED
@@ -409,7 +409,7 @@ psuedo-random sequence of allocs and frees
 
 **********************************************************************
 /u/c/s/cs537-2/ta/tests/3a/random 0 100000 1
-time: 0.783879995346
+time: 0.773667812347
 
 
 test random3 PASSED
@@ -423,7 +423,7 @@ psuedo-random sequence of allocs and frees
 
 **********************************************************************
 /u/c/s/cs537-2/ta/tests/3a/random 1 500000 1
-time: 3.91262483597
+time: 3.91684412956
 
 
 test random4 PASSED
@@ -437,7 +437,7 @@ psuedo-random sequence of allocs and frees
 
 **********************************************************************
 /u/c/s/cs537-2/ta/tests/3a/random 1 2000000 0
-time: 14.2715010643
+time: 14.2576510906
 
 
 test random5 PASSED

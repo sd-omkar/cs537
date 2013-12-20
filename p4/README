@@ -1,0 +1,40 @@
+Project 4:
+
+Name:   Omkar Deshmukh
+ID:     9069798065
+Email:  omkar@cs.wisc.edu
+
+Partner:
+Name:   Chetan Patil
+ID:     9070037685
+Email:  cpatil@cs.wisc.edu
+
+Project 4a:
+1) server.c
+  Creates threads dynamically and initializes the basic structure required depending
+  on the number of threads and the buffer size initialized.
+  Also hosts functions for producer and consumer and also contains function to get
+  information of the file that is size of the file and the length of the filename.
+  Uses the mutex locks and condition signals provided by the POSIX.
+2) cs537.c
+  Added few functions including put() and get() that are required by the producer-
+  consumer relation to work.
+3) request.c 
+  Slightly modified the existing functions in order to be compatible with the 
+  modifications in the cs537.c
+  
+
+Project 4b:
+1)New system calls:
+  clone:    Used for creating threads.
+  join:     Used for joining threads.
+  sleepcv:  Used by condition variables during cv_wait.
+  wakecv:   Used by condition variables during cv_signal.
+  For each of these 4 systems calls, kernel/sysproc. and kernel.proc 
+  has a pair of functions that expose the functionality to 
+  thread library in user programs.
+2)New functions in ulib.c:
+  Locks:            lock_init, lock_acquire, lock_release
+  Threads:          thread_create, thread_join
+  Cond. Variables:  cv_wait, cv_signal
+

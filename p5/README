@@ -1,0 +1,27 @@
+Project 4:
+
+Name:   Omkar Deshmukh
+ID:     9069798065
+Email:  omkar@cs.wisc.edu
+
+Partner:
+Name:   Chetan Patil
+ID:     9070037685
+Email:  cpatil@cs.wisc.edu
+
+Project 4a:
+Includes 2 major additions/modifications:
+
+Client side:
+-> Client library was built using the specifications provided
+-> The client library basically acts like a wrapper for the underlying UDP protocol
+-> Select() function used to detect the timeout
+
+Server side:
+-> The basic functionality of the client library is defined
+-> Implements the file system changes 
+-> Creates a file system if not existing
+
+Project 4b:
+1) include directory: Added new file type T_CHECKED and flag O_CHECKED. Added checksum field in struct stat.
+2) kernel directory: Modified open and create system calls to handle T_CHECKED file types. Modified read and write functions to calculate checksum. In bmap and itrunc, addressing was changed to handle only partial address and remaining bytes as checksum. Function stati was modified to stat the final checksum.

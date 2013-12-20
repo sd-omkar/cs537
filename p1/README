@@ -1,0 +1,8 @@
+Author: Omkar Deshmukh
+Email: omkar@cs.wisc.edu
+
+Linux: Sorting
+I found out that most of the code was already there in the files generate.c and dump.c. So apart from using qsort and its accompanying compare function, I believe most of the efforts were spent in putting the pieces together.
+
+xv6: Introducing a new system call
+By looking at the stack trace of actual system call, I was able to figure the call flow. This helped me understand which files to modify. Implementing the counter itself was pretty straightforward.

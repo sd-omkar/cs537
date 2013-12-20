@@ -1,0 +1,38 @@
+User:    cpatil
+Partner: omkar
+Test build 1
+Test basic 1
+Test blank 1
+Test multiline 1
+Test parseargs 1
+Test parseargs2 1
+Test parseargs3 1
+Test exit 1
+Test pwd 1
+Test cd 1
+Test cd2 1
+Test whitespace 1
+Test whitespace2 1
+Test args 1
+Test args2 1
+Test longline 1
+Test toolong 1
+Test badprog 1
+Test errout 1
+Test badcd 1
+Test badpwd 1
+Test badexit 1
+Test redirect 1
+Test redirect2 1
+Test badredir 1
+Test badredir2 1
+Test interactive 1
+Test interactive2 1
+Test background 1
+Test background2 1
+Test background3 1
+Test background4 1
+Test waitnone 1
+Test badwait 1
+Test fun 1
+Overall 35 of 35

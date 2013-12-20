@@ -1,0 +1,12 @@
+build - build xv6 using make
+write1 - write then read a block
+write2 - write then read largest possible file
+write3 - write then read, buffer smaller than one block
+write4 - write then read, buffer larger than one block
+write5 - check the correct image is produced after writing
+checksum1 - check that stat gives the correct checksum
+checksum2 - check that stat gives the correct checksum
+corrupt1 - first block of file is corrupt
+corrupt2 - 13th block of file is corrupt
+corrupt3 - overwrite corrupt data
+usertests - check for regressions

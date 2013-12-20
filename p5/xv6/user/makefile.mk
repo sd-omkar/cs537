@@ -12,11 +12,19 @@ USER_PROGS := \
 	mkdir\
 	rm\
 	sh\
+	stat\
 	stressfs\
 	tester\
 	usertests\
 	wc\
-	zombie
+	zombie\
+	checksum\
+	checksum1\
+	checksum2\
+	write1\
+	write2\
+	write3\
+	write4
 
 USER_PROGS := $(addprefix user/, $(USER_PROGS))
 
